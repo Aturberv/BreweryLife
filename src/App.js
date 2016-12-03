@@ -7,7 +7,7 @@ import './App.css';
 
   const defaultProps = {
     center: {lat: 40.7245168, lng: -73.9275694},
-    zoom: 12.27,
+    zoom: 12,
   };
 
 class App extends Component {
@@ -30,6 +30,7 @@ class App extends Component {
                            key={ brewery.name }
                            lat={ brewery.location.lat }
                            lng={ brewery.location.lng }
+                           brewery={ brewery }
             />
           )
         }

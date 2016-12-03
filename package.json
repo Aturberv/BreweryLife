@@ -9,7 +9,8 @@
     "google-map-react": "^0.22.0",
     "react": "^15.4.1",
     "react-async-script-loader": "^0.2.2",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react-modal-dialog": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
