@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const breweryMarker = (props) => (
     <div style={{
-        width: '100px',
-        height: '100px',
+        width: '10px',
+        height: '10px',
         background: 'red'
     }} />
 );
