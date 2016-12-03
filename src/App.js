@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
+import BreweryMarker from './BreweryMarker';
+import Breweries from './breweries';
 import logo from './logo.svg';
 import './App.css';
 
   const defaultProps = {
-    center: {lat: 59.938043, lng: 30.337157},
-    zoom: 9,
-    greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
+    center: {lat: 40.7245168, lng: -73.9275694},
+    zoom: 12.27,
   };
 
 class App extends Component {
@@ -22,7 +23,17 @@ class App extends Component {
         <GoogleMap
             defaultCenter={ defaultProps.center}
             defaultZoom={ defaultProps.zoom }
-        />
+        >
+        {
+          Breweries.map((brewery) => 
+            <BreweryMarker 
+                           key={ brewery.name }
+                           lat={ brewery.location.lat }
+                           lng={ brewery.location.lng }
+            />
+          )
+        }
+        </GoogleMap>
         </div>
       </div>
     );
