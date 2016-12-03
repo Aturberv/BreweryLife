@@ -8,11 +8,9 @@ const Breweries = [
             lng: -73.9862895,
             humanReadableAddress: '574A President Street Brooklyn, NY 11215'
         },
-        yelp: {
-            rating: 4.5,
-            reviews: 34,
-            url: 'https://www.yelp.com/biz/strong-rope-brewery-brooklyn'
-        }
+        rating: 4,
+        reviews: 20,
+        url: 'http://blah'
     },
     {
         name: "Threes Brewing",

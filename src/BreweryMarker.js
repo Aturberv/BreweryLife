@@ -16,7 +16,7 @@ class breweryMarker extends Component {
         this.state.isShowingModal &&
         <ModalContainer onClose={this.handleClose}>
           <ModalDialog style={{width:'80%'}} onClose={this.handleClose}>
-          	<BreweryDescription />
+          	<BreweryDescription brewery={this.props.brewery} />
           </ModalDialog>
         </ModalContainer>
       }

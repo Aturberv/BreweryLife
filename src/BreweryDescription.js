@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const BreweryDescription {
-	const {
-  		brewery = {}
-  	} = this.props
-  	return (
-        <h1>{brewery.name}</h1>
-        <p>{brewery.description}</p>
-    )
+class BreweryDescription extends Component {
+
+	render() {
+		const {
+	  		brewery
+	  	} = this.props;
+	  	return (
+	  		<div>
+	        <h1>{brewery.name}</h1>
+	        <p>{brewery.description}</p>
+	        </div>
+	    );
+	}
 }
+
+export default BreweryDescription;
