@@ -7,8 +7,8 @@ import Breweries from './breweries';
 import './App.css';
 
 const defaultProps = {
-    center: {lat: 40.7245168, lng: -73.9275694},
-    zoom: 12,
+    center: {lat: 40.7945168, lng: -73.9275694},
+    zoom: 11,
   };
 
 class App extends Component {
