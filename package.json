@@ -14,9 +14,11 @@
     "react-autobind": "^1.0.6",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
-    "react-modal-dialog": "^4.0.2"
+    "react-modal-dialog": "^4.0.2",
+    "yelp": "^1.0.1"
   },
   "scripts": {
+    "update-breweries": "node update-breweries.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
