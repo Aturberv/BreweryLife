@@ -1,28 +1,43 @@
 import React, { Component } from 'react';
-import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import BreweryDescription from './BreweryDescription'
+import { Modal, Button } from 'react-bootstrap';
+import './BrewModal.css';
 
 class BreweryMarker extends Component {
 	state = {
 		isShowingModal: false,
 	}
-  handleClick = () => this.setState({isShowingModal: true})
-  handleClose = () => this.setState({isShowingModal: false})
   render() {
+  	let close = () => this.setState({ isShowingModal: false });
+
     return (
-      <div onClick={this.handleClick}>
-      	<div><img src={require('../public/beer_pin-3.png')} role="presentation" /></div>
-      {
-        this.state.isShowingModal &&
-        <ModalContainer onClose={this.handleClose}>
-          <ModalDialog style={{width:'80%'}} onClose={this.handleClose}>
-          	<BreweryDescription brewery={this.props.brewery} />
-          </ModalDialog>
-        </ModalContainer>
-      }
+      <div className="modal-container" style={{height: 200}}>
+      	<div onClick={() => this.setState({ isShowingModal: true })} >
+      		<img 
+      			src={require('../public/beer_pin-3.png')} 
+      			role="presentation" 
+      		/>
+      	</div>
+
+        <Modal
+        	show={this.state.isShowingModal}
+        	onHide={close}
+        	container={this}
+        	aria-labelledby="contained-modal-title"
+        >
+        	<Modal.Header closeButton>
+        		<Modal.Title id="contained-modal-title">{this.props.brewery.name}</Modal.Title>
+        	</Modal.Header>
+        	<Modal.Body>
+        		{this.props.brewery.description}
+        	</Modal.Body>
+        	<Modal.Footer>
+        		<Button onClick={close}>Close</Button>
+        	</Modal.Footer>
+        </Modal>
     </div>
    );
   }
-}
+};
 
 export default BreweryMarker;
