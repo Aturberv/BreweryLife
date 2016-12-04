@@ -11,7 +11,7 @@ class breweryMarker extends Component {
   render() {
     return (
       <div onClick={this.handleClick}>
-      <div style={{width:'25px', height:'25px', background:'red'}}/>
+      	<div><img src={require('../public/beer_pin-3.png')} role="presentation" /></div>
       {
         this.state.isShowingModal &&
         <ModalContainer onClose={this.handleClose}>
