@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import BreweryDescription from './BreweryDescription'
 
-class breweryMarker extends Component {
+class BreweryMarker extends Component {
 	state = {
 		isShowingModal: false,
 	}
@@ -25,4 +25,4 @@ class breweryMarker extends Component {
   }
 }
 
-export default breweryMarker;
+export default BreweryMarker;

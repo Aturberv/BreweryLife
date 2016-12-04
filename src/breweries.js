@@ -9,8 +9,7 @@ const Breweries = [
             humanReadableAddress: '574A President Street Brooklyn, NY 11215'
         },
         rating: 4,
-        reviews: 20,
-        url: 'http://blah'
+        reviews: 20
     },
     {
         name: "Threes Brewing",
@@ -21,11 +20,8 @@ const Breweries = [
             lng: -73.9843722,
             humanReadableAddress: '333 DOUGLASS ST, BROOKLYN, NY 11217'
         },
-        yelp: {
-            rating: 4,
-            reviews: 187,
-            url: 'https://www.yelp.com/biz/threes-brewing-brooklyn'
-        }
+        rating: 4,
+        reviews: 187
     },
     {
         name: "Sixpoint Brewery",
@@ -36,11 +32,8 @@ const Breweries = [
             lng: -74.01192859999999,
             humanReadableAddress: '40 Van Dyke st Brooklyn, NY 11231'
         },
-        yelp: {
-            rating: 4.5,
-            reviews: 26,
-            url: 'https://www.yelp.com/biz/sixpoint-brewery-brooklyn'
-        }
+        rating: 4.5,
+        reviews: 26
     },
     {
         name: "Other Half Brewing",
@@ -51,11 +44,8 @@ const Breweries = [
             lng: -73.99909219999999,
             humanReadableAddress: '195 Centre St Brooklyn, NY 11231'
         },
-        yelp: {
-            rating: 4,
-            reviews: 103,
-            url: 'https://www.yelp.com/biz/other-half-brewing-brooklyn?osq=Sixpoint+Brewery'
-        }
+        rating: 4,
+        reviews: 103
     }
 ];
 
