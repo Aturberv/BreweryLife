@@ -3,13 +3,10 @@ import GoogleMap from 'google-map-react';
 import autoBind from 'react-autobind';
 import BreweryMarker from './BreweryMarker';
 import BreweryFilter from './BreweryFilter';
-import Breweries from './breweries';
+import breweries from './breweries.json';
 import './App.css';
 
-const defaultProps = {
-    center: {lat: 40.7945168, lng: -73.9275694},
-    zoom: 11,
-  };
+const Breweries = breweries.Breweries;
 
 class App extends Component {
 
@@ -44,8 +41,8 @@ class App extends Component {
         <BreweryFilter onFilter={ this.filterBreweries } /> 
         <div className="App-map">
           <GoogleMap
-              defaultCenter={ defaultProps.center}
-              defaultZoom={ defaultProps.zoom }
+              defaultCenter={ {lat: 40.7132859, lng: -73.9285485} }
+              defaultZoom={ 12 }
 
           >
           {
