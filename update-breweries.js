@@ -1,6 +1,10 @@
 var breweries = require('./src/breweries.json');
 var URL = require('url');
 var Yelp = require('yelp');
+var GoogleMaps = require('@google/maps');
+var extend = require('extend');
+var async = require('async');
+var fs = require('fs');
 
 var yelp = new Yelp({
     consumer_key: 'yS3miNcNSEzOhVKG_e-G4g',
@@ -9,28 +13,48 @@ var yelp = new Yelp({
     token_secret: process.env.YELP_TOKEN_SECRET,
 });
 
-var finalBreweriesJson = {
+var googleMaps = GoogleMaps.createClient({
+    key: process.env.GOOGLE_MAPS_API_KEY
+})
 
+var finalBreweriesList = []
+
+async.forEach(breweries.Breweries, generateBrewery, writeFinalBreweryJson);
+
+function writeFinalBreweryJson() {
+    finalBreweriesList.sort((a, b) => {
+        if(a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+        if(a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+        return 0;
+    });
+    console.log(finalBreweriesList);
+    fs.writeFile('test.json', JSON.stringify({"Breweries": finalBreweriesList}, null, 4));
 }
 
-breweries.Breweries.forEach(generateBrewery);
 
-function generateBrewery(brewery) {
-    yelpQuery(brewery.name)
+function generateBrewery(brewery, completeCallback) {
+    yelpQuery(brewery.yelpBusinessId)
         .then(parseYelpResponse)
-        .then(console.log)
+        .then(joinBreweryWithResponse.bind(this, brewery))
+        .then(appendFinalBrewery)
+        .then(completeCallback)
         .catch(console.error)
 }
 
-function parseYelpResponse(response) {
+function joinBreweryWithResponse(brewery, response) {
+    // join reviews together
+    response.reviews = response.reviews.concat(brewery.reviews);
+    return extend(brewery, response);
+}
+
+function parseYelpResponse(business) {
     return new Promise(function(resolve, reject){
         try {
-            var business = response.businesses[0];
             resolve({
                 rating: business.rating,
-                reviews: business.review_count,
-                yelpUrl: business.url.split(/[?#]/)[0],
-                phone: business.display_phone
+                numReviews: business.review_count,
+                phone: business.display_phone,
+                reviews: business.reviews
             });
         }
         catch (e){
@@ -41,11 +65,11 @@ function parseYelpResponse(response) {
 }
 
 function yelpQuery(breweryName, cb) {
-    return yelp.search({ 
-        term: breweryName,
-        location: 'NYC',
-        limit: 1,
-    });
+    return yelp.business(breweryName);
+}
+
+function appendFinalBrewery(brewery) {
+    finalBreweriesList.push(brewery);
 }
 
 
