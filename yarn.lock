@@ -3665,6 +3665,10 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
+"oauth@>=0.9.0 <1.0.0":
+  version "0.9.14"
+  resolved "https://registry.yarnpkg.com/oauth/-/oauth-0.9.14.tgz#c5748883a40b53de30ade9cabf2100414b8a0971"
+
 object-assign@4.1.0, object-assign@4.x, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
@@ -5505,3 +5509,9 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
+
+yelp@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/yelp/-/yelp-1.0.1.tgz#94ec7f7ae162a5394aaa22cd631971b82828a7ae"
+  dependencies:
+    oauth ">=0.9.0 <1.0.0"
