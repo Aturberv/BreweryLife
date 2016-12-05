@@ -8,13 +8,16 @@ class BreweryMarker extends Component {
 	}
 
   render() {
+    const {
+      brewery
+    } = this.props;
   	let close = () => this.setState({ isShowingModal: false });
 
  	const popoverHoverFocus = (
-		<Popover id="popover-trigger-hover-focus" title={this.props.brewery.name}>
+		<Popover id="popover-trigger-hover-focus" title={brewery.name}>
 			<ul>
-				<li>{this.props.brewery.rating} stars</li>
-				<li>{this.props.brewery.reviews} reviews</li>
+				<li><a href={`https://yelp.com/biz/${brewery.yelpBusinessId}`}>Yelp: </a>{brewery.yelpRating} stars ({brewery.yelpNumReviews} reviews)</li>
+				<li><a href={brewery.googleUrl}>Google: </a>{brewery.googleRating}</li>
 			</ul>
 		</Popover>
 	);
@@ -38,10 +41,22 @@ class BreweryMarker extends Component {
         	aria-labelledby="contained-modal-title"
         >
         	<Modal.Header closeButton>
-        		<Modal.Title id="contained-modal-title">{this.props.brewery.name}</Modal.Title>
+        		<Modal.Title id="contained-modal-title">{brewery.name}</Modal.Title>
         	</Modal.Header>
         	<Modal.Body>
-        		{this.props.brewery.description}
+        		<div>
+              {brewery.description}
+            </div>
+            <div>
+              {
+                brewery.reviews.map((review, idx) =>
+                  <div key={`${brewery.name}${idx}`}>
+                    <p>{ review.rating } / 5</p>
+                    <p>{ review.text }</p>
+                  </div>
+                )
+              }
+            </div>
         	</Modal.Body>
         	<Modal.Footer>
         		<Button onClick={close}>Close</Button>
