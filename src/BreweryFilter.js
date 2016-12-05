@@ -21,7 +21,7 @@ class BreweryFilter extends Component {
         this.setState({
             currentRating: e
         });
-        this.props.onFilter('rating', e);
+        this.props.onFilter('yelpRating', e);
     }
 
     onNameChange(e) {
