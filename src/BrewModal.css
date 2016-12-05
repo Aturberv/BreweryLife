@@ -4,3 +4,7 @@
 .modal-container .modal, .modal-container .modal-backdrop {
   position: absolute;
 }
+
+#contained-modal-title {
+	font-size: 3em;
+}

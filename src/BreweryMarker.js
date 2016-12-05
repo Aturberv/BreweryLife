@@ -22,7 +22,6 @@ class BreweryMarker extends Component {
         <Modal
         	show={this.state.isShowingModal}
         	onHide={close}
-        	container={this}
         	aria-labelledby="contained-modal-title"
         >
         	<Modal.Header closeButton>
