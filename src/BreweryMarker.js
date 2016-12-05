@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import BreweryDescription from './BreweryDescription'
 import { Modal, Button } from 'react-bootstrap';
 import './BrewModal.css';
 
