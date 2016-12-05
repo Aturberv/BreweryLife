@@ -25,7 +25,6 @@ class BreweryFilter extends Component {
     }
 
     onNameChange(e) {
-        console.log(e.target.value)
         this.props.onFilter('name', e.target.value);
     }
 
