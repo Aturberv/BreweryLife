@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Button, Popover, ButtonToolbar, OverlayTrigger } from 'react-bootstrap';
 import './BrewModal.css';
+import BreweryImages from './BreweryImages';
 
 class BreweryMarker extends Component {
 	state = {
@@ -44,8 +45,11 @@ class BreweryMarker extends Component {
         		<Modal.Title id="contained-modal-title">{brewery.name}</Modal.Title>
         	</Modal.Header>
         	<Modal.Body>
-        		<div>
+        	<div>
               {brewery.description}
+            </div>
+            <div>
+            	<BreweryImages brewery={brewery} />
             </div>
             <div>
               {
