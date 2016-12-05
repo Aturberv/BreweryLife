@@ -42,7 +42,7 @@ class App extends Component {
         <BreweryFilter onFilter={ this.filterBreweries } /> 
         <div className="App-map">
           <GoogleMap
-            bootstrapURLKEYS={{ key: API_KEY, language: 'en' }}
+            bootstrapURLKeys={{ key: API_KEY, language: 'en' }}
               defaultCenter={ {lat: 40.7132859, lng: -73.9285485} }
               defaultZoom={ 12 }
 
