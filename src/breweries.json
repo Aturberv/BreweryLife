@@ -1,59 +1,220 @@
 {
     "Breweries": [
-    {
-        "name": "Strong Rope Brewery",
-        "url": "http://strongropebrewery.com/",
-        "yelpBusinessId": "strong-rope-brewery-brooklyn",
-        "googlePlacesId": "ChIJz-qzXFVawokRSaTFuJFd_bQ",
-        "description": "Strong Rope Brewery and taproom serves hand-crafted ales in Gowanus, Brooklyn. As a New York state Farm Brewery, Strong Rope's ales range from reinterpretations of classic styles to seasonal varieties that utilize the best ingredients local farms have to offer.",
-        "location": {
-            "lat": 40.6768011,
-            "lng": -73.9862895,
-            "humanReadableAddress": "574A President Street Brooklyn, NY 11215"
+        {
+            "name": "Other Half Brewing",
+            "url": "http://www.otherhalfbrewing.com/",
+            "yelpBusinessId": "other-half-brewing-brooklyn",
+            "googlePlacesId": "ChIJyXHHyfZawokRm6SBxpOHUxY",
+            "description": "Craft Brewery specializing in IPA's and Sours",
+            "location": {
+                "lat": 40.6738735,
+                "lng": -73.99909219999999,
+                "humanReadableAddress": "195 Centre St Brooklyn, NY 11231"
+            },
+            "yelpRating": 4,
+            "yelpNumReviews": 103,
+            "reviews": [
+                {
+                    "text": "The scene of a Saturday morning can release is truly something to behold. Love these fellas. And considering their Gowanus Canal water supply, their product is impossibly delicious 😉",
+                    "rating": 5
+                },
+                {
+                    "text": "I love this place. The staff is friendly, the beer is ridiculous, and the lines are never long for releases. The brewery is dog friendly and sells very cool merchandise. In addition, they have a local sandwich shop that posts up for their releases! You really can't beat the experience :)",
+                    "rating": 5
+                },
+                {
+                    "text": "Great little brewery, with an outdoor space. Very good beers, especially if you are an IPA fan. If you want to visit for a release, come early so you can get them before they sell out!",
+                    "rating": 5
+                },
+                {
+                    "text": "Great ipas. A lot of rotation with can releases every other Saturday. The tap room is on the small side, but nice - you're probably there for the beer anyways. Would recommend. ",
+                    "rating": 5
+                },
+                {
+                    "text": "Fun, small place that serves some decent beer. Heavy on the IPA side, but of those they're awesome. Has a lot of collaboration beers and is active in the local beer scene. If you want to fill a growler make sure it's wide mouth or they can't fill it because of their system. ",
+                    "rating": 4
+                },
+                {
+                    "text": "Quarters are tight, like, super-tight.\n\nBeers are hoppy, like, super-hoppy.\n\nIf words like: Amarillo, Citra, Simcoe, and Mosaic hold meaning to you...you've...",
+                    "rating": 5
+                }
+            ],
+            "photos": [
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAJbKntjErc98-0C2fefLxz3cJ7IUkn_yZi936BvnQLlQf8OjNzf7V-pPbM3q5U2c064Ht9FLHG0tWJqNCCdnOOp13GjSaq-SzfpwPYYUR0ofrkAXv5FLCsO-PImqnnyZzPOFuYBjmFv_lrJcl3BMqPLkypzmuVSh7TRZ0PAHD7nmEhCsgrOVD-Oc9wMhM9MuOzNFGhSeYoedcGiOOBs6d0R4_NvHat-3gA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAANN_tKdhgqmkZgCzBFFH-o7hhxWlwsHYpG4G7gswt4RLxuYydC-eR-O0DypVXPR3oiz7gaIIEKYKjt932B81YxKAJVxBP5OWNh94KSXyYaZSg8VDRN460WExpzHbVsouUTk3GFDBUJHFg7KJLU4hChjVrBhfSaG4qUycG7oG5eoGEhBn1Zd4OrW44LdONciLyhnbGhSBtvsMpjSZdKMjg-lYG3kB00IY3A&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAACxd6xYSh3Kgfa2SS_zSbYMGbdMqnh_AZ1ZoGqefRjvlBu-XqNuLuRHVp7y2hlsMEN0bfsV_u-sNorJFEiZx65sf6JcvFv_twwD4ozlQl6h-pCSfb23YSlEWq-fQfCh7i_-5-x9rlIKkN9rIAtEDkDuI77nOyCPj0-5XcD2HOOdWEhA_2NAJw-BRZo5ECASJKWClGhTPq1K0GnqiNvl_PDuC0CMYvcPBKA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAALKMDqxah-Gcjvo0OHcGlRnHVO2QmHRcmCdTRhSvEVmsS22JYGKC5o7MtgOq9TFAhAZgrejCRLzOcNmAWdxs-DILI2vi56M5YhpCw8sTzMkS4qKPmS74kA9rbydbarRerz3YvcS4TOPA0vTuuo1UBPHGlu_BtMzFBNxkRvmWpz1dEhCDzSLP7O--8W2mG2X2zJutGhSmyQL2FUNBmhPRIzBkxYyNtIFwrQ&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAACaVhx3bF02qvfZm3uUMjHeXQ8kV6Qq-t-2B7ATkDyntHKD0AVyKNchzpxMPJXKCOwj63Tc_MlHKf-omS2EKiX3UP57050HpDo6-gylGz-FIyV8SYLxUdmro7Xajkih0YcD4cF9m0hahkt9Hc9E0OqeIdVBG6eoopfkJRJBI8tdIEhCjP8cSzsgTjT2EdgU1dwAdGhTRz7MR8d23LJDcH5FgajBSZAYfGQ&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAIYQzoaJAR3Y1ZiXjqAyWc6GobmyNvwfpUoTNNC6gDYl4vK_O4w-uaXmyPTIVZW4ASzJGoH9jJj57AHHWXRuLR_JS0PJ1fCYeQUPFxNJwkV_mmnvcZrIkOHazHzaABNnZEQ2Gl-JZ1b0ZoSIE-uT-h1cdSU6OuSSBWXY6qVtltS4EhADUJI4JS2BtXfDLxCDX9_KGhStU_NE-5rCJs9J4IVy11XXMBQsgQ&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAEcfEutNolsviVMSQxLjKbBAS06kw89GLLp7phlWGU90IFfzfic3owRzXlENtkFYa9gIp7oPKelKr3pfIwT2vfYJCiI3TXpbTFGDGhXs4FAgem5XRrbgnp3nBhryyS_HKB26V1I0YZB9F5PNc1nldPvqbJT1f_-HxsOdT12WZdl0EhBFpbjyD2GnMLUGZikkzTstGhRDOD_-NgRuXbD1U0Xzu5gapcyfNg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAMUUlNEEDFe1hasPopqRAKGCiDOrkvX4vcxF_vHWgDhKXPhxRKQZsEQi_IILfS0-S0MSR8Jb82SqJA4iIGNHrGiVz-0pzLsrR46QYu1gFw4v-YyNrQq67FbxxgtCqBKlJWT1h8o37TgBo_vT8ANbHhkNfLiOTuiIudwD1tA3EfpbEhDkfKWAwrEQ72H9fp6bLqQOGhTzKGM5DstmkL28Rl4X-oWUeG_Ckw&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAACH8-jNCthxhcn9crUdPRRc6Owi2TXmZvC9sx7oMtSim9UQ2C7ED-SML8XO8L-7QBpA7rC2jhyPG_Rr7DG8CpqXbFf8hEf3H5XJSIoavgfb0bDSIxar79_Wm4TWJYpYClAqxfo1udThMew19f9NHez0HKkvZ2viEjLuXl4n75OEnEhDcKCT5319fCwbu5ciqVX_zGhQ-qXeT5rY9ZjsCIElGwKb27C8ySQ&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAADpMKDxBeafWJCkMyFfjOpEumqW1xnKUD_-KlDb04yQxaKL2BCGfjGSzxU-OxFAKeoEcJRWh4AFLeWJLVzmMJ9ARNutUF903vjB7otSA7wXJ3TKulEt_mrXGzHsgtHlYqtoKvBmOY_amYxpo2IDqb0vgV-fWpgfUpSH3NkTaQIveEhAyyfMXlTwWb4aDQPSOyu93GhS9C-P13twy9dwIGYU_F4enagTxGA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ"
+            ],
+            "phone": "+1-347-987-3527",
+            "googleRating": 4.7,
+            "googleUrl": "https://maps.google.com/?cid=1608778560661726363"
         },
-        "rating": 1,
-        "numReviews": 1
-    },
-    {
-        "name": "Threes Brewing",
-        "url": "http://www.threesbrewing.com/",
-        "yelpBusinessId": "threes-brewing-brooklyn",
-        "googlePlacesId": "ChIJ__u3R6tbwokRYMOym8O83H0",
-        "description": "Threes Brewing is a brewery, bar & event space located in Gowanus, Brooklyn. Open 7 days a week with food, drink and programming, check back regularly for updates. We have a rotating kitchen residency where we bring in our favorite restaurants to take over our kitchen for a few weeks at a time.",
-        "location": {
-            "lat": 40.6797081,
-            "lng": -73.9843722,
-            "humanReadableAddress": "333 DOUGLASS ST, BROOKLYN, NY 11217"
+        {
+            "name": "Sixpoint Brewery",
+            "url": "http://www.sixpoint.com/",
+            "yelpBusinessId": "sixpoint-brewery-brooklyn",
+            "googlePlacesId": "ChIJm9GgGIxawokRXI9IjgXT4vE",
+            "description": "Sixpoint Craft Ales was founded in 2004 by Shane Welch, a former homebrewer that originally grew up in Milwaukee. The microbrewery is located in a 7,000-square-foot (650 m2) factory in in Red Hook, Brooklyn that formerly manufactured filing cabinets. Sixpoint began business by only distributing kegs to local bars and restaurants; instead of bottling its beer, filling growlers at bars were the only way for customers to drink the beer at their homes.",
+            "location": {
+                "lat": 40.6739779,
+                "lng": -74.01192859999999,
+                "humanReadableAddress": "40 Van Dyke st Brooklyn, NY 11231"
+            },
+            "yelpRating": 4.5,
+            "yelpNumReviews": 26,
+            "reviews": [
+                {
+                    "text": "I'm a bartender and Resin is one of my go to beers, personally. I work at a high volume music club and the Sixpoint lineup consistently outperforms any other craft beers we have in house. I'd recommend this beer to any casual drinker, beer snob, or business owner looking to expand his craft beer menu.",
+                    "rating": 5
+                },
+                {
+                    "text": "The staff is awesome. There might be an attached brewpub soon, but not at the moment. ",
+                    "rating": 5
+                },
+                {
+                    "text": "Disappointingly....not a tasting room, not open to the public, no phone number to confirm anything. How can a business not have a phone number?! Was looking forward to trying these beers fresh from the brewery ☹️",
+                    "rating": 1
+                },
+                {
+                    "text": "I had a dish with roasted salmon that was absolutely delicious ! We were exhausted after walking up Broadway at going up the Empire State Building: this place was in a great location to just stop there and eat.",
+                    "rating": 4
+                },
+                {
+                    "text": "The best beer I've ever had! Jammer!",
+                    "rating": 5
+                },
+                {
+                    "text": "Sixpoint is hands down one of my favorite breweries.  Just about everything they do is exceptional.  love the Resin IIPA, Probably the best double out there...",
+                    "rating": 5
+                }
+            ],
+            "photos": [
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAD6LADbAUC2ULDUZKavhm9lOxgE0MJiIC0LPj1AxDDipJsvwEKHxvsjCbrKygXPW5JoG9rAekM7u0Aauw3CR0vJ3uC3BndkXQV0cOYBwqX0BqdAtSQgsq80mNsxvZIbMJOrsWoSxkIQicKYOYH-lb9nmCQ6nz-ospSYae6JTbnrnEhC2uqNnLMm4On-H3nA8WGGUGhRvK2E_RLAm_qk-lQsqRSqDSRMxxg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAMlaODozF886Ycyf-sA3GiCtsRei2_UEQB7Svtkz63BzsrAqyhvzWlURz5DvzOPZp8u9-Lr32wGo_iTvOcrh7HeUe7Ncvyf776G4-LlK6K5znY_LvumW2b-McHNhN2Wa8L5KMFvM72klcdSB9flJEnUvh9tKB2mCi-ZdpB8dbRdDEhBmiPkpC0DHYZr8ODqQNcLdGhRC1hogMddHLzOXPLhWCA5wTKBAmQ&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAGoy8YkqJylVPkGTffSgxmgSavPtrqoue1755jtA9She4WQyshv5ohV2U1B_GgW1b9cosNVlLGmVQczQvKwaAR-0nMWBqYO-EC8lfk0vANxnBeF5jYR_o8IobqQ9uXfKC4unjNgR98wPM1F2MqzO3tPHZmBsRUJ1nrXB-rVLflU9EhAZndiBy_Gk30V-P9w5GhK5GhSfOkjleGKIADH6Vnkutn0jcJWQuA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAACY8mvKUj0ZCtsa2iXWjFUNdQyeAmsQU7OKhUnnb3HIbTm7chpWAgaYGuI3fpqBfPPjYQ9TVk3D2zwfKDHiCj-6frw-B0GTE5UVL1ubMhmQ-Pogk5r-z3JxgqFAF6P98X13sM_X087-14QEO6ZTaCBDkrNMMbhw6yapt_FRddFWaEhBGUXSwZi09hLys40VwroMwGhRgYe_SRX1YSmwX4KKb9AXVNAnjpg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAABCOR9lwapJvp1rIbtn1JUqhCMSNGDRzM2c9Ocmqawso21uC-AROc9uPlKxtLCOMgu0UeBL66WY_mKK1LBrIXJB9e0IE1hoMsp0p2edY0I6VQZsKzjP9RUWrKTlHeEg2rICf6QurakFNyNEQU4wI_Ga_VkS36S2QpbQQib6NPhnPEhCXSp0Y4Bvtev1efpQh3E1RGhTuoW4AqpRN-Q91dFIskNifV9OJMw&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAJQ4SNRcOt-b22Iw9nEMY0a5hIAylTBsEvr6VrWPL7a1Vo8sJ8LIMLQ56ACzuFa7pDgDxQbmxv0NQyOr6EoQ-MkBvV-JQWQ3-xNwKzmphyjWYq36TzTCXcj_zl1Oa24x6zrYZGf9XuNm8mR_tSSgKlXo0q7uXU3yDKfdS9q_B7-9EhAu8a8xyCDS0-2ekWzbiIEEGhTxmDd2LV6prWgTfgLBPzkb25KAKA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ"
+            ],
+            "phone": "+1-347-227-8676",
+            "googleRating": 4.3,
+            "googleUrl": "https://maps.google.com/?cid=17429725528692658012"
         },
-        "rating": 2,
-        "reviews": 187
-    },
-    {
-        "name": "Sixpoint Brewery",
-        "url": "http://www.sixpoint.com/",
-        "yelpBusinessId": "sixpoint-brewery-brooklyn",
-        "googlePlacesId": "ChIJm9GgGIxawokRXI9IjgXT4vE",
-        "description": "Sixpoint Craft Ales was founded in 2004 by Shane Welch, a former homebrewer that originally grew up in Milwaukee. The microbrewery is located in a 7,000-square-foot (650 m2) factory in in Red Hook, Brooklyn that formerly manufactured filing cabinets. Sixpoint began business by only distributing kegs to local bars and restaurants; instead of bottling its beer, filling growlers at bars were the only way for customers to drink the beer at their homes.",
-        "location": {
-            "lat": 40.6739779,
-            "lng": -74.01192859999999,
-            "humanReadableAddress": "40 Van Dyke st Brooklyn, NY 11231"
+        {
+            "name": "Strong Rope Brewery",
+            "url": "http://strongropebrewery.com/",
+            "yelpBusinessId": "strong-rope-brewery-brooklyn",
+            "googlePlacesId": "ChIJz-qzXFVawokRSaTFuJFd_bQ",
+            "description": "Strong Rope Brewery and taproom serves hand-crafted ales in Gowanus, Brooklyn. As a New York state Farm Brewery, Strong Rope's ales range from reinterpretations of classic styles to seasonal varieties that utilize the best ingredients local farms have to offer.",
+            "location": {
+                "lat": 40.6768011,
+                "lng": -73.9862895,
+                "humanReadableAddress": "574A President Street Brooklyn, NY 11215"
+            },
+            "yelpRating": 4.5,
+            "yelpNumReviews": 34,
+            "reviews": [
+                {
+                    "text": "Tiny brewery.  Decent beer.  Not a lot of seating.  No Food, (yet?).",
+                    "rating": 4
+                },
+                {
+                    "text": "Strong Rope is your best friend's basement but 100 times better. It's a brewery that doubles as a cozy bar with some great tasting beer. They have sampler beers in 3oz, a 10oz size as well as a pint at 16oz. I really love the low-key vibe. You can stay as long as you want. Bring a bunch of people to relax and have good conversation. ",
+                    "rating": 5
+                },
+                {
+                    "text": "Great microbrewery. Beers are well priced and it's got a nice calm atmosphere (I went there on a Saturday around 3). Good space.",
+                    "rating": 5
+                },
+                {
+                    "text": "Nice spot, they make some very nice beers but they don't do the hop bombs that other places do",
+                    "rating": 5
+                },
+                {
+                    "text": "This is a new and welcome addition to the neighborhood. I loved each beer I tried. It's a cool relaxed vibe and the bartenders are very helpful and friendly. They know all the ins and outs of their process and can give good recommendations. Ample room for seating and the crowd is friendly.",
+                    "rating": 4
+                },
+                {
+                    "text": "Freshest single best brew bar in Brooklyn right now. 3's has other brewery's on tap.. not here.. they make their ipas, strawberry beer and brown stouts...",
+                    "rating": 5
+                }
+            ],
+            "photos": [
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAACPkJzoAa0XjbPON9DlI4a0dUXw900akOMR7R55Vs52W7qPfW-WT0FVDreMKCgQodr8eiYBX6x-b-shjjgGeOPTCtYcXu7o_pcZ3kUr3XL_FAwtD0bMIchL2svvtVaHjOmP9NXlgDTFoKMcmFYzP7Sh5OH9M3RUWvh2dsuDxKGXzEhDRq5zgFj11_Y5xMO8OgjM8GhRg2vgy2GMZPWiRbmpaQr-oul3PiQ&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAALNjR_LtyKifs4iLxBe2GmcnV5qzDVibAmXqhPLr2EUHQJLi4351hVbQlZKKE2ZmsR1sn3eQqLLbPiQ3OLXslBlHJKdB9_bmH2wTlHMBA8uc5GxW-X58nebGpbe0bXtFzHIiUrX7b9OzjIZIbPSdSUdIGTW9fZDgHsq54Vn9_HQ6EhAXPZVhEN3acEZg69BZ-9liGhRMaSlWSDhVtceTo-v6xZJKJ8dr6w&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAAVCFVG0mI5GzCm6_vYIpA-FUf9QWGneJ8iBn76uYMbB_qakApbNeDHyE7lLV77T4M7uAJuW4uTzx3DJw_7hJ_cLwUpOS7q2vO6N_twBTkNowZwb9hQ91Z7QGHHYh40d2QDQSVlqA7GKAlgmlPUUJ2GeU7sLAV6Yo7AE1af8DJU3EhAVktQnOtfqBT7MCR7YVenCGhSVDMzMxdIVLujuO8BLlX10ZDeHhg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAGtGHFce5X3dr4v3tRUutu9KtEkbMTToLIkA-c6y_NCJatRTq4BMfxDp8sXBUEEoR4H1U7YbnvKATN_6lrzEXanSt84KUmGdzIfQhzTrxWxutsPOHa7_L9jAPvd98N2JnymRwFjTh4XyNOiUhhLJGsR-3agbdmiXXFN8VME4ZqLiEhCT0asvd4RarBKU03PORU6aGhQgoI63CcBeEoDKdqiCupNma_s3lw&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAEvRjwRGg7yEKSIV_0kfZFlql6HXxItISRcZs9ohlfCbOkHguS94jwYHQ6Z52y97m9Uu1eJqP6z-vOLob_HT__o9QB0UpWCMehrQd8rbuAtIeIMbCS5I_-l6SwA24Ey7DZyWo20sTN2XjYP9fdF9kN0f9LEEfrK2UOkxqy9-SFm6EhC32jASkDf57pSQwgGY0lvsGhRAwOwg6QVdAQVYwrnfSPnSx4VE0A&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAADg36ExdprOs92Cth9jKPEKsUaBMOHB1wD0SPHYiZfyRmnZEK67-cq7yYmMzRXjtnN1muqEJCV69NHpdFV6g71bgCH56XxIqLatcm9gvX0ohTgQKQOzwENUQLkyEMIIyxmJOmK5VS2l88MkN3XvoHgTpQzdV4b3-kbp5Kw2yzxGhEhCuealgpgJj8TZrQZoA8HeoGhSQpVkR4XbSt15V5e6e7p1up4AegA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAL_BuiIUvDQ-QExqW09ASrlfMTGHx6f7K3lahFEVGkxUHxQeqxDR4hCYcma6pQmjp5_FB2n2qSIpEKa28VN7jaxY79FUdgPMMMYFUlF7-djuCguroLt51bmTgPUil6gI90lNW_5A6_oH8B7kg4wx3DRWjTOgtT8Tj5gpRplU6VlKEhAgVbeTbmh41bomaI49Q144GhQf7bBmW8w79Q0K6orT7WMEwWszag&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAIaKXtiCvWxGmCpbA7L8ocGG8eZu-ljli1M4AwnGjLCAJ25_X88YSDl6GjaWpuF_go1BdSOQLiaHbJQOSWuCcyAqcz3SYnyykdxP5YMHXSit0G1-jnmdNpwzUkfze9XoKZv3YxaG4ZvnztTCEkPmOtjdgqQqU_MATh-4LTIwmzEPEhB0qFrvN7tOC1fEQG-66vCFGhRV9FU-rSHTpUZpu9YEwQxYNO9khA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAGrjOT3VhkD96F7sugXjIkImN690Wmhs7LszcwuS0B8nCxTqVoGDdmJxWPKam0A1uPluQbndGTCcidm--4KY3o88SAgsDVjJ0SGiUAkNo0h0rkGdDwRTCF-1CE7qRwCj0yBBSBmAhbfPQNVxGsVaWu0pEkGvPINiR7YICZUorEIFEhDK9ZjC0h_my43EuqqsUHOgGhQ16QsRIweaRpgBnsiPhF0gqCeaOw&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAF7FgOacuNttzpDEqViK-8dNOdbHOgrucGT7P41lVrKkt24xtZh-Va-TAc13kSUuTvSr2od8DkJoD7B6_gV2iEp52QqS7gnpwRIqVVeDvhGDxa0tFLJEpoMAkzAzFFPIWpbmwTMwMQ_L8h6ya5ZFrcdiM-SJYf10I_3tIjUVE_3OEhCn5kAwks8zOO6rQNyCXNAjGhSYvsUsZcxFFNftvkhtyUOvplCL_g&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ"
+            ],
+            "phone": "+1-929-337-8699",
+            "googleRating": 4.4,
+            "googleUrl": "https://maps.google.com/?cid=13041682976386425929"
         },
-        "rating": 3,
-        "reviews": 26
-    },
-    {
-        "name": "Other Half Brewing",
-        "url": "http://www.otherhalfbrewing.com/",
-        "yelpBusinessId": "other-half-brewing-brooklyn",
-        "googlePlacesId": "ChIJyXHHyfZawokRm6SBxpOHUxY",
-        "description": "Craft Brewery specializing in IPA's and Sours",
-        "location": {
-            "lat": 40.6738735,
-            "lng": -73.99909219999999,
-            "humanReadableAddress": "195 Centre St Brooklyn, NY 11231"
-        },
-        "rating": 4,
-        "reviews": 103
-    }
-]}
+        {
+            "name": "Threes Brewing",
+            "url": "http://www.threesbrewing.com/",
+            "yelpBusinessId": "threes-brewing-brooklyn",
+            "googlePlacesId": "ChIJ__u3R6tbwokRYMOym8O83H0",
+            "description": "Threes Brewing is a brewery, bar & event space located in Gowanus, Brooklyn. Open 7 days a week with food, drink and programming, check back regularly for updates. We have a rotating kitchen residency where we bring in our favorite restaurants to take over our kitchen for a few weeks at a time.",
+            "location": {
+                "lat": 40.6797081,
+                "lng": -73.9843722,
+                "humanReadableAddress": "333 DOUGLASS ST, BROOKLYN, NY 11217"
+            },
+            "yelpRating": 4,
+            "yelpNumReviews": 187,
+            "reviews": [
+                {
+                    "text": "Decent Beers. Friendly Staff. Nice Atmosphere (Very Hipster). The Meat Hook provides the food, super expensive.  They claim an amazing burger (They lie). They failed to cook burger Med-Rare ($13 for 1/3 lb cheese burger). Overall very disappointed!!!",
+                    "rating": 3
+                },
+                {
+                    "text": "The beer here is very good. I didn't have the food, but it smells amazing and everyone is eating something ,  so it must be good. Kinda feels like your in a restaurant and not a brewery. Plus, the Outdoor area is nice too. ",
+                    "rating": 4
+                },
+                {
+                    "text": "Excellent selection of Three's made beer, as well as cans and bottles from other sought after Brooklyn breweries. Outdoor patio is a nice plus, although on a 65 degree night they needed to turn off the heat lamps. Prices are about average, and the service was good but not great.",
+                    "rating": 4
+                },
+                {
+                    "text": "Excellent experience. Persuaded my girlfriend to pop in for a final drink before our flight back to the UK and it ended up being 3 and food. Lovely guys behind the bar, exciting food, music that will suit most tastes, and an excellent choice of beers: 20 of their own, 8 guests. Highly recommended to make any effort to get here.",
+                    "rating": 5
+                },
+                {
+                    "text": "Beautiful place if you ask a photographer.\n\nSome cool beers.\n\nGreat burger a little overpriced, awesome place though.",
+                    "rating": 5
+                },
+                {
+                    "text": "There's a whole lot more beer to be had in Brooklyn beyond that burrow-named brewery. For starters, there's this awesome little/big spot filled with stellar...",
+                    "rating": 5
+                }
+            ],
+            "photos": [
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAE_gewmhKGYb7_ujGQTACU7MPdON5gIbqpTARQBasCrvTeFimBuEIQlW0m01-3vdBd2VwpSM9XtB7ih5eT6EeRxh5BWs8n65Khal-JFmz_iEiLpG6hctNcFoNd8gR53JeKBOeRWYpCMHkLdL6L5FQXeADpBpjrT0dHcdyqpMQo4fEhA4IKiILidJG96gczW5VcK4GhQ1UtFE8aHi2zflh2vdTopJ2SfAMg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAP17yi77if0fhMVNNLEbT84CbHG6fEEWCtqzSlFfMPUTs9kYc57_3pcGTL5NhpQ6ux-PfKhEKgPzZXs_Vwp3adqQY72DLF0uX1V8_CSsOhbWkUAFPSFWEBvbnjtZR2AeuGc32Z1nFPKbhzA7UkubG51waJcnahPLYfHUTF3E9l8MEhD2N44UGagvrKZ2aVfBZlVVGhR2nbQZPSeg39WMIYP3n_B1EPNHkg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAHc9kNZfdu0EauBp3t6y--H7Q-TgWjoysGNJK8XFliA_87yRl58-BbRwfsOBMLzCeLmCQpRhEMnNjLgzh1JMXlXlOADm0T0E12VLTE_JGM4H2bNw8uPT4FrHiqaqTRZkCgNiS6b_XGlGlhYHWu09xsHHqvoVcNeX_X1sS4rCAh5OEhDnBongsgzRq-TLT6O8Ho-mGhQgeCInwn6n8OdpSQ0pQlz0xnqqXg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAFKQ0ODIrsyAid2rsX7W-PWE1sFUj-Bz6HMaEXj7MVytEblKB04U7YNwYceWlJjUNmYmrkxhvUxZ7jTrWi14QP8vvH_lPz56jzFfLxLk5MmBFB5WVxt-XiucrLnTTv794LF-Jtd5SLI9iwL8AoPXgFOxuNGj7TUq1hCplwwH5pW-EhDuj81cL2uLge-PoElEoKDvGhSUMpvdyuV3QZ0AFp0rOtA_QsIsOQ&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAHNXQ3w8C2ZxwdIrxft7-5MFwxlbOIKboxA91mzsiEwJg_rRYoJ53-2AwdWsygrIdF5rDM5OBMe9DxoGKE1lncPUdOVn5nC1y_x9wGnmaEN6wpc6vJGQewfJjmHKlDvrl3vS1dtf1ZDRKrpaTtC7vhhjbhjkqaA1GZP8wQLH8aKmEhBPpVEoWfQNHWJ2Ky19xXSHGhTn-xSRdnkErQyHnAdsmvM1KkPbiA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAALVvRD_1FnWE4cslnlXuwKl1MWZljYDLXKplZEP7PIKxyDre7wWo1AFYTTy1AW19QoCaQuJ-K-MhsOIqsxrqQ46ggHh4c1BvXBEWmZupNyOVDQpbmFEtWdXAUlD0Lp4n6ynmFs0uX-0No5U9ipWNkPwu7CxGB-YG5SgSYfsUrCqlEhCZLHp_PsyYqSURZ_9fLw3WGhRCkAqIzzSIorfIGblu1fu6iaxNdg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAADxq-eGMz4WgdvVCHQhufRSQum-5dmkPKoXHtgoXZ0F9HFbEfdWPwIasMH7Cv5QC9dUwcE3nJ3CSDoyB96mYNc1sCLNomVmfbaiJ8K4vsUSZiuA9A1l8Y_7NCTNL4gNNuGykmIR2jQHQW255N2qbJWpkH5MjhLq4W1nGSOqDUj0FEhAgbO6IXwQBDjvlq_hC6-PsGhQFbXcURiLUTN7lScqdAGlBCGBZRw&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAGehSo91sXOxQGI_4uAUREDXHHNZjtCQpy5AWhter0X03nGyckoEg6BWwVjxR_EJNdQTQdgwsON27-DmhNPW0dalMILy1SgT1ExXkrL9EMb8BE_E7XXoIZRo7Xu9IowPnmC7uUfnlBZMap7VXT7iNNgOqJfuzEUAMPpTPSZ8QluUEhCvv8yLoq_TBBxGeTJPxGlYGhRQokRnFi3UP9MLydMBObuAMWPI1Q&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAABlnst1dFyPS-2e_6eCGcV93BgeKO_yqny4ZJNzqqn9RtWoLuK8Xa6iROeKjl3PBtl3O0KJ-VEGNAG8n8MeIl7PVLxnSCy21xxS5cLatHZeUqRndxhfgWxJFJd9cJgeImbWpxPxT3DTf154NDlrTbzhHrF9tj9ZlK0gPXvdn0RsDEhCOTpXxnVlvqFSc5saMnxtOGhS4Udzn5VuxPyP8Peer5VBW7bPfBQ&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAJaaCq72pOFP46PqrCjgBbehEUgr4XmJ8egyZaUaR1hASkwVN9EBRwUba6YHwGqbFgIzWQU_a09n8d1xJR2z52UVyoEHDQoF6cldQfAJEY7h2RPzS5pp4TOW_cw0pZSQtF1TWAWdP0ublyTtmHvjxcUoCYaZE91s8doEy95S9Z9qEhBCAKk_DOc3Vt-G06OCdD9BGhSENMsZcw2JmU1f6K-q3FzF3Yx3iw&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ"
+            ],
+            "phone": "+1-718-522-2110",
+            "googleRating": 4.2,
+            "googleUrl": "https://maps.google.com/?cid=9069331297934164832"
+        }
+    ]
+}
