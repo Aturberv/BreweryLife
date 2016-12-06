@@ -3,7 +3,7 @@ import { Carousel } from 'react-bootstrap';
 
 const BreweryImage = ({brewery}) => {
 	return (
-		<Carousel>
+		<Carousel interval={0}>
 			{
 				brewery.photos.map((photo, idx) =>
 					<Carousel.Item key={idx}>

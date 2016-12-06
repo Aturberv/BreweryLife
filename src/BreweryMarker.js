@@ -1,80 +1,60 @@
 import React, { Component } from 'react';
-import { Modal, Button, Popover, ButtonToolbar, OverlayTrigger } from 'react-bootstrap';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
 import './BrewModal.css';
-import BreweryImages from './BreweryImages';
 import ReactGA from 'react-ga';
+import BreweryPage from './BreweryPage';
+import autoBind from 'react-autobind';
 
 class BreweryMarker extends Component {
-	state = {
-		isShowingModal: false,
-	}
+  constructor(props) {
+    super(props);
+    autoBind(this);
+    this.state = {
+      isShowing: false,
+    }
+  }
+
+  toggle() {
+    !this.state.isShowingModal ?
+        ReactGA.modalview(this.props.brewery.name)
+      : ReactGA.pageview('/') && ReactGA.event({
+          category: 'Modal',
+          action: 'Closed',
+          label: this.props.brewery.name});
+    this.setState({ isShowingModal: !this.state.isShowingModal });
+  }
 
   render() {
     const {
       brewery
     } = this.props;
-    let toggle = () => {
-      !this.state.isShowingModal ?
-        ReactGA.modalview(brewery.name)
-      : ReactGA.event({category: 'Modal', action: 'Closed', label: brewery.name}) && 
-        ReactGA.pageview('/');
-      this.setState({ isShowingModal: !this.state.isShowingModal })
-    }
 
- 	const popoverHoverFocus = (
-		<Popover id="popover-trigger-hover-focus" title={brewery.name}>
-			<ul>
-				<li><a href={`https://yelp.com/biz/${brewery.yelpBusinessId}`}>Yelp: </a>{brewery.yelpRating} stars ({brewery.yelpNumReviews} reviews)</li>
-				<li><a href={brewery.googleUrl}>Google: </a>{brewery.googleRating}</li>
-			</ul>
-		</Popover>
-	);
+    const popoverHoverFocus = (
+      <Popover id="popover-trigger-hover-focus" title={this.props.brewery.name}>
+        <div>
+          <div>{`Yelp: ${brewery.yelpRating}/5 (${brewery.yelpNumReviews} reviews)`}</div>
+          <div>{`Google: ${brewery.googleRating}/5`}</div>
+        </div>
+      </Popover>
+    );
 
     return (
-      <div className="modal-container" style={{height: 200}}>
-      <ButtonToolbar>
-        <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={popoverHoverFocus}>
-      	<div onClick={toggle} >
-      		<img 
-      			src={require('./images/beer_pin-3.png')} 
-      			role="presentation" 
-      		/>
-      	</div>
-      	</OverlayTrigger>
-      </ButtonToolbar>
-
-        <Modal
-        	show={this.state.isShowingModal}
-        	onHide={toggle}
-        	aria-labelledby="contained-modal-title"
-          dialogClassName="extra-wide-modal"
-        >
-        	<Modal.Header closeButton>
-        		<Modal.Title id="contained-modal-title">{brewery.name}</Modal.Title>
-        	</Modal.Header>
-        	<Modal.Body>
-        	<div>
-              {brewery.description}
-            </div>
-            <div>
-            	<BreweryImages brewery={brewery} />
-            </div>
-            <div>
-              {
-                brewery.reviews.map((review, idx) =>
-                  <div key={`${brewery.name}${idx}`}>
-                    <p>{ review.rating } / 5</p>
-                    <p>{ review.text }</p>
-                  </div>
-                )
-              }
-            </div>
-        	</Modal.Body>
-        	<Modal.Footer>
-        		<Button onClick={close}>Close</Button>
-        	</Modal.Footer>
-        </Modal>
-    </div>
+      <div className="brewery-pin">
+        <OverlayTrigger trigger={['hover', 'focus']} 
+                        placement="top" 
+                        overlay={popoverHoverFocus}>
+      	<div onClick={this.toggle} >
+      	 <img src={require('./images/beer_pin-3.png')} 
+              role="presentation" />
+        </div>
+        </OverlayTrigger>
+        <div className="brewery-page">
+        <BreweryPage isShowing={this.state.isShowing}
+                     toggle={this.toggle}
+                     brewery={brewery}
+        />
+        </div>
+      </div>
    );
   }
 };
