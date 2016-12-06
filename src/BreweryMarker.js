@@ -15,13 +15,13 @@ class BreweryMarker extends Component {
   }
 
   toggle() {
-    !this.state.isShowingModal ?
+    !this.state.isShowing ?
         ReactGA.modalview(this.props.brewery.name)
       : ReactGA.pageview('/') && ReactGA.event({
           category: 'Modal',
           action: 'Closed',
           label: this.props.brewery.name});
-    this.setState({ isShowingModal: !this.state.isShowingModal });
+    this.setState({ isShowing: !this.state.isShowing });
   }
 
   render() {

@@ -33,7 +33,7 @@ const BreweryPage = ({
             </div>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={close}>Close</Button>
+                <Button onClick={toggle}>Close</Button>
             </Modal.Footer>
         </Modal>
     );
