@@ -36,7 +36,7 @@ class BreweryMarker extends Component {
         <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={popoverHoverFocus}>
       	<div onClick={toggle} >
       		<img 
-      			src={require('../public/beer_pin-3.png')} 
+      			src={require('./images/beer_pin-3.png')} 
       			role="presentation" 
       		/>
       	</div>
@@ -47,6 +47,7 @@ class BreweryMarker extends Component {
         	show={this.state.isShowingModal}
         	onHide={toggle}
         	aria-labelledby="contained-modal-title"
+          dialogClassName="extra-wide-modal"
         >
         	<Modal.Header closeButton>
         		<Modal.Title id="contained-modal-title">{brewery.name}</Modal.Title>

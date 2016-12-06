@@ -5,9 +5,13 @@
   position: absolute;
 }
 
+.extra-wide-modal {
+    width: 95%;
+}
+
 #contained-modal-title {
 	font-size: 3.5em;
-	background-image: url("../public/beer-header.jpg");
+	background-image: url("./images/beer-header.jpg");
 	border-radius: 10px;
 	text-align: center;
 	color: #B0C4DE;
