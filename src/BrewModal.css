@@ -18,3 +18,13 @@
 	font-weight: lighter;
 	text-shadow: 2px 2px #6495ED;
 }
+
+.brewery-reviews {
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.brewery-description {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
