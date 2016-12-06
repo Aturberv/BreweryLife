@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Tabs, Tab } from 'react-bootstrap';
 import BreweryImages from './BreweryImages';
 
 const BreweryPage = ({
@@ -15,22 +15,28 @@ const BreweryPage = ({
                 <Modal.Title id="contained-modal-title">{brewery.name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <div>
-              {brewery.description}
-            </div>
-            <div>
-                <BreweryImages brewery={brewery} />
-            </div>
-            <div>
-              {
-                brewery.reviews.map((review, idx) =>
-                  <div key={`${brewery.name}${idx}`}>
-                    <p>{ review.rating } / 5</p>
-                    <p>{ review.text }</p>
+            <Tabs defaultActiveKey={2} id="brew-tabs">
+              <Tab eventKey={1} title="About">
+                  <div className="brewery-description">
+                    {brewery.description}
                   </div>
-                )
-              }
-            </div>
+                  <div>
+                      <BreweryImages brewery={brewery} />
+                  </div>
+              </Tab>
+              <Tab eventKey={2} title="Reviews">
+                <div className="brewery-reviews">
+                  {
+                    brewery.reviews.map((review, idx) =>
+                      <div key={`${brewery.name}${idx}`}>
+                        <p>{ review.rating } / 5</p>
+                        <p>{ review.text }</p>
+                      </div>
+                    )
+                  }
+                </div>
+              </Tab>
+            </Tabs>
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={toggle}>Close</Button>

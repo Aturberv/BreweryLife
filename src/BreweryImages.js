@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import './BrewImage.css';
 
 const BreweryImage = ({brewery}) => {
 	return (
@@ -7,7 +8,7 @@ const BreweryImage = ({brewery}) => {
 			{
 				brewery.photos.map((photo, idx) =>
 					<Carousel.Item key={idx}>
-						<img key={idx} width={600} height={250} src={photo} role="presentation" />
+						<img className="brew-images" key={idx} width={600} height={250} src={photo} role="presentation" />
 					</Carousel.Item>
 				)
 			}
