@@ -65,6 +65,7 @@ function parseGooglePlacesResponse(response) {
     var result = {
         googleRating: place.rating,
         googleUrl: place.url,
+        geometry: place.geometry,
         reviews: place.reviews.map(function(review){
             return {
                 text: review.text,
