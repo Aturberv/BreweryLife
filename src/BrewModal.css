@@ -1,3 +1,7 @@
+.brewery-pin {
+	cursor: pointer;
+}
+
 .modal-container {
   position: relative;
 }
@@ -20,11 +24,27 @@
 }
 
 .brewery-reviews {
-	margin-top: 10px;
 	padding: 10px;
+}
+
+.review-text {
+	border-bottom: 1px solid #D3D3D3;
+	padding: 10px;
+}
+
+.review-text:last-child {
+	border: 0px;
 }
 
 .brewery-description {
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+
+.brewery-beers {
+	padding: 10px;
+}
+
+.brewery-events {
+	padding: 10px;
 }

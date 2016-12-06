@@ -4,7 +4,7 @@ import BreweryImages from './BreweryImages';
 
 const BrewTabs = ({ brewery }) => {
 	return (
-		<Tabs defaultActiveKey={1} id="brew-tabs">
+	<Tabs defaultActiveKey={1} id="brew-tabs">
     	<Tab eventKey={1} title="About">
     	    <div className="brewery-description">
     	      <p>{brewery.description}</p>
@@ -14,7 +14,7 @@ const BrewTabs = ({ brewery }) => {
     	    </div>
     	</Tab>
     	<Tab eventKey={2} title="Beers">
-    		<div>
+    		<div className="brewery-beers">
     			Coming soon...
     		</div>
     	</Tab>
@@ -22,7 +22,7 @@ const BrewTabs = ({ brewery }) => {
     	  <div className="brewery-reviews">
     	    {
     	      brewery.reviews.map((review, idx) =>
-    	        <div key={`${brewery.name}${idx}`}>
+    	        <div className="review-text" key={`${brewery.name}${idx}`}>
     	          <p>{ review.rating } / 5</p>
     	          <p>{ review.text }</p>
     	        </div>
@@ -31,11 +31,11 @@ const BrewTabs = ({ brewery }) => {
     	  </div>
     	</Tab>
     	<Tab eventKey={4} title="Events">
-    		<div>
+    		<div className="brewery-events">
     			Coming Soon...
     		</div>
     	</Tab>
-    	</Tabs>
+    </Tabs>
 	)
 }
 
