@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Button, Popover, ButtonToolbar, OverlayTrigger } from 'react-bootstrap';
 import './BrewModal.css';
 import BreweryImages from './BreweryImages';
+import ReactGA from 'react-ga';
 
 class BreweryMarker extends Component {
 	state = {
@@ -12,7 +13,13 @@ class BreweryMarker extends Component {
     const {
       brewery
     } = this.props;
-  	let close = () => this.setState({ isShowingModal: false });
+    let toggle = () => {
+      !this.state.isShowingModal ?
+        ReactGA.modalview(brewery.name)
+      : ReactGA.event({category: 'Modal', action: 'Closed', label: brewery.name}) && 
+        ReactGA.pageview('/');
+      this.setState({ isShowingModal: !this.state.isShowingModal })
+    }
 
  	const popoverHoverFocus = (
 		<Popover id="popover-trigger-hover-focus" title={brewery.name}>
@@ -27,7 +34,7 @@ class BreweryMarker extends Component {
       <div className="modal-container" style={{height: 200}}>
       <ButtonToolbar>
         <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={popoverHoverFocus}>
-      	<div onClick={() => this.setState({ isShowingModal: true })} >
+      	<div onClick={toggle} >
       		<img 
       			src={require('../public/beer_pin-3.png')} 
       			role="presentation" 
@@ -38,7 +45,7 @@ class BreweryMarker extends Component {
 
         <Modal
         	show={this.state.isShowingModal}
-        	onHide={close}
+        	onHide={toggle}
         	aria-labelledby="contained-modal-title"
         >
         	<Modal.Header closeButton>
