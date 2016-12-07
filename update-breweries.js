@@ -37,7 +37,7 @@ function generateBrewery(brewery, completeCallback) {
     brewery.reviews = []; // reset reviews
     brewery.photos = []; // reset photos
     brewery.beers = []; // reset beers
-    brewery.beer_styles = []; // reset beer styles
+    // brewery.beer_styles = []; // reset beer styles
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
@@ -46,7 +46,7 @@ function generateBrewery(brewery, completeCallback) {
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(queryUntappd)
         .then(parseUntappdResponse)
-        // .then(joinBreweryWithResponse.bind(this, brewery))
+        .then(joinBreweryWithResponse.bind(this, brewery))
         .then(appendFinalBrewery)
         .then(completeCallback)
         .catch(console.error)
@@ -110,19 +110,19 @@ function queryUntappd(brewery) {
 }
 
 function parseUntappdResponse(response) {
-    // console.log(response.response.brewery.beer_list.items)
     var brewery = response.response.brewery;
     var breweryBeers = brewery.beer_list.items;
     var result = {
-        brewery_description: brewery.brewery_description,
-        beers: breweryBeers.map(function(beer){
+        breweryDescription: brewery.brewery_description,
+        beers: breweryBeers.map(function(brewery){
             return {
-                beer_name: beer.beer_name,
-                beer_style: beer.beer_style,
-                beer_label: beer.beer_label,
-                beer_description: beer.beer_description,
-                beer_rating: beer.rating_score,
-                beer_rating_count: beer.rating_count
+                beerName: brewery.beer.beer_name,
+                beerLabel: brewery.beer.beer_label,
+                beerStyle: brewery.beer.beer_style,
+                beerLabel: brewery.beer.beer_label,
+                beerDescription: brewery.beer.beer_description,
+                beerRating: brewery.beer.rating_score,
+                beerRating_count: brewery.beer.rating_count
             }
         })
     };
