@@ -3612,6 +3612,10 @@ node-pre-gyp@^0.6.29:
     tar "~2.2.1"
     tar-pack "~3.3.0"
 
+node-untappd@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/node-untappd/-/node-untappd-0.4.1.tgz#e1417ac8401b56c0807c93036f9f1c191e49a9bf"
+
 nopt@3.x, nopt@~3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"

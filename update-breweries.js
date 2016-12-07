@@ -6,6 +6,7 @@ var extend = require('extend');
 var async = require('async');
 var fs = require('fs');
 var http = require('http');
+var UntappdClient = require('node-untappd');
 
 var yelp = new Yelp({
     consumer_key: process.env.YELP_CONSUMER_KEY,
@@ -19,18 +20,32 @@ var googleMaps = GoogleMaps.createClient({
     Promise: Promise
 })
 
+var debug = false;
+
+var untappd = new UntappdClient(debug);
+var clientId = process.env.UNTAPPD_CLIENT_ID
+var clientSecret = process.env.UNTAPPD_CLIENT_SECRET
+
+untappd.setClientId(clientId)
+untappd.setClientSecret(clientSecret)
+
 var finalBreweriesList = []
 
 async.forEach(breweries.Breweries, generateBrewery, writeFinalBreweryJson);
 
 function generateBrewery(brewery, completeCallback) {
     brewery.reviews = []; // reset reviews
-    brewery.photos = [] // reset photos
+    brewery.photos = []; // reset photos
+    brewery.beers = []; // reset beers
+    brewery.beer_styles = []; // reset beer styles
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(googlePlacesQuery)
         .then(parseGooglePlacesResponse)
+        .then(joinBreweryWithResponse.bind(this, brewery))
+        .then(queryUntappd(brewery.BREWERY_ID))
+        .then(parseUntappdResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(appendFinalBrewery)
         .then(completeCallback)
@@ -79,6 +94,41 @@ function parseGooglePlacesResponse(response) {
         })
     };
     return result;
+}
+
+function queryUntappd(untappdBreweryId) {
+    return new Promise(function(resolve, reject){
+    untappd.breweryInfo(function(err, brew){
+    if(err){
+        console.log('err'+ err)
+        reject(err);
+    }
+        resolve(brew);
+    }, 
+        {"BREWERY_ID": untappdBreweryId})
+    })
+}
+
+function parseUntappdResponse(response) {
+    console.log(response)
+    // var brewery = response.json.result.brewery;
+    // var breweryBeers = brewery.beer_list.items.beer;
+    // var result = {
+    //     beer_styles: breweryBeers.map(function(beer){
+    //         return beer.beer_style
+    //     }),
+    //     beers: breweryBeers.map(function(beer){
+    //         return {
+    //             beer_name: beer.beer_name,
+    //             beer_style: beer.beer_style,
+    //             beer_label: beer.beer_label,
+    //             beer_description: beer.beer_description,
+    //             beer_rating: beer.rating_score,
+    //             beer_rating_count: beer.rating_count
+    //         }
+    //     })
+    // };
+    // return result;
 }
 
 function writeFinalBreweryJson() {
