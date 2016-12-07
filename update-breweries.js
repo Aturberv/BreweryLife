@@ -44,7 +44,7 @@ function generateBrewery(brewery, completeCallback) {
         .then(googlePlacesQuery)
         .then(parseGooglePlacesResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
-        .then(queryUntappd(brewery.BREWERY_ID))
+        .then(queryUntappd)
         .then(parseUntappdResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(appendFinalBrewery)
@@ -96,7 +96,7 @@ function parseGooglePlacesResponse(response) {
     return result;
 }
 
-function queryUntappd(untappdBreweryId) {
+function queryUntappd(brewery) {
     return new Promise(function(resolve, reject){
     untappd.breweryInfo(function(err, brew){
     if(err){
@@ -105,7 +105,7 @@ function queryUntappd(untappdBreweryId) {
     }
         resolve(brew);
     }, 
-        {"BREWERY_ID": untappdBreweryId})
+        {"BREWERY_ID": brewery.untappdBreweryId})
     })
 }
 
