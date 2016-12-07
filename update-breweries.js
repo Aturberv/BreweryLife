@@ -22,7 +22,7 @@ var googleMaps = GoogleMaps.createClient({
 
 var debug = false;
 
-var untappd = new UntappdClient(debug);
+var untappd = new UntappdClient(true);
 var clientId = process.env.UNTAPPD_CLIENT_ID
 var clientSecret = process.env.UNTAPPD_CLIENT_SECRET
 
@@ -46,7 +46,7 @@ function generateBrewery(brewery, completeCallback) {
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(queryUntappd)
         .then(parseUntappdResponse)
-        .then(joinBreweryWithResponse.bind(this, brewery))
+        // .then(joinBreweryWithResponse.bind(this, brewery))
         .then(appendFinalBrewery)
         .then(completeCallback)
         .catch(console.error)
@@ -110,26 +110,24 @@ function queryUntappd(brewery) {
 }
 
 function parseUntappdResponse(response) {
-    console.log(response)
-    // var brewery = response.json.result.brewery;
-    // var breweryBeers = brewery.beer_list.items.beer;
-    // var result = {
-    //     beer_styles: breweryBeers.map(function(beer){
-    //         return beer.beer_style
-    //     }),
-    //     beers: breweryBeers.map(function(beer){
-    //         return {
-    //             beer_name: beer.beer_name,
-    //             beer_style: beer.beer_style,
-    //             beer_label: beer.beer_label,
-    //             beer_description: beer.beer_description,
-    //             beer_rating: beer.rating_score,
-    //             beer_rating_count: beer.rating_count
-    //         }
-    //     })
-    // };
-    // return result;
-}
+    // console.log(response.response.brewery.beer_list.items)
+    var brewery = response.response.brewery;
+    var breweryBeers = brewery.beer_list.items;
+    var result = {
+        brewery_description: brewery.brewery_description,
+        beers: breweryBeers.map(function(beer){
+            return {
+                beer_name: beer.beer_name,
+                beer_style: beer.beer_style,
+                beer_label: beer.beer_label,
+                beer_description: beer.beer_description,
+                beer_rating: beer.rating_score,
+                beer_rating_count: beer.rating_count
+            }
+        })
+    };
+    return result;
+ }
 
 function writeFinalBreweryJson() {
     finalBreweriesList.sort((a, b) => {

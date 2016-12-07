@@ -1,57 +1,57 @@
 {
     "Breweries": [
         {
-            "name": "Transmitter Brewing",
-            "url": "http://transmitterbrewing.com/",
-            "yelpBusinessId": "transmitter-brewing-long-island-city",
-            "googlePlacesId": "ChIJHf11RTtZwokRUrBzv0lvNso",
-            "untappdBreweryId": "1548157",
+            "name": "Bridge and Tunnel Brewery",
+            "url": "http://www.bridgeandtunnelbrewery.com/",
+            "yelpBusinessId": "bridge-and-tunnel-brewery-ridgewood",
+            "googlePlacesId": "ChIJQzE0zjpcwokRB9nr5utX66g",
+            "untappdBreweryId": "44260",
             "reviews": [
                 {
-                    "text": "Cool brewery. Off the beaten path. Only bottles their beer which makes it difficult to enjoy just a selection for a true tasting ",
+                    "text": "Hidden gem -- but likely not for long. Super laid back and no pretenses. Very friendly. Oh and yeah, their brews are delicious.",
+                    "rating": 5
+                },
+                {
+                    "text": "great beers and that's all that matters. funky industrial space with friendly people - and a focus on production. come check it out and see real deal micro/craft. these guys are living it. ",
+                    "rating": 5
+                },
+                {
+                    "text": "Great find!  Good beer, people and space to enjoy yourself!",
                     "rating": 4
                 },
                 {
-                    "text": "If you love beer, you need to go here. \n\nTransmitter brews truly delicious beers (such as my favorite stout and one of the best triples I've ever had). Everything is bomber style, but the beers aren't too high gravity. Very rich, complex, nuanced flavors. Wide variety of brew types, all great. Make sure you pour with a little head, because every beer has a delicious one. But, those are just their beers, which you can get in a few places. \n\nThe tasting session at the brewery itself is amazing. You're literally tucked away in a corner of the brewery at small makeshift tables. The kegs and brew instruments are right there. So it smells like beer being made and you can watch them close out their day and see how they brew. They're more than willing to talk about the brews and they all have a great passion for brewing. It ends up being an amazing experience for a beer lover. Can't recommend enough. \n\nLove the brew dog too! ",
+                    "text": "An amazing place to visit for a really good craft beer and friendly conversation with the staff. The brewmaster has a passion for his work, which is evident in care given to the beer and the hospitality show to the patrons. Visiting this bar, with it's open brewery, gave me a deeper sense of appreciation for beer.",
                     "rating": 5
                 },
                 {
-                    "text": "Good albeit VERY small tasting room. They do bottle conditioned beers so they'll have a few open for free tasting. If you like one then you can buy a bottle and drink in the tasting room. Everyone there is really nice and friendly and the prices are good too, especially given everything is bottled. ",
+                    "text": "Great brews and even better prices! I suggest the Sewer Alligator! The atmosphere leans more toward comfy and relaxed than night life, night out, but it's still a great time no matter what! ",
                     "rating": 4
                 },
                 {
-                    "text": "Great spot off the beaten path to enjoy a sour. No taps but plenty of well-executed and bottle conditioned farmhouse ales ready to taste. It's like a Belgium picnic between fermenters. ",
-                    "rating": 5
-                },
-                {
-                    "text": "Cosy little brew bar, with a tasty range of sours & wilds 👌🏻",
-                    "rating": 5
-                },
-                {
-                    "text": "If you're a farmhouse/saison fan, Transmitter Brewing is your spot!\n\nThe brewery itself is quite small with a few benches, but once you you walk in, you get...",
+                    "text": "What a great spot. The beers are very unique and tasty. It's small, but has a real welcoming feel. So happy to have this place in my new neighborhood! I...",
                     "rating": 5
                 }
             ],
             "photos": [
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAN1pxuio1nLelScVFk5f3CWA5_8tlofchkR6fmvufCgxt_3AhtLudOESOU3EzyTIdpZBZhdjZYN7V3N606TBgrkKpqzLnUKuCgXjmP1XcHyNynt5hs9pPkp1aZN9caSXz3hCbeS-6ki3hfNclZsDNkI_twyBGBJjdgrD5PToZ_3zEhC3nSehVhkBzMLBKuPQfd_9GhT-Xe8wOuCW2r2jFCm9WcyhO-80dw&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAPrCt_3lXSOhFCHoTYdaTnJLsdIaCjCqfRGXTwk2LsmlBqdUX_cxWJeAOjUetl8Xvbq5_7c3j185iP7RLGJ5qDdUz6-R30_fStg96e7m6gv8BGPsH7QViqp20i4lTew_JVyoh-5hCoquYZVwXO7mv_iQbbxQjN34Ld8mWF4oDf8rEhC0P2A5cCWZSOt8zLP9O5slGhSCO2oix1MX-hxhA4ee5YDAnF04VQ&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAGLdP7uQ0veVhdKvvSvlmpgrv9eDo24GR5rnDNOYCsamhIICOsBCvS7JOohfYbxcjmI78Wv0zxw2mOBLWANBaUiOLA9hMAhjdXVcI5TJtrkuinXsYgI50ohFBQ2MLfLhjxyfaviyLD9QkHuzUXSS1HlFRq-EUuHW5tD6qSp1ZopsEhBsXgBETw2bxqQp34ZaY2kWGhSaaB3dPaVaGsnfsYvlXu3imkcMDQ&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAGVc5YiDszwxoVV8U8aqVKq9rlDnwPXcLTKYYW4PMn-yEJ-DMzfjS9JF4gdqjEwWwaoUzsAI_QEJaa-wo8pDrWEdTZCB5PQ07G2Qvvcsh49Qr1ci0SlXFSQ2TbALZa2fQ8fCDYJh8Yc8PPZkm2kVbdyBySYPWfP5qS9sEtGl7S5UEhDKFkY1cQgzJzUbP6Rct3oUGhTjb69Ufa7YfhiOco39lEITQHmsIg&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAABC5VbClqakr5XZqvAUCUlUKmqbjYgVEdCD8-DKg54ClCtmigVUW1NmkHwtkKx6v3kFSsP_EvMHYPPoBk18yZnElHW8N9ofmrIwEVKpvqY6tPfuuZh3X8THY0k_poG5baeMatkEd6AGDRUeQKeXJ47aSULfU5hWRd40bZFEFzItCEhC5V_DQsvZCDKcRxOej_Y8MGhTRY4BNbC429uxdY3ADMFog4hU5aw&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAM-wZUQpXEyNn3VW7I1cp9nbep2qNWgp8Z_8-uFZIHraDuZjzpNzbr2YtQ0mEgjjs_V2A5NC_QoyA5Wvsn8g2E3PSeL_WHD6RWMhdpMZVnfranxxxyUsBWz72Za3KC_jNuwIvlh59TGkekNitL7tFuNEneyrNaGLayXKWdIu51ibEhBW9QkQi1EDDfYsQcrRfESNGhTHhj5e04UqsiUPNz-8bpOqtFTqvg&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAOQfwIAc4MbsUFU9HzRTKGLhWGOnuv9bViwq-0KuzyM26WcIolvt6TjR7VYp-dErIlznuJ-R12WFwPJS6lo6QCYadJk-tkPBq3aK5ZLBnKXfNK_1PQnyItn7Axg7SUOMF4Cl6iDxYybhNVENxCFcbUexWmyEkxYafQ6Qk4VRxsrpEhBr7WZT9gbXlV4XgDjl3Q12GhR8UdvaYbwlplDFIrgV7yr0XVqJXw&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAP3OKqtWZWAtcTBqHXZMLSbQGxZOA0BoTHMlo7_dHq9KAjhCOZIkWEsjH9bOpTsOL5Nmkcvl6rlj-FA2PELjUiJVNTXr69J1TrY2i7P3CzV5NpQ90nurCRZRwwLFrIgqQRuADFc7pP70DpI8Aar-XgXNzwfPwbNohPqonPncBV2wEhC7gnf-pe8lfjckKPf01Q4pGhTBrxDPEh0SVlKW6-zUJpYA9K0r_Q&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAHO3c7aoa9NoeiiuAVKcyTZCdVNOk1xw6BceGNaZv9_NCyJccC3MZJ3Bs8XMv5oRMV7uW8mY4-P3ibuPTYiwgvMjTzx9FYzv_cC07IxiutlSLHHL0Jr7eCsbIoyHy_Sd9nZBN71EM-Sy3_NxALgpRphoXJXwwNLBe0ugiOZcYVm6EhAhO5FArbFd-w5KUXsPkomNGhQ36UDACLrnQaBc3JgjF-a32KQg0g&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAADel0MCounPyDNOgq2Q-s_mfprTn65R7btw5GPwxA8kBMhw2U_w9XahM3-E1rtQKg-2qKiQMG2TjVUt0-bSX_RVMAPMHLWJFQYLDjPHEiLeBV80A0z94_2yDqW-thNMcHvmvixaduNNZVGqPbNbhWc24qf5sG7YcITPJEeU_csVIEhCIK8VvBva8rOOLRZuvXGUWGhRKu3fM5i47M9ldKyfdRkBIQeed3g&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y"
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAHqjRBkppKuXRNAi8w0YEpW4S6LBOrHsXCCp5uizMkJaxBYYpIXpdmxWXK2vj3Q8NJVp6Il2RbN9LDIolnHGWnSRHh0w7OySNQGaHMTxp5rvKr1B6U-10wBFEf0g3Xh5bFVt8JkFzdfj6Id6P_F3MH-frkNKkZrc_aEfBZ6ZTX5bEhCQXPlB1Sc6jG_OjZR2gf8bGhQnBfEoN_x2Q59OFy_s9Rvt8J-X2g&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAB_F978JUrvfq0e3YNOll4kt3SjtJDv1kuHkYmFg592DxVlxOwVMm6naM4zbdk4TQpFSlciGdNB0bnqAFmGYZfSfLYm3M07xENvHUhiAqatLwCurNlp6RXyDDB1c0PGgTz0rQWzvsRzaZvf7qKhP4GTYJW6plKawgiMB6AKuZkl0EhB7ITkF4MIpgGOSsv52YR28GhQDBJgwJHy7Pm631A2D5kMmUiUc4Q&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAACfI0N0wr0eY_bAjelLv921imbkIDyEiSOeH30LhaU5WD3c6EtvH-tIXRp_SSRvQJYMQDK3W_XFydXJqSz8tZ0zgn6dZIZKfQSzrx8fvyZl5sTipUwiq_y8AuyRFVgAi6f24AAQyswFpkbjhFMFSOqSmj8gA62rZstH79LTNLAYhEhBfWO0eflBF73thPh0mr4cuGhS5-TsENKFnzHk1Xr5-1DYulGMdQw&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAABERdS0Bf2d8LAPWmNvVtbPiaKvCh0CM6QT0hahRVRygyJSVowU2YyCLQTyIhxCjrIfsrqW1DZI6OjyHM3P1BQLTiFWDpLBqiCFjwhf9ifrMuDeWgmdupvZ1sah63Y42_jo4oO71GC3NdAjlNqGLYMFRYiombZXAcBUHcm7KrKMaEhB2dBgOV7S-7d8Qmr3sk7tTGhRJg4hZ0DynFOfpNtZr8J4XIAEAVg&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAPG13JPcb2CpU2AyCLWeLteKsk4nMaY3gu6rDaXWkOf43nB9IadRE238go3mk7KAFCFji5xXg_FL2sLWQDhu1bMD9wUjzH3EDWSBGokY808juYcy4ty40aGp_IR4CgSG-KHQxBk4YIVh0W_pRydi4uT4RDGOgx8j06tm494Z65bHEhASxSEjTeSSXD-0TNDYuU3fGhR2IC2FLWd61hVp8WCZwmPOptWjaA&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAK8u0kR6xPozUbGyRLoFLCyHTpd_68_TYUGmQeleCol8K6YZ-J5DVycG470GbSOOviJXYl_bgGUH9N_pN_WptfGHMod5YUSk6nEPAkZucEC1Sh2UfHrO0U14qdsnIlY8QnHTER2BG6H7n4RfkCDGNZTpz7GjYu_owtE09hCDRb05EhBmtCKI5i9aug72kyh7myznGhTADE5P8hZka-ey7l5Qnw4F7rrJkA&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAPWFDMqywH6ZbnLl5X8lqrTokYrJM16-m4tE3zm4U3wznyIX9osgTpMa0mx3ZNj2XNK58wpqurVb_82f-0Yj33HwRPoVSvqCZQWwHX9UU7xrMgZGLBYW-0Fc13e0sZpWEC_YqcCTiASdGnMvov0g0a2TW9sSg871te55xnSwPmnwEhAE9LSuUaTae138HoDwnW1bGhRm9Cq8ra6wXHKzCbe3HkqLlEJDsA&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAClcA_KJcCakfoHR76icP4zHpaEeW6_5d83wYc0EnLjaWeqofvNG09gb0HJyjsmcKE1RQledua3u9EijR_7R0r4csnsueNCLGJu3VHr4NQYijBUxeMGse_HjRi4Ta5UUvNo_Yzw2WgcJlE2mykh4H6vz5MGe0BnoJBQPuhTcpXvlEhCxNgv7Kw4RgYuek0e2lVQUGhQuWTHPqN5zbPnfcAN165YgR4VRhw&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAH667SDt6qX5aaqUX0C5kC1NRHcrn3no0BIyNPASw_Z4SgN4t079pESOUZraY9rSTu0a5zas0eCGW-M0Tzl2sRWfiQLPdukG4coqstU4VT-O1kF3md6ax1rroRfO-nmzodK7Kj4nWI4IujEctylpyiduRzq4Jna22NW3T6lziNylEhCaUhRl7Lnjbv4u7QSxeDkUGhSY0oTUBaQQAivoPpPmSiYDfU3m2w&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAODlb0HoIzF7WyzFBhsPB8ACuB_SlvM9T-xlOWfRhd32kAEkBF5QByKXiQuKpiBoeGWFsPWL9N1ljdWko0Yru9X7Sb3sVGLwXKqgE3IXc0n5S6N4LhUTArupV6O8NA_vg1kipVqxPf8n6fk6TFxmJj7TAnhCiiHl5Gx_yI8BgEYfEhBxlXlkwQutgBjw45OPqoEvGhS2A2mPy5Z34NJCqBj8L_WJnL-1BQ&maxwidth=800&maxheight=800&key=AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y"
             ],
             "yelpRating": 4.5,
-            "yelpNumReviews": 40,
-            "phone": "+1-646-378-8529",
-            "googleRating": 4.7,
-            "googleUrl": "https://maps.google.com/?cid=14570956006939144274",
+            "yelpNumReviews": 17,
+            "phone": "+1-347-392-8593",
+            "googleRating": 4.8,
+            "googleUrl": "https://maps.google.com/?cid=12171919088602044679",
             "location": {
-                "lat": 40.7402349,
-                "lng": -73.9527002
+                "lat": 40.693822,
+                "lng": -73.902835
             }
         }
     ]
