@@ -6,6 +6,7 @@ var extend = require('extend');
 var async = require('async');
 var fs = require('fs');
 var http = require('http');
+var UntappdClient = require('node-untappd');
 
 var yelp = new Yelp({
     consumer_key: process.env.YELP_CONSUMER_KEY,
@@ -19,18 +20,31 @@ var googleMaps = GoogleMaps.createClient({
     Promise: Promise
 })
 
+var debug = false;
+
+var untappd = new UntappdClient(debug);
+var clientId = process.env.UNTAPPD_CLIENT_ID
+var clientSecret = process.env.UNTAPPD_CLIENT_SECRET
+
+untappd.setClientId(clientId)
+untappd.setClientSecret(clientSecret)
+
 var finalBreweriesList = []
 
 async.forEach(breweries.Breweries, generateBrewery, writeFinalBreweryJson);
 
 function generateBrewery(brewery, completeCallback) {
     brewery.reviews = []; // reset reviews
-    brewery.photos = [] // reset photos
+    brewery.photos = []; // reset photos
+    brewery.beers = []; // reset beers
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(googlePlacesQuery)
         .then(parseGooglePlacesResponse)
+        .then(joinBreweryWithResponse.bind(this, brewery))
+        .then(queryUntappd)
+        .then(parseUntappdResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(appendFinalBrewery)
         .then(completeCallback)
@@ -80,6 +94,42 @@ function parseGooglePlacesResponse(response) {
     };
     return result;
 }
+
+function queryUntappd(brewery) {
+    return new Promise(function(resolve, reject){
+        untappd.breweryInfo(function(err, brew){
+            if(err){
+                console.log('err'+ err)
+                reject(err);
+            }
+                resolve(brew);
+        }, 
+        {"BREWERY_ID": brewery.untappdBreweryId})
+    })
+}
+
+function parseUntappdResponse(response) {
+    var brewery = response.response.brewery;
+    var breweryBeers = brewery.beer_list.items;
+    var result = {
+        breweryDescription: brewery.brewery_description,
+        breweryLogo: brewery.brewery_label,
+        beers: breweryBeers.map(function(beerObj){
+            return {
+                beerName: beerObj.beer.beer_name,
+                beerLabel: beerObj.beer.beer_label,
+                beerStyle: beerObj.beer.beer_style,
+                beerLabel: beerObj.beer.beer_label,
+                beerDescription: beerObj.beer.beer_description,
+                beerRating: beerObj.beer.rating_score,
+                beerRatingCount: beerObj.beer.rating_count,
+                beerABV: beerObj.beer.beer_abv,
+                beerIBU: beerObj.beer.beer_ibu
+            }
+        })
+    };
+    return result;
+ }
 
 function writeFinalBreweryJson() {
     finalBreweriesList.sort((a, b) => {

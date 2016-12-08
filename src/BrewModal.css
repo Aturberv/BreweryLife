@@ -43,6 +43,16 @@
 
 .brewery-beers {
 	padding: 10px;
+	border-bottom: 1px solid #D3D3D3;
+}
+
+.brewery-beers:last-child {
+	border: 0px;
+}
+
+.beer-label {
+	float: left;
+	padding: 10px;
 }
 
 .brewery-events {
