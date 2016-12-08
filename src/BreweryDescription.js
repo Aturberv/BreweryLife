@@ -3,7 +3,7 @@ import React from 'react';
 const BreweryDescription = ({brewery}) => {
 	return (
   	    <div className="brewery-description">
-    	      <p>{brewery.description}</p>
+    	      <p>{brewery.breweryDescription}</p>
     	</div>
 	)
 }
