@@ -2,9 +2,16 @@ import React from 'react';
 
 const BreweryBeers = ({brewery}) => {
 	return (
-		<div className="brewery-beers">
-    		Coming soon...
-    	</div>
+		{
+			brewery.beers.map((beer) =>
+				<div className="brewery-beers">
+    				<img src={beer.beerLabel} />
+    				<h3>beer.beerName</h3>
+    				<h4>beer.beerStyle</h4>
+    				<p>beer.beerDescription</p>
+    				<span>rating: beer.beerRating, reviews: beer.beerRatingCount</span>
+    			</div>
+    	}
 	)
 }
 

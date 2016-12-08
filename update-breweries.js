@@ -37,7 +37,6 @@ function generateBrewery(brewery, completeCallback) {
     brewery.reviews = []; // reset reviews
     brewery.photos = []; // reset photos
     brewery.beers = []; // reset beers
-    // brewery.beer_styles = []; // reset beer styles
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
@@ -114,6 +113,7 @@ function parseUntappdResponse(response) {
     var breweryBeers = brewery.beer_list.items;
     var result = {
         breweryDescription: brewery.brewery_description,
+        breweryLogo: brewery.brewery_label,
         beers: breweryBeers.map(function(brewery){
             return {
                 beerName: brewery.beer.beer_name,
@@ -122,7 +122,7 @@ function parseUntappdResponse(response) {
                 beerLabel: brewery.beer.beer_label,
                 beerDescription: brewery.beer.beer_description,
                 beerRating: brewery.beer.rating_score,
-                beerRating_count: brewery.beer.rating_count
+                beerRatingCount: brewery.beer.rating_count
             }
         })
     };
