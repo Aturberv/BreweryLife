@@ -1,10 +1,17 @@
 import React from 'react';
-import { Modal, Button, Tabs, Tab } from 'react-bootstrap';
+//import { Tabs, Tab } from 'react-bootstrap';
 import BreweryImages from './BreweryImages';
 import BreweryReviews from './BreweryReviews';
 import BreweryDescription from './BreweryDescription';
 import BreweryEvents from './BreweryEvents';
 import BreweryBeers from './BreweryBeers';
+
+import Modal from 'antd/lib/modal';
+import 'antd/lib/modal/style/css';
+
+import Tabs from 'antd/lib/tabs';
+import 'antd/lib/tabs/style/css';
+
 import './BrewModal.css';
 
 const BreweryPage = ({
@@ -13,32 +20,32 @@ const BreweryPage = ({
     isShowing
 }) => {
     return (
-        <Modal show={isShowing}
-               onHide={toggle}
-               dialogClassName="extra-wide-modal">
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title">{brewery.name}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <Tabs defaultActiveKey={1} id="brew-tabs">
-                    <Tab eventKey={1} title="About">
+        <Modal visible={isShowing}
+               onCancel={toggle}
+               closable
+               width="100%"
+               title={
+                <p>{brewery.name}</p>
+               }
+               footer={
+                ''
+               }
+               >
+                <Tabs defaultActiveKey="1" id="brew-tabs">
+                    <Tabs.TabPane key="1" tab="About">
                         <BreweryDescription brewery={brewery} />
                         <BreweryImages brewery={brewery} />
-                    </Tab>
-                    <Tab eventKey={2} title="Beers">
+                    </Tabs.TabPane>
+                    <Tabs.TabPane key="2" tab="Beers">
                         <BreweryBeers brewery={brewery} />
-                    </Tab>
-                    <Tab eventKey={3} title="Reviews">
+                    </Tabs.TabPane>
+                    <Tabs.TabPane key="3" tab="Reviews">
                         <BreweryReviews brewery={brewery} />
-                    </Tab>
-                    <Tab eventKey={4} title="Events">
+                    </Tabs.TabPane>
+                    <Tabs.TabPane key="4" tab="Events">
                         <BreweryEvents brewery={brewery} />
-                    </Tab>
+                    </Tabs.TabPane>
                 </Tabs>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button onClick={toggle}>Close</Button>
-            </Modal.Footer>
         </Modal>
     );
 }

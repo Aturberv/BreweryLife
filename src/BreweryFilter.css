@@ -1,6 +1,7 @@
 .navbar {
     margin-bottom: 0px;
     color: #777;
+    z-index: 1001; /* above the map and the modals */ 
 }
 
 .nav-element {
