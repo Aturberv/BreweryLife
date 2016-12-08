@@ -15,7 +15,8 @@ class App extends Component {
     super(props);
     autoBind(this)
     this.state = {
-      breweries: Breweries
+      breweries: Breweries,
+      breweryShowing: false
     }
   }
 
@@ -36,10 +37,18 @@ class App extends Component {
     });
   }
 
+  breweryShowingToggle() {
+    this.setState({
+      breweryShowing: !this.state.breweryShowing
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <BreweryFilter onFilter={ this.filterBreweries } /> 
+        <BreweryFilter onFilter={ this.filterBreweries }
+                       breweryShowing={ this.state.breweryShowing }
+                       breweryShowingToggle={ this.breweryShowingToggle } /> 
         <div className="App-map">
           <GoogleMap
             bootstrapURLKeys={{ key: API_KEY, language: 'en' }}
@@ -54,6 +63,8 @@ class App extends Component {
                              lat={ brewery.location.lat }
                              lng={ brewery.location.lng }
                              brewery={ brewery }
+                             breweryShowingToggle={ this.breweryShowingToggle }
+                             breweryShowing={ this.state.breweryShowing }
               />
             )
           }

@@ -3,6 +3,8 @@ import Slider from 'rc-slider';
 import autoBind from 'react-autobind';
 import { Col, Row, FormControl } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
+import Icon from 'antd/lib/icon';
+import 'antd/lib/icon/style/css';
 // wtf
 import '../node_modules/rc-slider/assets/index.css';
 import './BreweryFilter.css';
@@ -33,7 +35,15 @@ class BreweryFilter extends Component {
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        NYC Brewery Map
+                        {
+                            this.props.breweryShowing ?
+                                (<span  style={{cursor:'pointer'}}
+                                        onClick={this.props.breweryShowingToggle}>
+                                    <Icon type="left"/> Map
+                                </span>)
+                            :
+                                "NYC Brewery Map"
+                        }
                     </Navbar.Brand>
                     <Navbar.Toggle/>
                 </Navbar.Header>

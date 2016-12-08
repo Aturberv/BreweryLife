@@ -22,6 +22,7 @@ class BreweryMarker extends Component {
           action: 'Closed',
           label: this.props.brewery.name});
     this.setState({ isShowing: !this.state.isShowing });
+    this.props.breweryShowingToggle();
   }
 
   render() {
@@ -49,7 +50,7 @@ class BreweryMarker extends Component {
         </div>
         </OverlayTrigger>
         <div className="brewery-page">
-        <BreweryPage isShowing={this.state.isShowing}
+        <BreweryPage isShowing={this.state.isShowing && this.props.breweryShowing}
                      toggle={this.toggle}
                      brewery={brewery}
         />
