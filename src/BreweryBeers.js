@@ -13,8 +13,8 @@ const BreweryBeers = ({brewery}) => {
     					<h4>{beer.beerStyle}</h4>
     					<p>{beer.beerDescription}</p>
                     <div className="beer-stats">
-    					ABV and IBU go here.
-    					<p>rating: {beer.beerRating} reviews: {beer.beerRatingCount}</p>
+    					<p>ABV: {beer.beerABV}, IBU: {beer.beerIBU}</p>
+    					<p>rating: {beer.beerRating}, reviews: {beer.beerRatingCount}</p>
                     </div> 
     				</div>
     			</div>

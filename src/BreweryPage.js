@@ -14,7 +14,7 @@ const BreweryPage = ({
     brewery
 }) => {
     return (
-        <div className="breweryPage">
+      <div className="breweryPage">
             <div className="breweryPage-header">
                 <h2>{brewery.name}</h2>
             </div>
