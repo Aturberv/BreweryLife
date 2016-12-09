@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Slider from 'rc-slider';
 import autoBind from 'react-autobind';
 import { Col, Row, FormControl } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import Icon from 'antd/lib/icon';
 import 'antd/lib/icon/style/css';
-// wtf
-import '../node_modules/rc-slider/assets/index.css';
+import Slider from 'antd/lib/slider';
+import 'antd/lib/slider/style/css';
 import './BreweryFilter.css';
 
 class BreweryFilter extends Component {
@@ -36,9 +35,9 @@ class BreweryFilter extends Component {
                 <Navbar.Header>
                     <Navbar.Brand>
                         {
-                            this.props.breweryShowing ?
+                            this.props.brewery ?
                                 (<span  style={{cursor:'pointer'}}
-                                        onClick={this.props.breweryShowingToggle}>
+                                        onClick={this.props.closeBrewery}>
                                     <Icon type="left"/> Map
                                 </span>)
                             :
@@ -62,7 +61,7 @@ class BreweryFilter extends Component {
                                     <div style={{paddingTop:'2px'}}>
                                         <Slider onChange={ this.onRatingChange }
                                                 max={ 5 }
-                                                step={ .25 }
+                                                step={ .1 }
                                                 defaultValue={ this.state.currentRating }
                                         />
                                         <div style={{paddingTop:'1px'}}>

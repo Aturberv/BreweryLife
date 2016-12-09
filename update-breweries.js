@@ -29,7 +29,7 @@ var clientSecret = process.env.UNTAPPD_CLIENT_SECRET
 untappd.setClientId(clientId)
 untappd.setClientSecret(clientSecret)
 
-var finalBreweriesList = []
+var finalBreweriesList = {};
 
 async.forEach(breweries.Breweries, generateBrewery, writeFinalBreweryJson);
 
@@ -132,13 +132,8 @@ function parseUntappdResponse(response) {
  }
 
 function writeFinalBreweryJson() {
-    finalBreweriesList.sort((a, b) => {
-        if(a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-        if(a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-        return 0;
-    });
     console.log(finalBreweriesList);
-    fs.writeFile('./src/breweries.json', JSON.stringify({"Breweries": finalBreweriesList}, null, 4));
+    fs.writeFile('./src/breweries.json', JSON.stringify(finalBreweriesList, null, 4));
 }
 
 function joinBreweryWithResponse(brewery, response) {
@@ -150,5 +145,5 @@ function joinBreweryWithResponse(brewery, response) {
 
 
 function appendFinalBrewery(brewery) {
-    finalBreweriesList.push(brewery);
+    finalBreweriesList[brewery.name] = brewery;
 }

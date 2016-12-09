@@ -1,13 +1,9 @@
 import React from 'react';
-//import { Tabs, Tab } from 'react-bootstrap';
 import BreweryImages from './BreweryImages';
 import BreweryReviews from './BreweryReviews';
 import BreweryDescription from './BreweryDescription';
 import BreweryEvents from './BreweryEvents';
 import BreweryBeers from './BreweryBeers';
-
-import Modal from 'antd/lib/modal';
-import 'antd/lib/modal/style/css';
 
 import Tabs from 'antd/lib/tabs';
 import 'antd/lib/tabs/style/css';
@@ -16,21 +12,11 @@ import './BrewModal.css';
 
 const BreweryPage = ({
     brewery,
-    toggle,
-    isShowing
+    closeBrewery,
 }) => {
     return (
-        <Modal visible={isShowing}
-               onCancel={toggle}
-               closable
-               width="100%"
-               title={
-                <p>{brewery.name}</p>
-               }
-               footer={
-                ''
-               }
-               >
+        <div>
+        <span onClick={closeBrewery}>{brewery.name}</span>
                 <Tabs defaultActiveKey="1" id="brew-tabs">
                     <Tabs.TabPane key="1" tab="About">
                         <BreweryDescription brewery={brewery} />
@@ -46,7 +32,7 @@ const BreweryPage = ({
                         <BreweryEvents brewery={brewery} />
                     </Tabs.TabPane>
                 </Tabs>
-        </Modal>
+        </div>
     );
 }
 

@@ -5,3 +5,9 @@
   left: 0;
   right: 0;
 }
+
+.brewery-page {
+    position: relative;
+    z-index: 1; /* above the map */
+    background: white;
+}
