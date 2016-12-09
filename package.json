@@ -13,7 +13,6 @@
     "extend": "^3.0.0",
     "google-map-react": "^0.22.0",
     "node-untappd": "^0.4.1",
-    "rc-slider": "^5.3.5",
     "react": "^15.4.1",
     "react-async-script-loader": "^0.2.2",
     "react-autobind": "^1.0.6",

@@ -13,16 +13,6 @@
     width: 95%;
 }
 
-#contained-modal-title {
-	font-size: 3.5em;
-	background-image: url("./images/beer-header.jpg");
-	border-radius: 10px;
-	text-align: center;
-	color: #B0C4DE;
-	font-weight: lighter;
-	text-shadow: 2px 2px #6495ED;
-}
-
 .brewery-reviews {
 	padding: 10px;
 }
