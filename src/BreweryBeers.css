@@ -1,0 +1,31 @@
+.brewery-beers {
+    padding: 30px;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+.brewery-beers:last-child {
+    border: 0px;
+}
+
+.beer-info {
+    text-align: left;
+    margin-left: 120px;
+    position: relative;
+}
+
+.beer-stats {
+    text-align: right;
+    padding: 10px;
+}
+
+.beer-label {
+    padding-right: 30px;
+    padding-bottom: 20px;
+    display: inline-table;
+    position: absolute;
+    float: left;
+    width: 120px;
+    max-width: 120px;
+    height: 120px;
+    max-height: 120px; 
+}

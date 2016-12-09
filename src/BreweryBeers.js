@@ -1,4 +1,5 @@
 import React from 'react';
+import './BreweryBeers.css';
 
 const BreweryBeers = ({brewery}) => {
 	return (

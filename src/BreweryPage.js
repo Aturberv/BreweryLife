@@ -8,8 +8,6 @@ import BreweryBeers from './BreweryBeers';
 import Tabs from 'antd/lib/tabs';
 import 'antd/lib/tabs/style/css';
 
-import './BrewModal.css';
-
 const BreweryPage = ({
     brewery,
     closeBrewery,

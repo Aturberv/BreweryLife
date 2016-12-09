@@ -1,0 +1,12 @@
+.brewery-reviews {
+    padding: 10px;
+}
+
+.review-text {
+    border-bottom: 1px solid #D3D3D3;
+    padding: 10px;
+}
+
+.review-text:last-child {
+    border: 0px;
+}

@@ -6,9 +6,9 @@ import Icon from 'antd/lib/icon';
 import 'antd/lib/icon/style/css';
 import Slider from 'antd/lib/slider';
 import 'antd/lib/slider/style/css';
-import './BreweryFilter.css';
+import './Header.css';
 
-class BreweryFilter extends Component {
+class Header extends Component {
 
     constructor(props) {
         super(props);
@@ -78,4 +78,4 @@ class BreweryFilter extends Component {
 
 }
 
-export default BreweryFilter;
+export default Header;

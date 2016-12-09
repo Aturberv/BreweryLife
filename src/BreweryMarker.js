@@ -1,6 +1,6 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import './BrewModal.css';
+import './BreweryMarker.css';
 
 const BreweryMarker = ({
   brewery
