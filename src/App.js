@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   filterBreweries(type, value) {
-    
+
     this.setState({
       breweries: Object.entries(Breweries).reduce((result, [breweryName, brewery]) => {
         switch(typeof (value)){
@@ -68,8 +68,7 @@ class App extends Component {
       <div className="App">
         <Header onFilter={ this.filterBreweries }
                        brewery={ this.state.brewery }
-                       closeBrewery={ () => this.selectBrewery(null) } /> 
-        <div>
+                       closeBrewery={ () => this.selectBrewery(null) } />
         {
           this.state.brewery &&
             <div className="brewery-page">
@@ -86,8 +85,8 @@ class App extends Component {
             onChildClick={ this.selectBrewery }
           >
           {
-            Object.entries(this.state.breweries).map(([breweryName, brewery]) => 
-              <BreweryMarker 
+            Object.entries(this.state.breweries).map(([breweryName, brewery]) =>
+              <BreweryMarker
                  key={ breweryName }
                  lat={ brewery.location.lat }
                  lng={ brewery.location.lng }
@@ -96,7 +95,6 @@ class App extends Component {
             )
           }
           </GoogleMap>
-        </div>
         </div>
       </div>
     );
