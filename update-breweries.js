@@ -114,6 +114,7 @@ function parseUntappdResponse(response) {
     var result = {
         breweryDescription: brewery.brewery_description,
         breweryLogo: brewery.brewery_label,
+        social: brewery.contact, 
         beers: breweryBeers.map(function(beerObj){
             return {
                 beerName: beerObj.beer.beer_name,
