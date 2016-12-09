@@ -114,6 +114,14 @@ function parseUntappdResponse(response) {
     var result = {
         breweryDescription: brewery.brewery_description,
         breweryLogo: brewery.brewery_label,
+        social: brewery.contact.map(socialUrl){
+            return {
+                twitter: `https://twitter.com/${socialUrl.twitter}`,
+                instagram: `href: 'https://www.instagram.com/${socialUrl.instagram}`,
+                facebook: socialUrl.facebook,
+                website: socialUrl.url
+            }
+        },
         beers: breweryBeers.map(function(beerObj){
             return {
                 beerName: beerObj.beer.beer_name,
