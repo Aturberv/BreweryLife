@@ -49,13 +49,6 @@ acorn@^4.0.1:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.3.tgz#1a3e850b428e73ba6b09d1cc527f5aaad4d03ef1"
 
-active-event-stack@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/active-event-stack/-/active-event-stack-1.0.0.tgz#6b5b92ebad719afae982cd51f49c38c5b6800c50"
-  dependencies:
-    immutable "^3.7.4"
-    lodash "^3.9.3"
-
 add-dom-event-listener@1.x:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/add-dom-event-listener/-/add-dom-event-listener-1.0.1.tgz#70e74d0692b27108f9740554e0fa80a4683c2eb2"
@@ -1048,10 +1041,6 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bowser@^1.0.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.5.0.tgz#b97414bacbc631f19f1e2e11466566ec19324983"
-
 brace-expansion@^1.0.0:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.6.tgz#7197d7eaa9b87e648390ea61fc66c84427420df9"
@@ -1209,7 +1198,7 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-classnames@2.x, classnames@^2.1.2, classnames@^2.2.0, classnames@^2.2.1, classnames@^2.2.3, classnames@^2.2.5, classnames@~2.2.0:
+classnames@2.x, classnames@^2.2.0, classnames@^2.2.1, classnames@^2.2.3, classnames@^2.2.5, classnames@~2.2.0:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -1753,10 +1742,6 @@ draft-js@^0.9.1, draft-js@~0.9.1:
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
-
-dynamics.js@^1.1.0:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/dynamics.js/-/dynamics.js-1.1.5.tgz#b90bdc33605cefe652b8416e701f79bf6eefce32"
 
 ecc-jsbn@~0.1.1:
   version "0.1.1"
@@ -2499,11 +2484,7 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoist-non-react-statics@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.1.0.tgz#3227305f91f338ae06a6271f00005299eaf41b2c"
-
-hoist-non-react-statics@1.x, hoist-non-react-statics@^1.0.3:
+hoist-non-react-statics@1.x:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
@@ -2608,10 +2589,6 @@ https-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.0.tgz#b3ffdfe734b2a3d4a9efd58e8654c91fce86eafd"
 
-hyphenate-style-name@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
-
 iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
@@ -2670,13 +2647,6 @@ inherits@2.0.1:
 ini@~1.3.0:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
-
-inline-style-prefixer@*:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/inline-style-prefixer/-/inline-style-prefixer-2.0.5.tgz#c153c7e88fd84fef5c602e95a8168b2770671fe7"
-  dependencies:
-    bowser "^1.0.0"
-    hyphenate-style-name "^1.0.1"
 
 inquirer@^0.12.0:
   version "0.12.0"
@@ -3293,7 +3263,7 @@ jsx-ast-utils@^1.0.0, jsx-ast-utils@^1.3.1:
     acorn-jsx "^3.0.1"
     object-assign "^4.1.0"
 
-keycode@^2.1.0, keycode@^2.1.2:
+keycode@^2.1.2:
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.7.tgz#7b9255919f6cff562b09a064d222dca70b020f5c"
 
@@ -3441,10 +3411,6 @@ lodash.throttle@^4.0.0:
 "lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.2, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
-
-lodash@^3.9.3:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 longest@^1.0.1:
   version "1.0.1"
@@ -3620,12 +3586,6 @@ mute-stream@0.0.5:
 nan@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.4.0.tgz#fb3c59d45fe4effe215f0b890f8adf6eb32d2232"
-
-narcissus@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/narcissus/-/narcissus-1.0.0.tgz#2462a07c4598ce9065eb41b2abbdb30d0e30f46e"
-  dependencies:
-    inline-style-prefixer "*"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -4544,7 +4504,7 @@ rc-select@~6.6.1:
     rc-util "3.x"
     warning "2.x"
 
-rc-slider@^5.3.5, rc-slider@~5.3.0:
+rc-slider@~5.3.0:
   version "5.3.5"
   resolved "https://registry.yarnpkg.com/rc-slider/-/rc-slider-5.3.5.tgz#8398cadb044c90196d3c635b677583e50516a69b"
   dependencies:
@@ -4665,12 +4625,6 @@ rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
-react-async-script-loader@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/react-async-script-loader/-/react-async-script-loader-0.2.2.tgz#70ae44c143539a2f2d4f79aa5f177f244eea8c55"
-  dependencies:
-    hoist-non-react-statics "^1.0.3"
-
 react-autobind@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-autobind/-/react-autobind-1.0.6.tgz#936bb58edf6b89b619c50f82f0e617159fdfd4f1"
@@ -4688,12 +4642,6 @@ react-bootstrap@^0.30.7:
     react-prop-types "^0.4.0"
     uncontrollable "^4.0.1"
     warning "^3.0.0"
-
-react-center-component@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-center-component/-/react-center-component-3.0.0.tgz#d28986bf434e0f8ebff63c91277f1bf6ad189c72"
-  dependencies:
-    lodash "^4.0.0"
 
 react-dev-utils@^0.4.0:
   version "0.4.0"
@@ -4733,12 +4681,6 @@ react-hammerjs@~0.5.0:
   dependencies:
     hammerjs "^2.0.8"
 
-react-jss@^2.0.6:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/react-jss/-/react-jss-2.1.1.tgz#8c856b780825ca79f328f932ac4939444dacc450"
-  dependencies:
-    hoist-non-react-statics "1.1.0"
-
 react-lazy-load@^3.0.10:
   version "3.0.10"
   resolved "https://registry.yarnpkg.com/react-lazy-load/-/react-lazy-load-3.0.10.tgz#75304b6f3705a92f4d1ae820bccf9ffaca2ce47f"
@@ -4746,20 +4688,6 @@ react-lazy-load@^3.0.10:
     eventlistener "0.0.1"
     lodash.debounce "^4.0.0"
     lodash.throttle "^4.0.0"
-
-react-modal-dialog@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/react-modal-dialog/-/react-modal-dialog-4.0.2.tgz#34936b3a5558d7d497d2e0e9e915d38d391eaf1f"
-  dependencies:
-    active-event-stack "^1.0.0"
-    classnames "^2.1.2"
-    dynamics.js "^1.1.0"
-    immutable "^3.7.4"
-    keycode "^2.1.0"
-    lodash "^3.9.3"
-    narcissus "^1.0.0"
-    react-center-component "^3.0.0"
-    react-jss "^2.0.6"
 
 react-overlays@^0.6.10:
   version "0.6.10"

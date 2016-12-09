@@ -31,7 +31,7 @@ untappd.setClientSecret(clientSecret)
 
 var finalBreweriesList = {};
 
-async.forEach(breweries.Breweries, generateBrewery, writeFinalBreweryJson);
+async.forEach(breweries, generateBrewery, writeFinalBreweryJson);
 
 function generateBrewery(brewery, completeCallback) {
     brewery.reviews = []; // reset reviews
