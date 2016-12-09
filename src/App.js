@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
 import autoBind from 'react-autobind';
+import Header from './Header';
 import BreweryMarker from './BreweryMarker';
-import BreweryFilter from './BreweryFilter';
 import BreweryPage from './BreweryPage';
 import Breweries from './breweries.json';
 import ReactGA from 'react-ga';
@@ -66,7 +66,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BreweryFilter onFilter={ this.filterBreweries }
+        <Header onFilter={ this.filterBreweries }
                        brewery={ this.state.brewery }
                        closeBrewery={ () => this.selectBrewery(null) } /> 
         <div>
