@@ -4,6 +4,7 @@ import BreweryReviews from './BreweryReviews';
 import BreweryDescription from './BreweryDescription';
 import BreweryEvents from './BreweryEvents';
 import BreweryBeers from './BreweryBeers';
+import BrewerySocial from './BrewerySocial';
 
 import Tabs from 'antd/lib/tabs';
 import 'antd/lib/tabs/style/css';
@@ -14,7 +15,8 @@ const BreweryPage = ({
 }) => {
     return (
         <div>
-        <span onClick={closeBrewery}>{brewery.name}</span>
+        <span onClick={closeBrewery}><h3 className="brewery-header">{brewery.name}</h3></span>
+            <BrewerySocial brewery={brewery} />
                 <Tabs defaultActiveKey="1" id="brew-tabs">
                     <Tabs.TabPane key="1" tab="About">
                         <BreweryDescription brewery={brewery} />
