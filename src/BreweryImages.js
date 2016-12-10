@@ -6,7 +6,7 @@ import './BrewImages.css';
 
 const BreweryImage = ({brewery}) => {
 	const images = brewery.photos.map((photo) => {return {original: photo}});
-	console.log(images)
+
 	return (
 		<Row>
 		<Col lg={8} lgOffset={2}

@@ -42,6 +42,18 @@ class App extends Component {
     }
   }
 
+  ratingFilter(ratingEvent) {
+    this.props.router.push('/');
+    this.setState({
+      breweries: Object.keys(Breweries).reduce((result, key) => {
+        if(Breweries[key].yelpRating >= ratingEvent) {
+          result[key] = Breweries[key];
+        }
+        return result;
+      }, {})
+    });
+  }
+
   componentWillReceiveProps(nextProps) {
     if(this.props.location.pathname !== nextProps.location.pathname) {
       ReactGA.pageview(nextProps.location.pathname)
@@ -54,6 +66,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header autocompleteFilter={this.autocompleteFilter}
+                ratingFilter={this.ratingFilter}
                 breweryKey={ breweryKey }/>
         {
           breweryKey && <BreweryPage brewery={ Breweries[breweryKey] }/>

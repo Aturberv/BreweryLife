@@ -18,20 +18,30 @@ class Header extends Component {
         super(props);
         autoBind(this);
         this.state = {
-            currentRating: 3
+            selectedValues: []
         };
-    }
-
-    onRatingChange(e) {
-        this.setState({
-            currentRating: e
-        });
-        this.props.onFilter('yelpRating', e);
     }
 
     caseInsensitiveSearch(searchText, option){
         return option.key.toLowerCase().includes(searchText.toLowerCase());
     }
+
+    autocompleteFilter(breweryKeys) {
+
+        this.setState({
+            selectedValues: breweryKeys
+        })
+        this.props.autocompleteFilter(breweryKeys);
+    }
+
+    ratingFilter(rating) {
+        this.setState({
+            selectedValues: [] //our searches are currently mutually exclusive :(
+        })
+        this.props.ratingFilter(rating);
+    }
+
+
 
     render() {
         const { breweryKey } = this.props;
@@ -64,8 +74,9 @@ class Header extends Component {
                                             placeholder="Brewery Name"
                                             size="large"
                                             filterOption={this.caseInsensitiveSearch}
-                                            onChange={this.props.autocompleteFilter}
-                                            style={{width:'100%'}}>
+                                            onChange={this.autocompleteFilter}
+                                            style={{width:'100%'}}
+                                            value={this.state.selectedValues}>
                                         {
                                             Object.keys(Breweries).map((key) =>
                                                 <Select.Option key={key}>{ Breweries[key].name }</Select.Option>
@@ -77,14 +88,11 @@ class Header extends Component {
                             <Col xs={12} sm={4} md={4} lg={3} >
                                 <div className="nav-element">
                                     <div style={{paddingTop:'2px'}}>
-                                        <Slider onChange={ this.onRatingChange }
+                                        <Slider onChange={ this.ratingFilter }
                                                 max={ 5 }
                                                 step={ .1 }
-                                                defaultValue={ this.state.currentRating }
+                                                defaultValue={ 3 }
                                         />
-                                        <div style={{paddingTop:'1px'}}>
-                                            <span>Rating: { this.state.currentRating }</span>
-                                        </div>
                                     </div>
                                 </div>
                             </Col>
