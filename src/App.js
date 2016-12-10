@@ -68,13 +68,13 @@ class App extends Component {
             defaultZoom={ 12 }
           >
           {
-            Object.entries(this.state.breweries).map(([breweryKey, brewery]) =>
+            Object.keys(this.state.breweries).map((breweryKey) =>
                 <BreweryMarker
                    key={ breweryKey }
-                   lat={ brewery.location.lat }
-                   lng={ brewery.location.lng }
+                   lat={ Breweries[breweryKey].location.lat }
+                   lng={ Breweries[breweryKey].location.lng }
                    breweryKey={ breweryKey }
-                   brewery={ brewery }
+                   brewery={ Breweries[breweryKey] }
                 />
             )
           }
