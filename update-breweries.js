@@ -1,4 +1,4 @@
-var breweries = require('./src/breweries.json');
+var breweryIds = require('./breweryIds.json');
 var URL = require('url');
 var Yelp = require('yelp');
 var GoogleMaps = require('@google/maps');
@@ -31,7 +31,7 @@ untappd.setClientSecret(clientSecret)
 
 var finalBreweriesList = {};
 
-async.forEach(breweries, generateBrewery, writeFinalBreweryJson);
+async.forEach(breweryIds, generateBrewery, writeFinalBreweryJson);
 
 function generateBrewery(brewery, completeCallback) {
     brewery.reviews = []; // reset reviews
@@ -112,6 +112,8 @@ function parseUntappdResponse(response) {
     var brewery = response.response.brewery;
     var breweryBeers = brewery.beer_list.items;
     var result = {
+        name: brewery.brewery_name,
+        untappdRating: brewery.rating.rating_score,
         breweryDescription: brewery.brewery_description,
         breweryLogo: brewery.brewery_label,
         beers: breweryBeers.map(function(beerObj){
