@@ -68,5 +68,47 @@
         "yelpBusinessId": "finback-brewery-ridgewood",
         "googlePlacesId": "ChIJrfWZEXFewokR376UoCVzBG4",
         "untappdBreweryId": "52099"
+    },
+    "AlphabetCityBeerCo": {
+        "googlePlacesId": "ChIJWaWbwHlZwokRj1wHkvB84zE",
+        "untappdBreweryId": "22243"
+    },
+    "GrimmAles": {
+        "untappdBreweryId": "72844",
+        "location": {
+            "lat": 40.6633343,
+            "lng": -73.9680493,
+            "valid": false
+        }
+    },
+    "BravenBrewingCompany": {
+        "untappdBreweryId": "114457",
+        "location": {
+            "lat": 40.6959384,
+            "lng": -73.9169584,
+            "valid": false
+        }
+    },
+    "KingsCountyBrewersCollective": {
+        "googlePlacesId": "ChIJb6ZVSB1cwokRES6FZ2WAMAA",
+        "yelpBusinessId": "kings-county-brewers-collective-brooklyn",
+        "untappdBreweryId": "167520"
+    },
+    "OriginalSin": {
+        "untappdBreweryId": "6200",
+        "googlePlacesId": "ChIJPQtICZlZwokR1EGsTnHz1PM"
+    },
+    "RuckusBrewing": {
+        "untappdBreweryId": "179069",
+        "location": {
+            "lat": 40.7527107,
+            "lng": -73.9942639,
+            "valid": false
+        }
+    },
+    "BigAliceBrewing": {
+        "yelpBusinessId": "big-alice-brewing-long-island-city",
+        "googlePlacesId": "ChIJh9-J99hYwokRxc9AgwkG1Io",
+        "untappdBreweryId": "49805"
     }
 }
