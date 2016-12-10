@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Col, Row, FormControl } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router';
+import Select from 'antd/lib/select'
+import 'antd/lib/select/style/css';
 import Icon from 'antd/lib/icon';
 import 'antd/lib/icon/style/css';
 import Slider from 'antd/lib/slider';
 import 'antd/lib/slider/style/css';
+import Breweries from './breweries.json';
 import './Header.css';
 
 class Header extends Component {
@@ -26,8 +29,8 @@ class Header extends Component {
         this.props.onFilter('yelpRating', e);
     }
 
-    onNameChange(e) {
-        this.props.onFilter('name', e.target.value);
+    caseInsensitiveSearch(searchText, option){
+        return option.key.toLowerCase().includes(searchText.toLowerCase());
     }
 
     render() {
@@ -54,15 +57,24 @@ class Header extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                         <Row>
-                            <Col xs={12} sm={12} md={6} lg={4}>
+                            <Col xs={12} sm={4} md={4} lg={3}>
                                 <div className="nav-element">
-                                    <FormControl type="text" 
-                                                 onChange={this.onNameChange} 
-                                                 placeholder="Brewery Name"
-                                    />
+                                    <Select multiple
+                                            dropdownMatchSelectWidth={false}
+                                            placeholder="Brewery Name"
+                                            size="large"
+                                            filterOption={this.caseInsensitiveSearch}
+                                            onChange={this.props.autocompleteFilter}
+                                            style={{width:'100%'}}>
+                                        {
+                                            Object.keys(Breweries).map((key) =>
+                                                <Select.Option key={key}>{ Breweries[key].name }</Select.Option>
+                                            )
+                                        }
+                                    </Select>
                                 </div>
                             </Col>
-                            <Col xs={12} sm={12} md={6} lg={4} >
+                            <Col xs={12} sm={4} md={4} lg={3} >
                                 <div className="nav-element">
                                     <div style={{paddingTop:'2px'}}>
                                         <Slider onChange={ this.onRatingChange }
