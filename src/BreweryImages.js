@@ -1,30 +1,23 @@
 import React from 'react';
-import Carousel from 'antd/lib/carousel';
-import 'antd/lib/carousel/style/css'
-import Icon from 'antd/lib/icon';
-import 'antd/lib/icon/style/css';
+import { Row, Col } from 'react-bootstrap';
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
 import './BrewImages.css';
 
 const BreweryImage = ({brewery}) => {
+	const images = brewery.photos.map((photo) => {return {original: photo}});
+	console.log(images)
 	return (
-		<Carousel arrows={true}
-				  infinite={true}
-				  accessibility={true}
-				  nextArrow={<Icon type="right"/>}
-				  prevArrow={<Icon type="left"/>}	
-				  dots={false}
-				  lazyLoad={true}
-				  draggable={false} //disable dragging on desktop
-				  swipeToSlide={true}
-				  >
-			{
-				brewery.photos.map((photo, idx) =>
-					<div key={idx}>
-						<img className="brew-image" key={idx} src={photo} role="presentation" />
-					</div>
-				)
-			}
-		</Carousel>
+		<Row>
+		<Col lg={8} lgOffset={2}
+			 md={10} mdOffset={1} 
+			 sm={12}>
+			<ImageGallery items={images}
+						  lazyLoad={true}
+						  showThumbnails={false}
+						  showPlayButton={false}/>
+		</Col>
+	    </Row>
 	);
 }
 
