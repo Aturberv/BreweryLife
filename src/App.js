@@ -23,7 +23,7 @@ class App extends Component {
     ReactGA.pageview('/');
   }
 
-  autocompleteFilter(breweryKeys) {
+  breweryNameFilter(breweryKeys) {
     if (breweryKeys.length === 0) {
       this.setState({breweries: Breweries});
       this.props.router.push('/');
@@ -39,6 +39,25 @@ class App extends Component {
         }, {})
       });
       this.props.router.push('/');
+    }
+  }
+
+  beerTypeFilter(beerTypes) {
+    if (beerTypes.length === 0) {
+      this.setState({breweries: Breweries});
+    } else {
+      this.setState({
+        breweries: Object.keys(Breweries).reduce((result, key) => {
+          const intersection = new Set(
+              Breweries[key].beerTypes
+              .filter(type => beerTypes.indexOf(type) > -1))
+          // we matched on all desired filters
+          if(intersection.size === beerTypes.length) {
+            result[key] = Breweries[key];
+          }
+          return result;
+        }, {})
+      });
     }
   }
 
@@ -65,7 +84,8 @@ class App extends Component {
     const { breweryKey } = this.props.params;
     return (
       <div className="App">
-        <Header autocompleteFilter={this.autocompleteFilter}
+        <Header breweryNameFilter={this.breweryNameFilter}
+                beerTypeFilter={this.beerTypeFilter}
                 ratingFilter={this.ratingFilter}
                 breweryKey={ breweryKey }/>
         {

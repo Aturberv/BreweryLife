@@ -128,6 +128,12 @@ function parseUntappdResponse(response) {
                 beerABV: beerObj.beer.beer_abv,
                 beerIBU: beerObj.beer.beer_ibu
             }
+        }),
+        // extract unique beer types from each brewery
+        beerTypes: breweryBeers.map(function(beerObj){
+            return beerObj.beer.beer_style;
+        }).filter(function(value, index, self){
+            return self.indexOf(value) === index;
         })
     };
     return result;
