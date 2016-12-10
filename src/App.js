@@ -23,26 +23,23 @@ class App extends Component {
     ReactGA.pageview('/');
   }
 
-  filterBreweries(type, value) {
-    this.setState({
-      breweries: Object.entries(Breweries).reduce((result, [breweryName, brewery]) => {
-        switch(typeof (value)){
-          case 'number':
-            if(brewery[type] >= value){
-              result[breweryName] = brewery
-            }
-            break;
-          case 'string':
-            if(brewery[type].toLowerCase().includes(value.toLowerCase())){
-              result[breweryName] = brewery
-            }
-            break;
-          default:
-            return result;
-        }
-        return result;
-      }, {})
-    });
+  autocompleteFilter(breweryKeys) {
+    if (breweryKeys.length === 0) {
+      this.setState({breweries: Breweries});
+      this.props.router.push('/');
+    } else if (breweryKeys.length === 1) {
+        this.props.router.push(`/${breweryKeys[0]}`)
+    } else {
+      this.setState({
+        breweries: Object.keys(Breweries).reduce((result, key) => {
+          if(breweryKeys.indexOf(key) > -1) {
+            result[key] = Breweries[key]
+          }
+          return result
+        }, {})
+      });
+      this.props.router.push('/');
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -56,7 +53,7 @@ class App extends Component {
     const { breweryKey } = this.props.params;
     return (
       <div className="App">
-        <Header onFilter={ this.filterBreweries }
+        <Header autocompleteFilter={this.autocompleteFilter}
                 breweryKey={ breweryKey }/>
         {
           breweryKey && <BreweryPage brewery={ Breweries[breweryKey] }/>
