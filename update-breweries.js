@@ -52,47 +52,61 @@ function generateBrewery(brewery, completeCallback) {
 }
 
 function yelpQuery(brewery) {
-    return yelp.business(brewery.yelpBusinessId);
+    if (brewery.yelpBusinessId) {
+        return yelp.business(brewery.yelpBusinessId);    
+    } else {
+        return Promise.resolve(null);
+    }
+    
 }
 
 function parseYelpResponse(business) {
-    return {
-                yelpRating: business.rating,
-                yelpNumReviews: business.review_count,
-                phone: business.display_phone,
-                reviews: business.reviews.map(function(review){
-                    return {
-                        text: review.excerpt,
-                        rating: review.rating
-                    }
-                })
-            }
+    if (business) {
+        return {
+            yelpRating: business.rating,
+            yelpNumReviews: business.review_count,
+            phone: business.display_phone,
+            reviews: business.reviews ? business.reviews.map(function(review){
+                return {
+                    text: review.excerpt,
+                    rating: review.rating
+                }
+            }) : []
+        }
+    }
 }
 
 function googlePlacesQuery(brewery) {
-    return googleMaps.place({ placeid: brewery.googlePlacesId}).asPromise();
+    if(brewery.googlePlacesId) {
+        return googleMaps.place({ placeid: brewery.googlePlacesId}).asPromise();    
+    } else {
+        return Promise.resolve(null);
+    }
+    
 }
 
 function parseGooglePlacesResponse(response) {
-    var place = response.json.result;
-    var photoUrls = []
-    var result = {
-        googleRating: place.rating,
-        googleUrl: place.url,
-        location: place.geometry.location,
-        reviews: place.reviews.map(function(review){
-            return {
-                text: review.text,
-                rating: review.rating
-            }
-        }),
-        photos: place.photos.map(function(photoReference){
-            return 'https://maps.googleapis.com/maps/api/place/photo?photoreference=' +
-            photoReference.photo_reference +
-            '&maxwidth=800&maxheight=800&key=' + process.env.GOOGLE_MAPS_API_KEY
-        })
-    };
-    return result;
+    if(response) {
+        var place = response.json.result;
+        var photoUrls = []
+        var result = {
+            googleRating: place.rating,
+            googleUrl: place.url,
+            location: place.geometry.location,
+            reviews: place.reviews ? place.reviews.map(function(review){
+                return {
+                    text: review.text,
+                    rating: review.rating
+                }
+            }) : [],
+            photos: place.photos ? place.photos.map(function(photoReference){
+                return 'https://maps.googleapis.com/maps/api/place/photo?photoreference=' +
+                photoReference.photo_reference +
+                '&maxwidth=800&maxheight=800&key=' + process.env.GOOGLE_MAPS_API_KEY
+            }) : []
+        };
+        return result;
+    }
 }
 
 function queryUntappd(brewery) {
@@ -145,6 +159,7 @@ function writeFinalBreweryJson() {
 }
 
 function joinBreweryWithResponse(brewery, response) {
+    if(!response) return brewery
     // join reviews and photos together
     if(response.reviews) response.reviews = response.reviews.concat(brewery.reviews);
     if(response.photos) response.photos = response.photos.concat(brewery.photos);
