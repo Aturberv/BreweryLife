@@ -1,0 +1,16 @@
+.breweryPage {
+    z-index: 1; /* above the map */
+    background: white;
+    flex: 1 1 auto;
+}
+
+.breweryPage-header {
+    display: table;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.ant-tabs-nav-container {
+    display: table;
+    margin: 0 auto;
+}

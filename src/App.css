@@ -11,9 +11,3 @@
   left: 0;
   right: 0;
 }
-
-.brewery-page {
-    z-index: 1; /* above the map */
-    background: white;
-    flex: 1 1 auto;
-}

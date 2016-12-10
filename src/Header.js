@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { Col, Row, FormControl } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
+import { Link } from 'react-router';
 import Icon from 'antd/lib/icon';
 import 'antd/lib/icon/style/css';
 import Slider from 'antd/lib/slider';
@@ -30,16 +31,21 @@ class Header extends Component {
     }
 
     render() {
+        const { breweryKey } = this.props;
         return (
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
                         {
-                            this.props.brewery ?
-                                (<span  style={{cursor:'pointer'}}
-                                        onClick={this.props.closeBrewery}>
-                                    <Icon type="left"/> Map
-                                </span>)
+                            breweryKey ?
+                                (
+                                    <Link to={{
+                                        pathname: '/',
+                                        state: { breweryKey: null}
+                                    }}>
+                                        <Icon type="left"/> Map
+                                    </Link>
+                                )
                             :
                                 "NYC Brewery Map"
                         }

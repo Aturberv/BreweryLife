@@ -1,8 +1,18 @@
+.navbar, .navbar-default {
+    flex: 0 0 auto;
+}
+
 .navbar {
-	flex: 0 1 auto;
     margin-bottom: 0px;
     color: #777;
     z-index: 1001; /* above the map and the modals */
+}
+
+.navbar-default {
+    background-color: white; 
+    border-color: #777;
+    border: 1px;
+    border-style: none none solid none;
 }
 
 .nav-element {

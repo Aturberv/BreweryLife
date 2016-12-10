@@ -18,13 +18,12 @@ class App extends Component {
     autoBind(this)
     this.state = {
       breweries: Breweries,
-      brewery: null,
       defaultCenter: {lat: 40.7132859, lng: -73.9285485}
     }
+    ReactGA.pageview('/');
   }
 
   filterBreweries(type, value) {
-
     this.setState({
       breweries: Object.entries(Breweries).reduce((result, [breweryName, brewery]) => {
         switch(typeof (value)){
@@ -46,52 +45,37 @@ class App extends Component {
     });
   }
 
-  trackBreweryView(breweryName) {
-    breweryName ?
-        ReactGA.modalview(breweryName)
-      : ReactGA.pageview('/') && ReactGA.event({
-          category: 'Modal',
-          action: 'Closed',
-          label: breweryName
-        });
-  }
-
-  selectBrewery(breweryName) {
-    this.setState({
-      brewery: this.state.breweries[breweryName]
-    });
-    this.trackBreweryView(breweryName);
+  componentWillReceiveProps(nextProps) {
+    if(this.props.location.pathname !== nextProps.location.pathname) {
+      ReactGA.pageview(nextProps.location.pathname)
+    }
   }
 
   render() {
+    // this is set by the URL
+    const { breweryKey } = this.props.params;
     return (
       <div className="App">
         <Header onFilter={ this.filterBreweries }
-                       brewery={ this.state.brewery }
-                       closeBrewery={ () => this.selectBrewery(null) } />
+                breweryKey={ breweryKey }/>
         {
-          this.state.brewery &&
-            <div className="brewery-page">
-              <BreweryPage closeBrewery={ () => this.selectBrewery(null) }
-                           brewery={this.state.brewery}
-              />
-            </div>
+          breweryKey && <BreweryPage brewery={ Breweries[breweryKey] }/>
         }
         <div className="App-map">
           <GoogleMap
             bootstrapURLKeys={{ key: API_KEY, language: 'en' }}
             defaultCenter={ this.state.defaultCenter }
             defaultZoom={ 12 }
-            onChildClick={ this.selectBrewery }
           >
           {
-            Object.entries(this.state.breweries).map(([breweryName, brewery]) =>
-              <BreweryMarker
-                 key={ breweryName }
-                 lat={ brewery.location.lat }
-                 lng={ brewery.location.lng }
-                 brewery={ brewery }
-              />
+            Object.entries(this.state.breweries).map(([breweryKey, brewery]) =>
+                <BreweryMarker
+                   key={ breweryKey }
+                   lat={ brewery.location.lat }
+                   lng={ brewery.location.lng }
+                   breweryKey={ breweryKey }
+                   brewery={ brewery }
+                />
             )
           }
           </GoogleMap>

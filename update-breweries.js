@@ -145,5 +145,6 @@ function joinBreweryWithResponse(brewery, response) {
 
 
 function appendFinalBrewery(brewery) {
-    finalBreweriesList[brewery.name] = brewery;
+    // we use the brewery names for routing, so get rid of whitespace
+    finalBreweriesList[brewery.name.replace(/\s/g,'')] = brewery;
 }
