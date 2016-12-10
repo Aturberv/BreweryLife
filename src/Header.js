@@ -12,13 +12,24 @@ import 'antd/lib/slider/style/css';
 import Breweries from './breweries.json';
 import './Header.css';
 
+const uniqueBeerTypes = Object.keys(Breweries).reduce((result, key) => {
+    return [...new Set(result.concat(Breweries[key].beerTypes))];
+}, []).sort((a, b) =>
+    a.toLowerCase() < b.toLowerCase() ? 
+        -1 : 
+    (a.toLowerCase() > b.toLowerCase()) ? 
+        1 : 
+        0
+);
+
 class Header extends Component {
 
     constructor(props) {
         super(props);
         autoBind(this);
         this.state = {
-            selectedValues: []
+            breweryNamesSelected: [],
+            beerTypesSelected: []
         };
     }
 
@@ -26,17 +37,25 @@ class Header extends Component {
         return option.key.toLowerCase().includes(searchText.toLowerCase());
     }
 
-    autocompleteFilter(breweryKeys) {
-
+    breweryNameFilter(breweryKeys) {
         this.setState({
-            selectedValues: breweryKeys
+            breweryNamesSelected: breweryKeys
         })
-        this.props.autocompleteFilter(breweryKeys);
+        this.props.breweryNameFilter(breweryKeys);
+    }
+
+    beerTypeFilter(beerTypes) {
+        this.setState({
+            beerTypesSelected: beerTypes
+        })
+        this.props.beerTypeFilter(beerTypes);
     }
 
     ratingFilter(rating) {
+        //our searches are currently mutually exclusive :(
         this.setState({
-            selectedValues: [] //our searches are currently mutually exclusive :(
+            breweryNamesSelected: [],
+            beerTypesSelected: []
         })
         this.props.ratingFilter(rating);
     }
@@ -67,16 +86,15 @@ class Header extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                         <Row>
-                            <Col xs={12} sm={4} md={4} lg={3}>
+                            <Col xs={12} sm={3}>
                                 <div className="nav-element">
                                     <Select multiple
                                             dropdownMatchSelectWidth={false}
                                             placeholder="Brewery Name"
-                                            size="large"
                                             filterOption={this.caseInsensitiveSearch}
-                                            onChange={this.autocompleteFilter}
+                                            onChange={this.breweryNameFilter}
                                             style={{width:'100%'}}
-                                            value={this.state.selectedValues}>
+                                            value={this.state.breweryNamesSelected}>
                                         {
                                             Object.keys(Breweries).map((key) =>
                                                 <Select.Option key={key}>{ Breweries[key].name }</Select.Option>
@@ -85,15 +103,35 @@ class Header extends Component {
                                     </Select>
                                 </div>
                             </Col>
-                            <Col xs={12} sm={4} md={4} lg={3} >
+                            <Col xs={12} sm={3}>
                                 <div className="nav-element">
-                                    <div style={{paddingTop:'2px'}}>
+                                    <div>
                                         <Slider onChange={ this.ratingFilter }
                                                 max={ 5 }
                                                 step={ .1 }
                                                 defaultValue={ 3 }
                                         />
+                                        <div className="rating">
+                                            Rating
+                                        </div>
                                     </div>
+                                </div>
+                            </Col>
+                            <Col xs={12} sm={3}>
+                                <div className="nav-element">
+                                    <Select multiple
+                                            dropdownMatchSelectWidth={false}
+                                            placeholder="Type of Beer"
+                                            filterOption={this.caseInsensitiveSearch}
+                                            onChange={this.beerTypeFilter}
+                                            style={{width:'100%'}}
+                                            value={this.state.beerTypesSelected}>
+                                        {
+                                            uniqueBeerTypes.map((type) =>
+                                                <Select.Option key={type}>{ type }</Select.Option>
+                                            )
+                                        }
+                                    </Select>
                                 </div>
                             </Col>
                         </Row>

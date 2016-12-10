@@ -17,5 +17,14 @@
 
 .nav-element {
     padding: 5px;
+    margin-top: 5px;
 }
 
+.ant-slider {
+    margin: 0;
+}
+
+.rating {
+    display: table;
+    margin: 0 auto;
+}
