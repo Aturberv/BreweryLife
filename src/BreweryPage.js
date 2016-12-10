@@ -17,8 +17,8 @@ const BreweryPage = ({
     return (
       <div className="breweryPage">
             <div className="breweryPage-header">
-                <h2>{brewery.name}</h2>
-                <BrewerySocial social={brewery.social} />
+                <h2 className="brewery-name">{brewery.name}</h2>
+                <center><BrewerySocial social={brewery.social} /></center>
             </div>
             <div className="breweryPage-tabs">
                 <Tabs defaultActiveKey="1">

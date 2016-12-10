@@ -5,18 +5,27 @@ import './BrewerySocial.css';
 
 const BrewerySocial = ({ social }) => {
 	const socialTypes = {
-		"facebook": social.facebook,
-		"twitter": social.twitter,
-		"instagram": social.instagram,
-		"globe": social.website
+		"facebook": {
+			icon: "facebook"
+		},
+		"twitter": {
+			icon: "twitter"
+		},
+		"instagram": {
+			icon: "instagram"
+		},
+		"website": {
+			icon: "globe"
+		}
 	}
+
 	return (
 		<div>
 			<span>
 			{
-				Object.keys(socialTypes).map((key) =>
-					<a href={socialTypes[key]} key={key}>
-						<Icon className="social-icon" name={ key } size='lg' />
+				Object.keys(social).map((key) =>
+					<a href={social[key]} key={key}>
+						<Icon className="social-icon" name={ socialTypes[key].icon } size='lg' />
 					</a>
 				)
 			}

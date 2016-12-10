@@ -126,7 +126,6 @@ function parseUntappdResponse(response) {
     var brewery = response.response.brewery;
     var breweryBeers = brewery.beer_list.items;
     var socialObj = brewery.contact;
-    console.log(socialObj)
     var result = {
         name: brewery.brewery_name,
         untappdRating: brewery.rating.rating_score,
