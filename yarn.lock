@@ -4690,6 +4690,12 @@ react-hammerjs@~0.5.0:
   dependencies:
     hammerjs "^2.0.8"
 
+react-image-gallery@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/react-image-gallery/-/react-image-gallery-0.7.4.tgz#f8b738fd1d384012480948a51a22933c6f6a33c0"
+  dependencies:
+    react-swipeable "^3.5.1"
+
 react-lazy-load@^3.0.10:
   version "3.0.10"
   resolved "https://registry.yarnpkg.com/react-lazy-load/-/react-lazy-load-3.0.10.tgz#75304b6f3705a92f4d1ae820bccf9ffaca2ce47f"
@@ -4795,6 +4801,10 @@ react-slick@~0.14.2:
     object-assign "^4.1.0"
     react-responsive-mixin "^0.4.0"
     slick-carousel "^1.6.0"
+
+react-swipeable@^3.5.1:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-3.7.0.tgz#c51f1a9c21e132d06bb95bf75554d23f89385162"
 
 react@^15.4.1:
   version "15.4.1"
