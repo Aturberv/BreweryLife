@@ -125,19 +125,19 @@ function queryUntappd(brewery) {
 function parseUntappdResponse(response) {
     var brewery = response.response.brewery;
     var breweryBeers = brewery.beer_list.items;
+    var socialObj = brewery.contact;
+    console.log(socialObj)
     var result = {
         name: brewery.brewery_name,
         untappdRating: brewery.rating.rating_score,
         breweryDescription: brewery.brewery_description,
         breweryLogo: brewery.brewery_label,
-        social: brewery.contact.map(socialUrl){
-            return {
-                twitter: `https://twitter.com/${socialUrl.twitter}`,
-                instagram: `href: 'https://www.instagram.com/${socialUrl.instagram}`,
-                facebook: socialUrl.facebook,
-                website: socialUrl.url
-            }
-        },
+        social: {
+                twitter: `https://twitter.com/${socialObj.twitter}`,
+                instagram: `href: 'https://www.instagram.com/${socialObj.instagram}`,
+                facebook: socialObj.facebook,
+                website: socialObj.url
+            },
         beers: breweryBeers.map(function(beerObj){
             return {
                 beerName: beerObj.beer.beer_name,

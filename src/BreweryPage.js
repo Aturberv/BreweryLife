@@ -4,6 +4,7 @@ import BreweryReviews from './BreweryReviews';
 import BreweryDescription from './BreweryDescription';
 import BreweryEvents from './BreweryEvents';
 import BreweryBeers from './BreweryBeers';
+import BrewerySocial from './BrewerySocial';
 
 import Tabs from 'antd/lib/tabs';
 import 'antd/lib/tabs/style/css';
@@ -17,6 +18,7 @@ const BreweryPage = ({
       <div className="breweryPage">
             <div className="breweryPage-header">
                 <h2>{brewery.name}</h2>
+                <BrewerySocial social={brewery.social} />
             </div>
             <div className="breweryPage-tabs">
                 <Tabs defaultActiveKey="1">
