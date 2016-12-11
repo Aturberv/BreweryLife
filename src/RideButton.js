@@ -42,8 +42,8 @@ class RideButton extends Component {
     }
 
    loadingDisplay() {
-        console.log('display')
-        const text = isMobile ? "Getting location" : "Unavailable on desktop";
+        const text = isMobile ? "Getting location" 
+                              : "Unavailable on desktop";
         return (
             <div className="uber-placeholder">
                 <img role="presentation"
@@ -55,7 +55,6 @@ class RideButton extends Component {
     }
 
     onRideRequest() {
-        console.log('clicked button')
         ReactGA.event({
             category: 'Ride Request',
             action: 'Click',

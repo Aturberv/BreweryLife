@@ -16,7 +16,9 @@ const BreweryPage = ({brewery}) => {
       <div className="breweryPage">
             <div className="breweryPage-header">
                 <h2 className="brewery-name">{brewery.name}</h2>
-                <center><BrewerySocial social={brewery.social} /></center>
+                <center>
+                    <BrewerySocial social={brewery.social} />
+                </center>
             </div>
             <RideButton breweryName={brewery.name} destination={brewery.location}/>
             <div className="breweryPage-tabs">
