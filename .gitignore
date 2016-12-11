@@ -1,5 +1,4 @@
 .idea
-src/breweries.json
 .DS_Store
 build/
 npm-debug.log

@@ -133,7 +133,7 @@ function parseUntappdResponse(response) {
         breweryLogo: brewery.brewery_label,
         social: {
                 twitter: `https://twitter.com/${socialObj.twitter}`,
-                instagram: `href: 'https://www.instagram.com/${socialObj.instagram}`,
+                instagram: `https://www.instagram.com/${socialObj.instagram}`,
                 facebook: socialObj.facebook,
                 website: socialObj.url
             },
