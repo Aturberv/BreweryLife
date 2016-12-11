@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eux
 
 npm run update-breweries
 npm run build
