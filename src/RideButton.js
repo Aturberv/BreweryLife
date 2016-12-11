@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import {geolocated} from 'react-geolocated';
 import ReactGA from 'react-ga';
 import autoBind from 'react-autobind';
 import './RideButton.css';
 
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 
 class RideButton extends Component {
 
@@ -22,17 +21,16 @@ class RideButton extends Component {
     }
 
     refreshButton(){
-        if(isMobile && this.props.coords) {
+        if(this.props.isMobile && this.props.userCoordinates) {
             bttnio('refresh') //eslint-disable-line no-undef    
         }
     }
 
     locationString() {
-        if(!this.props.coords) return "";
         return `{
             "user_location": {
-                "latitude": ${this.props.coords.latitude},
-                "longitude": ${this.props.coords.longitude}
+                "latitude": ${this.props.userCoordinates.latitude},
+                "longitude": ${this.props.userCoordinates.longitude}
             },
             "subject_location": {
                 "latitude": ${this.props.destination.lat},
@@ -42,8 +40,8 @@ class RideButton extends Component {
     }
 
    loadingDisplay() {
-        const text = isMobile ? "Getting location" 
-                              : "Unavailable on desktop";
+        const text = this.props.isMobile ? "Getting location..." 
+                                         : "Unavailable on desktop";
         return (
             <div className="uber-placeholder">
                 <img role="presentation"
@@ -64,12 +62,14 @@ class RideButton extends Component {
 
 
     render() {
-        const { coords } = this.props;
+        const { isMobile, userCoordinates } = this.props; 
+        console.log(isMobile)
+        console.log(userCoordinates)
         return (
             <div className="ride-button">
                 <div>
                 {
-                    !coords ?
+                    !userCoordinates ?
                         this.loadingDisplay()
                     :
                         isMobile && <div data-bttnio-id="btn-58c5e756c2a3e133"
@@ -81,15 +81,6 @@ class RideButton extends Component {
             </div>
         );
     }
-}
-
-if(isMobile) {
-    RideButton = geolocated({
-        positionOptions: {
-            enableHighAccuracy: false
-        },
-        userDecisionTimeout: 5000
-    })(RideButton);  
 }
 
 export default RideButton;
