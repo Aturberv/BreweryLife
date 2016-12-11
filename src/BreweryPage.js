@@ -11,7 +11,12 @@ import 'antd/lib/tabs/style/css';
 
 import './BreweryPage.css';
 
-const BreweryPage = ({brewery}) => {
+const BreweryPage = (
+{
+    brewery, 
+    userCoordinates,
+    isMobile
+}) => {
     return (
       <div className="breweryPage">
             <div className="breweryPage-header">
@@ -20,7 +25,10 @@ const BreweryPage = ({brewery}) => {
                     <BrewerySocial social={brewery.social} />
                 </center>
             </div>
-            <RideButton breweryName={brewery.name} destination={brewery.location}/>
+            <RideButton breweryName={brewery.name} 
+                        userCoordinates={userCoordinates}
+                        isMobile={isMobile}
+                        destination={brewery.location}/>
             <div className="breweryPage-tabs">
                 <Tabs defaultActiveKey="1">
                     <Tabs.TabPane key="1" tab="About">

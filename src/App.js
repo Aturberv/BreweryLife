@@ -4,12 +4,14 @@ import autoBind from 'react-autobind';
 import Header from './Header';
 import BreweryMarker from './BreweryMarker';
 import BreweryPage from './BreweryPage';
+import {geolocated} from 'react-geolocated';
 import Breweries from './breweries.json';
 import ReactGA from 'react-ga';
 
 import './App.css';
 
 const API_KEY = 'AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y';
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 class App extends Component {
 
@@ -82,6 +84,7 @@ class App extends Component {
   render() {
     // this is set by the URL
     const { breweryKey } = this.props.params;
+    const { coords } = this.props;
     return (
       <div className="App">
         <Header breweryNameFilter={this.breweryNameFilter}
@@ -89,7 +92,9 @@ class App extends Component {
                 ratingFilter={this.ratingFilter}
                 breweryKey={ breweryKey }/>
         {
-          breweryKey && <BreweryPage brewery={ Breweries[breweryKey] }/>
+          breweryKey && <BreweryPage brewery={ Breweries[breweryKey] }
+                                     isMobile={ isMobile }
+                                     userCoordinates={ coords }/>
         }
         <div className="App-map">
           <GoogleMap
@@ -113,6 +118,16 @@ class App extends Component {
       </div>
     );
   }
+}
+
+
+if(isMobile) {
+    App = geolocated({
+        positionOptions: {
+            enableHighAccuracy: false
+        },
+        userDecisionTimeout: 5000
+    })(App);  
 }
 
 export default App;
