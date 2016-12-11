@@ -1,0 +1,17 @@
+.ride-button {
+    display: table;
+    margin: 0 auto;
+    max-width: 180px; /* ug */
+    height: 44px; /* to enable a placeholder */
+}
+
+.uber-placeholder {
+    padding: 10px;
+}
+
+.uber-logo {
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 2em;
+    vertical-align: middle;
+}

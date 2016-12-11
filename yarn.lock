@@ -4694,6 +4694,10 @@ react-ga@^2.1.2:
   dependencies:
     object-assign "^4.0.1"
 
+react-geolocated@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-geolocated/-/react-geolocated-1.0.1.tgz#82df28374fc1a6c934c3833acbed67e0ae7eb6b3"
+
 react-hammerjs@~0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/react-hammerjs/-/react-hammerjs-0.5.0.tgz#aa20e5c5f44d660f3e8e87ed11282f12173e77ae"
