@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eux
 
+npm run generate-sitemap
 npm run update-breweries
 npm run build
 pip install --user awscli
