@@ -1,20 +1,24 @@
 var breweries = require('./breweryIds.json');
 var xml = require('xml');
 var fs = require('fs');
+var async = require('async')
 
-// var xmlString = xml(xmlObject, options);
+// <?xml version="1.0" encoding="UTF-8"?>
 
-var siteMap = [{ urlset: [{
-	Object.keys(breweries).map(function(key){
-		return {
-			url: {
-				loc: `https://nycbrewerymap.com/${key}` }
-			}
-		}
-	})
-	]}
-]}
+var siteMap = [{ urlset: [{}] }];
 
-function writeSiteMap() {
-	fs.writeFile('./src/sitemap.xml', xml(siteMap, options))
-}
+var siteMapObj = Object.keys(breweries).map(function(key){
+	return {
+		url: [{
+			loc: `https://nycbrewerymap.com/${key}`
+		}]
+	}
+})
+
+var siteMap = [{ urlset: siteMapObj }]
+
+
+setTimeout(function writeSiteMap() {
+	console.log(siteMap)
+	fs.writeFile('./public/sitemap.xml', xml(siteMap))
+}, 3000);
