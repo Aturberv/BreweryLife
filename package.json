@@ -26,6 +26,7 @@
     "yelp": "^1.0.1"
   },
   "scripts": {
+    "generate-sitemap": "node generate-sitemap.js",
     "update-breweries": "node update-breweries.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
