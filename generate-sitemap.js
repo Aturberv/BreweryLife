@@ -3,7 +3,6 @@ var xml = require('xml');
 var fs = require('fs');
 var async = require('async')
 
-// <?xml version="1.0" encoding="UTF-8"?>
 
 var siteMap = [{ urlset: [{}] }];
 
@@ -17,8 +16,7 @@ var siteMapObj = Object.keys(breweries).map(function(key){
 
 var siteMap = [{ urlset: siteMapObj }]
 
-
 setTimeout(function writeSiteMap() {
 	console.log(siteMap)
-	fs.writeFile('./public/sitemap.xml', xml(siteMap))
+	fs.writeFile('./public/sitemap.xml', xml(siteMap, { declaration: true }))
 }, 3000);
