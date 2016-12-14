@@ -3,4 +3,4 @@
 build/
 npm-debug.log
 node_modules/
-public/sitemap.xml
+sitemap.xml
