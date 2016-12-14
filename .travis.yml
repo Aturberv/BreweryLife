@@ -17,3 +17,4 @@ script: npm run build
 deploy:
   provider: script
   script: "./deploy.sh"
+  skip_cleanup: true
