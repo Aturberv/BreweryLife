@@ -1,21 +1,4 @@
-/*.image-gallery-image > img{
-    object-fit: scale-down;
-    display: block;
-    margin: 0 auto;
-    width: auto;
-    height: 400px;
-    max-height: 400px;
-}
-
-#Gallery > div > a > img {
-	width: auto;
-	height: 270px;
-	max-height: 800px;
-}
-
-#Gallery {
-	margin-left: 40px;
-}*/
+/*https://codepen.io/joshhunt/pen/LVQZRa*/
 
 $duration = 450ms
 $tileWidth = 250px
@@ -103,19 +86,5 @@ p {
 }
 
 
-.row__inner:hover {
-  transform: translate3d($moveLeft, 0, 0);
-}
 
-.row__inner:hover .tile{
 
-  opacity: .3;
-
-  &:hover;
-    transform: scale($growSize);
-    opacity: 1;
-}
-
-.tile:hover ~ .tile {
-  transform: translate3d($moveRight, 0, 0);
-}

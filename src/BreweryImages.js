@@ -7,11 +7,11 @@ const BreweryImage = ({brewery}) => {
 		<div className="row">
 			<div className="row__inner">
 			{
-				brewery.photos.map((photo) =>
-					<div className="tile">
+				brewery.photos.map((photo, idx) =>
+					<div className="tile" key={idx}>
 						<div className="tile__media">
 							<img className="tile__image"
-								src={photo} />
+								src={photo} role="presentation"/>
 						</div>
 					</div>
 				)
