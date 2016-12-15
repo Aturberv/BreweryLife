@@ -3,4 +3,6 @@
     display: block;
     margin: 0 auto;
     width: auto;
+    height: 400px;
+    max-height: 400px;
 }
