@@ -6,3 +6,9 @@
     height: 400px;
     max-height: 400px;
 }
+
+#Gallery > div > a > img {
+	width: auto;
+	height: 260px;
+	max-height: 800px;
+}
