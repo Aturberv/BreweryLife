@@ -1,13 +1,23 @@
 <!doctype html>
 <html lang="en">
-  <head>
+  <head itemscope itemtype="http://schema.org/WebSite">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="NYC Brewery Map shows you ratings, reviews, and most importantly beers from breweries located in New York City.">
     <meta name="keywords" content="NYC, New York City, brewery, breweries, map, beer, brewery rating, brewery review, brewery beers, brewery tour, NYC breweries, Brooklyn breweries">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="alternate" hreflang="en" href="https://nycbrewerymap.com">
+    <link rel="canonical" href="https://nycbrewerymap.com" itemprop="url">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-    <title>NYC Brewery Map</title>
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://nycbrewerymap.com",
+      "logo": "https://nycbrewerymap.com/icon.png"
+    }
+    </script>
+    <title itemprop="name">NYC Brewery Map</title>
   </head>
   <body>
     <div id="root"></div>
