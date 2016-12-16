@@ -24,6 +24,7 @@ $growSize = 2
 
 .brew-image-row {
   	overflow: scroll;
+  	-webkit-overflow-scrolling: touch;
   	width: 100%;
 }
 
