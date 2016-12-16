@@ -1,16 +1,15 @@
 import React from 'react';
-import "react-image-gallery/styles/css/image-gallery.css";
 import './BrewImages.css';
 
 const BreweryImage = ({brewery}) => {
 	return(
-		<div className="row">
-			<div className="row__inner">
+		<div className="brew-image-row">
+			<div className="brew-image-row__inner">
 			{
 				brewery.photos.map((photo, idx) =>
-					<div className="tile" key={idx}>
-						<div className="tile__media">
-							<img className="tile__image"
+					<div className="brew-image-tile" key={idx}>
+						<div className="brew-image-tile__media">
+							<img className="brew-image-tile__image"
 								src={photo} role="presentation"/>
 						</div>
 					</div>
