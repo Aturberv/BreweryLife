@@ -1,88 +1,67 @@
 /*https://codepen.io/joshhunt/pen/LVQZRa*/
 
 $duration = 450ms
-$tileWidth = 250px
-$tileHeight = ($tileWidth / (16/9))
-$iconSize = 50px
 $growSize = 2
 
-$moveLeft = -( $tileWidth / $growSize)
-$moveRight = $tileWidth
-
-body, html {
-  padding: 0 10px;
-  margin: 0;
-  background: #0E0F11;
-  color: #ecf0f1;
-  font-family: 'Open Sans', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
+.brew-image-row {
+  	padding: 0 10px;
+  	margin: 0;
+  	background: #0E0F11;
+  	color: #ecf0f1;
+  	font-family: 'Open Sans', sans-serif;
+  	min-height: 100vh;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	width: 100%;
 }
 
-.tile__image {
+.brew-image-tile__image {
 	width: auto;
 	height: 400px;
 	max-height: 400px;
 }
-* { box-sizing: border-box }
 
-h1, p {
-  text-align: center;
+.brew-image-row {
+  	overflow: scroll;
+  	width: 100%;
 }
 
-p {
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
+.brew-image-row__inner {
+  	transition: $duration transform;
+  	font-size: 0;
+  	white-space: nowrap;
+  	margin: ($tileHeight / 2) 0;
+  	padding-bottom: 10px;
 }
 
-.contain {
-  width: 100%;
+.brew-image-tile {
+  	position: relative;
+  	display: inline-block;
+  	width: $tileWidth;
+  	height: $tileHeight;
+  	margin-right: 10px;
+  	font-size: 20px;
+  	cursor: pointer;
+  	transition: $duration all;
+  	transform-origin: center left;
 }
 
-.row {
-  overflow: scroll;
-  width: 100%;
-}
-
-.row__inner {
-  transition: $duration transform;
-  font-size: 0;
-  white-space: nowrap;
-  margin: ($tileHeight / 2) 0;
-  padding-bottom: 10px;
-}
-
-.tile {
-  position: relative;
-  display: inline-block;
-  width: $tileWidth;
-  height: $tileHeight;
-  margin-right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: $duration all;
-  transform-origin: center left;
-}
-
-.tile__img {
-  width: $tileWidth;
-  height: $tileHeight;
-  object-fit: cover;
+.brew-image-tile__img {
+  	width: $tileWidth;
+  	height: $tileHeight;
+  	object-fit: cover;
 }
 
 
-.tile:hover & {
+.brew-image-tile:hover & {
     opacity: 1;
 }
 
 .tile__title{
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
+  	position: absolute;
+  	bottom: 0;
+  	padding: 10px;
 }
 
 
