@@ -1,7 +1,6 @@
 import React from 'react';
+import StarRating from './Rating';
 import './BreweryReviews.css';
-
-var Rating = require('react-rating');
 
 const BreweryReviews = ({ brewery }) => {
 	return(
@@ -13,11 +12,7 @@ const BreweryReviews = ({ brewery }) => {
        	  {
        	    brewery.reviews.map((review, idx) =>
        	      <div className="review-text" key={`${brewery.name}${idx}`}>
-       	        <Rating 
-                            initialRate={ review.rating } 
-                            readonly={true} fractions={1/2} 
-                            empty={<span className="fa fa-star-o fa-lg" />} 
-                            full={<span className="fa fa-star fa-lg" />} />
+       	        <StarRating rating={ review.rating } />
        	        <p className="brew-review-text">{ review.text }</p>
        	      </div>
        	    )
