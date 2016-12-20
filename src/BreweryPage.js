@@ -2,9 +2,9 @@ import React from 'react';
 import BreweryImages from './BreweryImages';
 import BreweryReviews from './BreweryReviews';
 import BreweryDescription from './BreweryDescription';
-import BreweryEvents from './BreweryEvents';
 import BreweryBeers from './BreweryBeers';
 import BrewerySocial from './BrewerySocial';
+// import BreweryMenu from './BreweryMenu'; for future implementation
 import RideButton from './RideButton';
 import Tabs from 'antd/lib/tabs';
 import 'antd/lib/tabs/style/css';
@@ -34,15 +34,12 @@ const BreweryPage = (
                     <Tabs.TabPane key="1" tab="About">
                         <BreweryDescription brewery={brewery} />
                         <BreweryImages brewery={brewery} />
+                    <div className="review-menu-container">
+                        <BreweryReviews brewery={brewery} />
+                    </div>
                     </Tabs.TabPane>
                     <Tabs.TabPane key="2" tab="Beers">
                         <BreweryBeers brewery={brewery} />
-                    </Tabs.TabPane>
-                    <Tabs.TabPane key="3" tab="Reviews">
-                        <BreweryReviews brewery={brewery} />
-                    </Tabs.TabPane>
-                    <Tabs.TabPane key="4" tab="Events">
-                        <BreweryEvents brewery={brewery} />
                     </Tabs.TabPane>
                 </Tabs>
             </div>
