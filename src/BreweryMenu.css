@@ -1,18 +1,20 @@
-.brew-reviews-container {
+.brewery-menu-container {
 	float: left;
+	border: 1px solid #D3D3D3;
 	display: block;
 	width: 50%;
-	/*border: 1px solid #D3D3D3;*/
-	/*margin-right: 10px;*/
+	/*margin-left: 10px;*/
+	margin-bottom: 30px;
 }
 
 .brewery-reviews {
+	margin-top: 30px;
 	margin-bottom: 30px;
 }
 
 .brew-reviews-header {
 	border-bottom: 1px solid #D3D3D3;
-	color: #778899;
+	color: #1E90FF;
 	text-align: left;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -46,4 +48,3 @@
 	padding: 2px;
 	text-shadow: 1px 1px 1px #ccc;
 }
-

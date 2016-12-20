@@ -24,7 +24,11 @@
     "react-fa": "^4.1.2",
     "react-ga": "^2.1.2",
     "react-geolocated": "^1.0.1",
+<<<<<<< 61edc68eaa801702c9ef08d26e0cf91095dd1a34
     "react-helmet": "^3.2.3",
+=======
+    "react-rating": "^0.6.3",
+>>>>>>> update reviews to look nicer and be put on the main content tab
     "react-router": "^3.0.0",
     "xml": "^1.0.1",
     "yelp": "^1.0.1"

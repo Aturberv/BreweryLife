@@ -2,9 +2,9 @@ import React from 'react';
 import BreweryImages from './BreweryImages';
 import BreweryReviews from './BreweryReviews';
 import BreweryDescription from './BreweryDescription';
-import BreweryEvents from './BreweryEvents';
 import BreweryBeers from './BreweryBeers';
 import BrewerySocial from './BrewerySocial';
+// import BreweryMenu from './BreweryMenu'; for future implementation
 import RideButton from './RideButton';
 import Tabs from 'antd/lib/tabs';
 import Helmet from 'react-helmet';
@@ -39,17 +39,12 @@ const BreweryPage = (
                         <BreweryDescription description={brewery.description} />
                         <BreweryImages brewery={brewery} />
                         <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
+                    <div className="review-menu-container">
+                        <BreweryReviews brewery={brewery} />
+                    </div>
                     </Tabs.TabPane>
                     <Tabs.TabPane key="2" tab="Beers">
                         <BreweryBeers brewery={brewery} />
-                        <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
-                    </Tabs.TabPane>
-                    <Tabs.TabPane key="3" tab="Reviews">
-                        <BreweryReviews brewery={brewery} />
-                        <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
-                    </Tabs.TabPane>
-                    <Tabs.TabPane key="4" tab="Events">
-                        <BreweryEvents brewery={brewery} />
                         <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
                     </Tabs.TabPane>
                 </Tabs>

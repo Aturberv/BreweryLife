@@ -4994,6 +4994,10 @@ react-prop-types@^0.4.0:
   dependencies:
     warning "^3.0.0"
 
+react-rating@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/react-rating/-/react-rating-0.6.3.tgz#fc9d9103ffebe7a54599c08949749c4be11cfae9"
+
 react-resizable@^1.4.2:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/react-resizable/-/react-resizable-1.4.5.tgz#b0f00244959bad9b003de5bf8f7d14dee5b6c2d3"
