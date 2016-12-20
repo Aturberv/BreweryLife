@@ -1,6 +1,7 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from 'react-router';
+import StarRating from './Rating';
 import './BreweryMarker.css';
 
 const BreweryMarker = ({
@@ -10,8 +11,15 @@ const BreweryMarker = ({
   const popoverHoverFocus = (
       <Popover id="popover-trigger-hover-focus" title={brewery.name}>
         <div>
-          <div>{`Yelp: ${brewery.yelpRating}/5 (${brewery.yelpNumReviews} reviews)`}</div>
-          <div>{`Google: ${brewery.googleRating}/5`}</div>
+          <div>
+          <p>Yelp:
+            <StarRating rating={ brewery.yelpRating } />
+          {`, ${brewery.yelpNumReviews} reviews`}</p>
+          </div>
+          <div>
+          Google:
+            <StarRating rating={ brewery.googleRating } />
+          </div>
         </div>
       </Popover>
     );
