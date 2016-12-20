@@ -1,6 +1,8 @@
 import React from 'react';
 import './BreweryBeers.css';
 
+var Rating = require('react-rating');
+
 const BreweryBeers = ({brewery}) => {
 	return (
 		<div>
@@ -14,7 +16,13 @@ const BreweryBeers = ({brewery}) => {
     					<p>{beer.beerDescription}</p>
                     <div className="beer-stats">
     					<p>ABV: {beer.beerABV}, IBU: {beer.beerIBU}</p>
-    					<p>rating: {beer.beerRating}, reviews: {beer.beerRatingCount}</p>
+                        <Rating 
+                            initialRate={ beer.beerRating } 
+                            readonly={true} 
+                            fractions={2} 
+                            empty={<span className="fa fa-star-o fa-lg" />} 
+                            full={<span className="fa fa-star fa-lg" />} />
+                        <p>reviews: {beer.beerRatingCount}</p>
                     </div> 
     				</div>
     			</div>

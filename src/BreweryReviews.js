@@ -15,7 +15,7 @@ const BreweryReviews = ({ brewery }) => {
        	      <div className="review-text" key={`${brewery.name}${idx}`}>
        	        <Rating 
                             initialRate={ review.rating } 
-                            readonly={true} fractions={1/2} 
+                            readonly={true} fractions={2} 
                             empty={<span className="fa fa-star-o fa-lg" />} 
                             full={<span className="fa fa-star fa-lg" />} />
        	        <p className="brew-review-text">{ review.text }</p>
