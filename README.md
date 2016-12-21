@@ -1,6 +1,7 @@
-# [NYC Brewery Map](nycbrewerymap.com)
+# <a href="https://nycbrewerymap.com/" target="_blank">NYC Brewery Map</a>
 
-[![Travis CI](<img src="https://travis-ci.org/travis-ci/travis-web.svg?branch=master">)](https://travis-ci.org/Aturberv/NYCBeerMap/) [![Coverage Status](https://coveralls.io/repos/github/Aturberv/NYCBeerMap/badge.svg?branch=master)](https://coveralls.io/github/Aturberv/NYCBeerMap?branch=master)
+[<img src="https://travis-ci.org/travis-ci/travis-web.svg?branch=master">](https://travis-ci.org/Aturberv/NYCBeerMap/)
+[![Coverage Status](https://coveralls.io/repos/github/Aturberv/NYCBeerMap/badge.svg?branch=master)](https://coveralls.io/github/Aturberv/NYCBeerMap?branch=master)
 
 
 ## Getting started
