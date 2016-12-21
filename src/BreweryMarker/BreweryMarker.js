@@ -1,7 +1,7 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from 'react-router';
-import StarRating from './Rating';
+import StarRating from '../Rating';
 import './BreweryMarker.css';
 
 const BreweryMarker = ({
@@ -30,7 +30,7 @@ const BreweryMarker = ({
           <OverlayTrigger trigger={['hover', 'focus']} 
                           placement="top" 
                           overlay={popoverHoverFocus}>
-           <img src={require('./images/beer_pin-3.png')} 
+           <img src={require('../images/beer_pin-3.png')} 
                 role="presentation" />
           </OverlayTrigger>
         </div>

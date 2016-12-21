@@ -1,10 +1,10 @@
 import React from 'react';
-import BreweryImages from './BreweryImages';
-import BreweryReviews from './BreweryReviews';
-import BreweryDescription from './BreweryDescription';
-import BreweryBeers from './BreweryBeers';
-import BrewerySocial from './BrewerySocial';
-import RideButton from './RideButton';
+import BreweryImages from '../BreweryImages/BreweryImages';
+import BreweryReviews from '../BreweryReviews/BreweryReviews';
+import BreweryDescription from '../BreweryDescription/BreweryDescription';
+import BreweryBeers from '../BreweryBeers/BreweryBeers';
+import BrewerySocial from '../BrewerySocial/BrewerySocial';
+import RideButton from '../RideButton';
 import Tabs from 'antd/lib/tabs';
 import Helmet from 'react-helmet';
 import 'antd/lib/tabs/style/css';

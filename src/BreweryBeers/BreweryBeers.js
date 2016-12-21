@@ -1,5 +1,5 @@
 import React from 'react';
-import StarRating from './Rating';
+import StarRating from '../Rating';
 import './BreweryBeers.css';
 
 
