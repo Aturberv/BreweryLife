@@ -4,15 +4,8 @@ $duration = 450ms
 $growSize = 2
 
 .brew-image-row {
-  	padding: 0 10px;
-  	margin: 0;
-  	background: #0E0F11;
-  	color: #ecf0f1;
-  	font-family: 'Open Sans', sans-serif;
   	min-height: 100vh;
-  	display: flex;
-  	flex-direction: row;
-  	align-items: center;
+    max-height: 100vh;
   	width: 100%;
 }
 
@@ -23,6 +16,11 @@ $growSize = 2
 }
 
 .brew-image-row {
+    padding: 0 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   	overflow: scroll;
   	-webkit-overflow-scrolling: touch;
   	width: 100%;
