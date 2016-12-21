@@ -10,17 +10,26 @@ const BreweryMarker = ({
 }) => {
   const popoverHoverFocus = (
       <Popover id="popover-trigger-hover-focus" title={brewery.name}>
+      { brewery.yelpRating ? (
         <div>
           <div>
-          <p>Yelp:
-            <StarRating rating={ brewery.yelpRating } />
-          {`, ${brewery.yelpNumReviews} reviews`}</p>
+            <p>
+              Yelp:
+              <StarRating rating={ brewery.yelpRating } />
+              {`, ${brewery.yelpNumReviews} reviews`}
+            </p>
           </div>
           <div>
-          Google:
+            Google:
             <StarRating rating={ brewery.googleRating } />
           </div>
         </div>
+        ) : (
+          <div>
+            Google:
+            <StarRating rating={ brewery.googleRating } />
+          </div>        
+      )}
       </Popover>
     );
 
