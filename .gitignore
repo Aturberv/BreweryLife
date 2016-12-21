@@ -4,3 +4,4 @@ build/
 npm-debug.log
 node_modules/
 sitemap.xml
+coverage

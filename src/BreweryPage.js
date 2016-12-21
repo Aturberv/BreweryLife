@@ -36,7 +36,7 @@ const BreweryPage = (
             <div className="breweryPage-tabs">
                 <Tabs defaultActiveKey="1">
                     <Tabs.TabPane key="1" tab="About">
-                        <BreweryDescription brewery={brewery} />
+                        <BreweryDescription description={brewery.description} />
                         <BreweryImages brewery={brewery} />
                     </Tabs.TabPane>
                     <Tabs.TabPane key="2" tab="Beers">
