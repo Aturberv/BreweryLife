@@ -4,7 +4,7 @@ import BreweryReviews from '../BreweryReviews/BreweryReviews';
 import BreweryDescription from '../BreweryDescription/BreweryDescription';
 import BreweryBeers from '../BreweryBeers/BreweryBeers';
 import BrewerySocial from '../BrewerySocial/BrewerySocial';
-import RideButton from '../RideButton';
+import RideButton from '../RideButton/RideButton';
 import Tabs from 'antd/lib/tabs';
 import Helmet from 'react-helmet';
 import 'antd/lib/tabs/style/css';
@@ -35,15 +35,15 @@ const BreweryPage = (
             <div className="breweryPage-tabs">
                 <Tabs defaultActiveKey="1">
                     <Tabs.TabPane key="1" tab="About">
-                        <BreweryDescription description={brewery.description} />
-                        <BreweryImages brewery={brewery} />
+                        <BreweryDescription description={brewery.breweryDescription} />
+                        <BreweryImages photos={brewery.photos} />
                         <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
                         <div className="review-menu-container">
-                            <BreweryReviews brewery={brewery} />
+                            <BreweryReviews reviews={brewery.reviews} />
                         </div>
                     </Tabs.TabPane>
                     <Tabs.TabPane key="2" tab="Beers">
-                        <BreweryBeers brewery={brewery} />
+                        <BreweryBeers beers={brewery.beers} />
                         <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
                     </Tabs.TabPane>
                 </Tabs>

@@ -9,7 +9,7 @@ import Icon from 'antd/lib/icon';
 import 'antd/lib/icon/style/css';
 import Slider from 'antd/lib/slider';
 import 'antd/lib/slider/style/css';
-import Breweries from './breweries.json';
+import Breweries from '../breweries.json';
 import './Header.css';
 
 const uniqueBeerTypes = Object.keys(Breweries).reduce((result, key) => {
