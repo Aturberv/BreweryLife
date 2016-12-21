@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.0"
+    "coveralls": "^2.11.15",
+    "enzyme": "^2.6.0",
+    "react-addons-test-utils": "^15.4.1",
+    "react-scripts": "0.8.4",
+    "sinon": "^1.17.6"
   },
   "dependencies": {
     "@google/maps": "^0.3.1",

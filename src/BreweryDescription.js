@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './BreweryDescription.css';
 
-const BreweryDescription = ({brewery}) => {
+const BreweryDescription = ({description}) => {
 	return (
   	    <div className="brewery-description">
-    	    <p>{brewery.breweryDescription}</p>
+    	    <p>{description}</p>
     	</div>
 	)
 }
+
+BreweryDescription.propTypes = {
+    description: PropTypes.string.isRequired
+};
 
 
 export default BreweryDescription;
