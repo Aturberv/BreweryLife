@@ -7,6 +7,7 @@ import BreweryBeers from './BreweryBeers';
 import BrewerySocial from './BrewerySocial';
 import RideButton from './RideButton';
 import Tabs from 'antd/lib/tabs';
+import Helmet from 'react-helmet';
 import 'antd/lib/tabs/style/css';
 
 import './BreweryPage.css';
@@ -19,6 +20,9 @@ const BreweryPage = (
 }) => {
     return (
       <div className="breweryPage">
+          <Helmet 
+              title={ brewery.name }
+            />
             <div className="breweryPage-header">
                 <h2 className="brewery-name">{brewery.name}</h2>
                 <center>

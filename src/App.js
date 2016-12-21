@@ -7,6 +7,7 @@ import BreweryPage from './BreweryPage';
 import {geolocated} from 'react-geolocated';
 import Breweries from './breweries.json';
 import ReactGA from 'react-ga';
+import Helmet from 'react-helmet';
 
 import './App.css';
 
@@ -87,6 +88,10 @@ class App extends Component {
     const { coords } = this.props;
     return (
       <div className="App">
+        <Helmet
+          defaultTitle="NYC Brewery Map"
+          titleTemplate="%s - NYC Brewery Map"
+        />
         <Header breweryNameFilter={this.breweryNameFilter}
                 beerTypeFilter={this.beerTypeFilter}
                 ratingFilter={this.ratingFilter}
