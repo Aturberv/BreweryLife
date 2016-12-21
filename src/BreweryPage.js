@@ -38,15 +38,19 @@ const BreweryPage = (
                     <Tabs.TabPane key="1" tab="About">
                         <BreweryDescription description={brewery.description} />
                         <BreweryImages brewery={brewery} />
+                        <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
                     </Tabs.TabPane>
                     <Tabs.TabPane key="2" tab="Beers">
                         <BreweryBeers brewery={brewery} />
+                        <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
                     </Tabs.TabPane>
                     <Tabs.TabPane key="3" tab="Reviews">
                         <BreweryReviews brewery={brewery} />
+                        <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
                     </Tabs.TabPane>
                     <Tabs.TabPane key="4" tab="Events">
                         <BreweryEvents brewery={brewery} />
+                        <center><script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=31a89591-e2e0-4a99-9e83-e873cab052a9&storeId=nycbrewerymap-20"></script></center>
                     </Tabs.TabPane>
                 </Tabs>
             </div>

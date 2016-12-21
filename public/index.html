@@ -19,23 +19,22 @@
       "logo": "https://nycbrewerymap.com/icon.png"
     }
     </script>
-    <title itemprop="name">NYC Brewery Map</title>
-  </head>
-  <body>
-    <div id="root"></div>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js" async defer></script>
     <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"
     crossorigin="anonymous" async defer></script>
     <script>
-      Raven.config('https://c56bf372c3244e089766fb089d1fb85a@sentry.io/122382').install()
-    </script>
-    <script>
       window.ButtonWebConfig = {
         applicationId: 'app-760d46b2c04938db'
       };
-      (function(u,s,e,b,t,n){
-        u['__bttnio']=b;u[b]=u[b]||function(){(u[b].q=u[b].q||[]).push(arguments)};t=s.createElement(e);n=s.getElementsByTagName(e)[0];t.async=1;t.src='https://web.btncdn.com/v1/button.js';n.parentNode.insertBefore(t,n)
-      })(window, document, 'script', 'bttnio');
+      window['__bttnio'] = 'bttnio';
+    </script>
+    <script src="https://web.btncdn.com/v1/button.js" async defer></script>
+    <title itemprop="name">NYC Brewery Map</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      Raven.config('https://c56bf372c3244e089766fb089d1fb85a@sentry.io/122382').install()
     </script>
   </body>
 </html>

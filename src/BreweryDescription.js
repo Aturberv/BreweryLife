@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import './BreweryDescription.css';
 
 const BreweryDescription = ({description}) => {
@@ -8,10 +8,5 @@ const BreweryDescription = ({description}) => {
     	</div>
 	)
 }
-
-BreweryDescription.propTypes = {
-    description: PropTypes.string.isRequired
-};
-
 
 export default BreweryDescription;
