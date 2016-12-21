@@ -1,7 +1,7 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from 'react-router';
-import StarRating from '../Rating';
+import StarRating from '../Rating/Rating';
 import './BreweryMarker.css';
 
 const BreweryMarker = ({

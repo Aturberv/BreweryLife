@@ -34,7 +34,8 @@
   <body>
     <div id="root"></div>
     <script>
-      Raven.config('https://c56bf372c3244e089766fb089d1fb85a@sentry.io/122382').install()
+      Raven.config('https://c56bf372c3244e089766fb089d1fb85a@sentry.io/122382', 
+        {whitelistUrls: [/https:\/\/nycbrewerymap\.com.*]}).install()
     </script>
   </body>
 </html>

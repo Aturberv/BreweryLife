@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMap from 'google-map-react';
 import autoBind from 'react-autobind';
-import Header from './Header';
+import Header from './Header/Header';
 import BreweryMarker from './BreweryMarker/BreweryMarker';
 import BreweryPage from './BreweryPage/BreweryPage';
 import {geolocated} from 'react-geolocated';

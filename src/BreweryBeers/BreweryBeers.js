@@ -1,13 +1,13 @@
 import React from 'react';
-import StarRating from '../Rating';
+import StarRating from '../Rating/Rating';
 import './BreweryBeers.css';
 
 
-const BreweryBeers = ({brewery}) => {
+const BreweryBeers = ({beers}) => {
 	return (
 		<div>
 		{
-			brewery.beers.map((beer, idx) =>
+			beers.map((beer, idx) =>
 				<div key={beer.beerName} className="brewery-beers">
     				<img className="beer-label" src={beer.beerLabel} role="presentation" />
                     <div className="beer-info">
