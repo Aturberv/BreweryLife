@@ -63,8 +63,6 @@ class RideButton extends Component {
 
     render() {
         const { isMobile, userCoordinates } = this.props; 
-        console.log(isMobile)
-        console.log(userCoordinates)
         return (
             <div className="ride-button">
                 <div>
