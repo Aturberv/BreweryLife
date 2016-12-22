@@ -1,3 +1,9 @@
 .brewery-pin {
     cursor: pointer;
 }
+
+.brewery-logo {
+	border-radius: 50%;
+	width: auto;
+	height: 25px;
+}
