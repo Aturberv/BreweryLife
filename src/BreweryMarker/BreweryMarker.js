@@ -25,10 +25,16 @@ const BreweryMarker = ({
           </div>
         </div>
         ) : (
+        <div>
+          <div>
+            Yelp:
+            <StarRating rating={0} />
+          </div>
           <div>
             Google:
             <StarRating rating={ brewery.googleRating } />
-          </div>        
+          </div>
+        </div>        
       )}
       </Popover>
     );
@@ -39,8 +45,10 @@ const BreweryMarker = ({
           <OverlayTrigger trigger={['hover', 'focus']} 
                           placement="top" 
                           overlay={popoverHoverFocus}>
-           <img src={require('../images/beer_pin-3.png')} 
-                role="presentation" />
+            <img
+              className="brewery-logo" 
+              src={brewery.breweryLogo ? brewery.breweryLogo : require('../images/beer_pin-3.png')} 
+              role="presentation" />
           </OverlayTrigger>
         </div>
       </Link>
