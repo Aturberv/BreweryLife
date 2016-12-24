@@ -11,8 +11,9 @@ $growSize = 2
 
 .brew-image-tile__image {
 	width: auto;
-	height: 400px;
-	max-height: 400px;
+	height: auto;
+  max-width: 90vw;
+	max-height: 85vh;
 }
 
 .brew-image-row {
