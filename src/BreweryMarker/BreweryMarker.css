@@ -5,5 +5,6 @@
 .brewery-logo {
 	border-radius: 50%;
 	width: auto;
-	height: 25px;
+	height: 30px;
+    box-shadow: 1px 1px 1px 1px #9fd2f6
 }

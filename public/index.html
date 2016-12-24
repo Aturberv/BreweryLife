@@ -11,15 +11,8 @@
     <link rel="apple-touch-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="160x160" href="/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-    <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "https://nycbrewerymap.com",
-      "logo": "https://nycbrewerymap.com/icon.png"
-    }
+    <script type="application/ld+json">{"@context": "http://schema.org","@type": "Organization","url": "https://nycbrewerymap.com","logo": "https://nycbrewerymap.com/icon.png"}
     </script>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js" async defer></script>
     <script>
       window.ButtonWebConfig = {
         applicationId: 'app-760d46b2c04938db'
@@ -31,11 +24,11 @@
   </head>
   <body>
     <div id="root"></div>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js" crossorigin="anonymous"></script>
     <script>
       Raven.config('https://c56bf372c3244e089766fb089d1fb85a@sentry.io/122382', 
         {whitelistUrls: [/https:\/\/nycbrewerymap\.com.*/]}).install()
     </script>
-    <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"
-    crossorigin="anonymous"></script>
   </body>
 </html>
