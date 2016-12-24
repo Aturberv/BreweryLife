@@ -1,5 +1,5 @@
 import React from 'react';
-import {Icon} from 'react-fa';
+import Icon from 'react-fa';
 
 import './BrewerySocial.css';
 
@@ -16,7 +16,7 @@ const BrewerySocial = ({ social }) => {
 			<span>
 			{
 			Object.keys(social).map((key) =>
-				<a href={social[key]} key={key}>
+				<a href={social[key]} key={key} target="_blank">
 					<Icon className="social-icon" name={ socialIcons[key] } size='2x' />
 				</a>
 				)
