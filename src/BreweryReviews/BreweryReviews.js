@@ -6,7 +6,7 @@ const BreweryReviews = ({ reviews }) => {
 	return(
        <div className="brew-reviews-container">
           <div className="brew-reviews-header">
-            <h3>Reviews</h3>
+            <center><h3>Reviews</h3></center>
           </div>
           <div className="brewery-reviews">
        	    {
