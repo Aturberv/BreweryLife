@@ -6,6 +6,7 @@ function cleanup {
 }
 trap cleanup EXIT
 
+rm -rf ssr
 mkdir -p ssr
 
 npm run generate-sitemap
@@ -22,4 +23,3 @@ aws s3 sync build/ s3://nycbrewerymap/ --content-encoding 'gzip' --cache-control
 aws s3 sync ssr/ s3://nycbrewerymap/ --content-type 'text/html' --content-encoding 'gzip' --cache-control max-age=172800
 aws configure set preview.cloudfront true
 aws cloudfront create-invalidation --distribution-id E3N8Q7PC3NRSYR --paths "/*"
-rm -rf ssr/ build/
