@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './App/App';
 import BreweryPage from './BreweryPage/BreweryPage';
 import { Router, Route, browserHistory } from 'react-router';
 import './index.css';
