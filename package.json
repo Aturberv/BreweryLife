@@ -35,8 +35,8 @@
     "yelp": "^1.0.1"
   },
   "scripts": {
-    "generate-sitemap": "node generate-sitemap.js",
-    "update-breweries": "node update-breweries.js",
+    "generate-sitemap": "node deploy/generate-sitemap.js",
+    "update-breweries": "node deploy/update-breweries.js",
     "server": "node deploy/server.js &",
     "scrape": "node deploy/scraper.js",
     "deploy": "./deploy/deploy.sh",
