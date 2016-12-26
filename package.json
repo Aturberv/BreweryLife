@@ -2,7 +2,7 @@
   "name": "nyc-beer-map",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nycbrewerymap.com",
+  "homepage": "https://nycbrewerymap.com/",
   "devDependencies": {
     "chromedriver": "^2.26.1",
     "coveralls": "^2.11.15",
@@ -37,6 +37,8 @@
   "scripts": {
     "generate-sitemap": "node generate-sitemap.js",
     "update-breweries": "node update-breweries.js",
+    "server": "node deploy/server.js &",
+    "scrape": "node deploy/scraper.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
