@@ -12,3 +12,5 @@ http.createServer(function (request, response) {
         }        
     }).resume();
 }).listen(8080);
+
+console.log('Running static server for build/ directory on port 8080');
