@@ -39,6 +39,7 @@
     "update-breweries": "node update-breweries.js",
     "server": "node deploy/server.js &",
     "scrape": "node deploy/scraper.js",
+    "deploy": "./deploy/deploy.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
