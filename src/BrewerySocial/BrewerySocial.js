@@ -8,7 +8,10 @@ const BrewerySocial = ({ social }) => {
 		"facebook": "facebook",
 		"twitter": "twitter",
 		"instagram": "instagram",
-		"website": "globe"
+		"website": "globe",
+		"untappd": "beer",
+		"yelp": "yelp",
+		"google": "google"
 	}
 
 	return (

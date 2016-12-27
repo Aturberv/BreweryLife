@@ -30,7 +30,7 @@ const BreweryPage = (
                 <h2 className="brewery-name">{brewery.name}</h2>
                 <center>
                     <BrewerySocial social={brewery.social} />
-                    <BreweryRating brewery={brewery} />
+                    <BreweryRating ratings={brewery.breweryRating} />
                 </center>
             </div>
             <RideButton breweryName={brewery.name} 
