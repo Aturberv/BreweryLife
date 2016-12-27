@@ -37,6 +37,7 @@ function generateBrewery(brewery, completeCallback) {
     brewery.reviews = []; // reset reviews
     brewery.photos = []; // reset photos
     brewery.beers = []; // reset beers
+    brewery.breweryRating = {};
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
@@ -63,8 +64,10 @@ function yelpQuery(brewery) {
 function parseYelpResponse(business) {
     if (business) {
         return {
-            yelpRating: business.rating,
-            yelpNumReviews: business.review_count,
+            yelp: business.rating ? {
+                rating: business.rating,
+                reviewCount: business.review_count
+            } : {},
             phone: business.display_phone,
             reviews: business.reviews ? business.reviews.map(function(review){
                 return {
@@ -90,7 +93,10 @@ function parseGooglePlacesResponse(response) {
         var place = response.json.result;
         var photoUrls = []
         var result = {
-            googleRating: place.rating,
+            google: place.rating ? {
+                rating: place.rating,
+                reviewCount: 0
+            } : {},
             googleUrl: place.url,
             location: place.geometry.location,
             reviews: place.reviews ? place.reviews.map(function(review){
@@ -128,7 +134,10 @@ function parseUntappdResponse(response) {
     var socialObj = brewery.contact;
     var result = {
         name: brewery.brewery_name,
-        untappdRating: brewery.rating.rating_score,
+        untappd: brewery.rating.rating_score ? {
+            rating: brewery.rating.rating_score,
+            reviewCount: 0
+        } : {},
         breweryDescription: brewery.brewery_description,
         breweryLogo: brewery.brewery_label,
         social: {
@@ -170,9 +179,14 @@ function joinBreweryWithResponse(brewery, response) {
     // join reviews and photos together
     if(response.reviews) response.reviews = response.reviews.concat(brewery.reviews);
     if(response.photos) response.photos = response.photos.concat(brewery.photos);
+    if(response.yelp) brewery.breweryRating['yelp'] = response.yelp;
+    delete response.yelp
+    if(response.google) brewery.breweryRating['google'] = response.google;
+    delete response.google
+    if(response.untappd) brewery.breweryRating['untappd'] = response.untappd;
+    delete response.untappd
     return extend(brewery, response);
 }
-
 
 function appendFinalBrewery(brewery) {
     // we use the brewery names for routing, so get rid of whitespace

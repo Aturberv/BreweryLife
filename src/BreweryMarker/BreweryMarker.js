@@ -10,7 +10,7 @@ const BreweryMarker = ({
 }) => {
   const popoverHoverFocus = (
       <Popover id="popover-trigger-hover-focus" title={brewery.name}>
-        <BreweryRating brewery={brewery} />
+        <BreweryRating ratings={brewery.breweryRating} />
       </Popover>
     );
 
