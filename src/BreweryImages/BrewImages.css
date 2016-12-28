@@ -7,6 +7,8 @@ $growSize = 2
   	min-height: 100vh;
     max-height: 100vh;
   	width: 100%;
+    overflow-x: scroll;
+    overflow: -moz-scrollbars-horizontal;
 }
 
 .brew-image-tile__image {
@@ -22,7 +24,8 @@ $growSize = 2
     display: flex;
     flex-direction: row;
     align-items: center;
-  	overflow: scroll;
+  	overflow-x: scroll;
+    overflow: -moz-scrollbars-horizontal;
   	-webkit-overflow-scrolling: touch;
   	width: 100%;
 }
