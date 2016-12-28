@@ -59,10 +59,12 @@ function yelpQuery(brewery) {
 function parseYelpResponse(business) {
     if (business) {
         return {
-            yelp: business.rating ? {
-                rating: business.rating,
-                reviewCount: business.review_count
-            } : {},
+            breweryRating: {
+                yelp: business.rating ? {
+                    rating: business.rating,
+                    reviewCount: business.review_count
+                } : {}
+            },
             phone: business.display_phone,
             reviews: business.reviews ? business.reviews.map(function(review){
                 return {
@@ -88,10 +90,11 @@ function parseGooglePlacesResponse(response) {
         var place = response.json.result;
         var photoUrls = []
         var result = {
-            google: place.rating ? {
-                rating: place.rating,
-                reviewCount: 0
-            } : {},
+            breweryRating: {
+                google: place.rating ? {
+                    rating: place.rating,
+                } : {}
+            },
             googleUrl: place.url,
             location: place.geometry.location,
             reviews: place.reviews ? place.reviews.map(function(review){
@@ -129,10 +132,11 @@ function parseUntappdResponse(response) {
     var socialObj = brewery.contact;
     var result = {
         name: brewery.brewery_name,
-        untappd: brewery.rating.rating_score ? {
-            rating: brewery.rating.rating_score,
-            reviewCount: 0
-        } : {},
+        breweryRating: {
+            untappd: brewery.rating.rating_score ? {
+                rating: brewery.rating.rating_score,
+            } : {}
+        },
         breweryDescription: brewery.brewery_description,
         breweryLogo: brewery.brewery_label,
         social: {
@@ -174,12 +178,10 @@ function joinBreweryWithResponse(brewery, response) {
     // join reviews and photos together
     if(response.reviews) response.reviews = response.reviews.concat(brewery.reviews);
     if(response.photos) response.photos = response.photos.concat(brewery.photos);
-    if(response.yelp) brewery.breweryRating['yelp'] = response.yelp;
-    delete response.yelp
-    if(response.google) brewery.breweryRating['google'] = response.google;
-    delete response.google
-    if(response.untappd) brewery.breweryRating['untappd'] = response.untappd;
-    delete response.untappd
+    if(response.breweryRating) Object.keys(response.breweryRating).map(function(key) {
+        brewery.breweryRating[key] = response.breweryRating[key]
+        delete response.breweryRating
+    })
     return extend(brewery, response);
 }
 
