@@ -1,4 +1,4 @@
-var breweries = require('./breweryIds.json');
+var breweries = require('../config.json').breweries;
 var fs = require('fs');
 require('chromedriver');
 const webdriver = require('selenium-webdriver');

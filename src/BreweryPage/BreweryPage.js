@@ -22,6 +22,9 @@ const BreweryPage = (
       <div className="breweryPage">
           <Helmet 
               title={ brewery.name }
+              meta={[
+                {name:"description", content:brewery.breweryDescription}
+              ]}
             />
             <div className="breweryPage-header">
                 <h2 className="brewery-name">{brewery.name}</h2>

@@ -1,0 +1,124 @@
+{
+    "url": "https://nycbrewerymap.com",
+    "title": "NYC Brewery Map",
+    "description": "NYC Brewery Map shows you ratings, reviews, and most importantly beers from breweries located in New York City.",
+    "keywords": "NYC, New York City, brewery, breweries, map, beer, brewery rating, brewery review, brewery beers, brewery tour, NYC breweries, Brooklyn breweries",
+    "mapCenter": {
+        "lat": 40.7132859,
+        "lng": -73.9285485
+    },
+    "breweries": {
+        "OtherHalfBrewing": {
+            "yelpBusinessId": "other-half-brewing-brooklyn",
+            "googlePlacesId": "ChIJyXHHyfZawokRm6SBxpOHUxY",
+            "untappdBreweryId": "94785"
+        },
+        "SingleCutBeersmiths" : {
+            "yelpBusinessId": "singlecut-beersmiths-astoria",
+            "googlePlacesId": "ChIJ65bqXmNfwokRn6lrddvisMI",
+            "untappdBreweryId": "16555"
+        },
+        "TheBronxBrewery": {
+            "yelpBusinessId": "the-bronx-brewery-bronx",
+            "googlePlacesId": "ChIJ-58gdd71wokR0j6VEtMh9ho",
+            "untappdBreweryId": "15784"
+        },
+        "ThreesBrewing": {
+            "yelpBusinessId": "threes-brewing-brooklyn",
+            "googlePlacesId": "ChIJ__u3R6tbwokRYMOym8O83H0",
+            "untappdBreweryId": "161808"
+        },
+        "LICBeerProject": {
+            "yelpBusinessId": "lic-beer-project-long-island-city",
+            "googlePlacesId": "ChIJ-yxNmdNYwokRcATW_K6TeII",
+            "untappdBreweryId": "201804"
+        },
+        "RockawayBrewingCompany": {
+            "yelpBusinessId": "rockaway-brewing-company-long-island-city",
+            "googlePlacesId": "ChIJufHAQSFZwokRLq1_oKmXu9c",
+            "untappdBreweryId": "47828"
+        },
+        "TransmitterBrewing": {
+            "yelpBusinessId": "transmitter-brewing-long-island-city",
+            "googlePlacesId": "ChIJHf11RTtZwokRUrBzv0lvNso",
+            "untappdBreweryId": "95893"
+        },
+        "StrongRopeBrewery": {
+            "yelpBusinessId": "strong-rope-brewery-brooklyn",
+            "googlePlacesId": "ChIJz-qzXFVawokRSaTFuJFd_bQ",
+            "untappdBreweryId": "239783"
+        },
+        "BrooklynBrewery": {
+            "yelpBusinessId": "the-brooklyn-brewery-brooklyn",
+            "googlePlacesId": "ChIJUaAuMl1ZwokRt0-S_ynnRtc",
+            "untappdBreweryId": "259"
+        },
+        "FlagshipBrewingCompany": {
+            "yelpBusinessId": "flagship-brewing-staten-island",
+            "googlePlacesId": "ChIJc9BA28xPwokRsBC_ry3kiYI",
+            "untappdBreweryId": "115902"
+        },
+        "ChelseaCraftBrewingCompany": {
+            "yelpBusinessId": "chelsea-craft-brewing-company-bronx-2",
+            "googlePlacesId": "ChIJNauApUL0wokRc_wz50mGCmg",
+            "untappdBreweryId": "374"
+        },
+        "BridgeandTunnelBrewery": {
+            "yelpBusinessId": "bridge-and-tunnel-brewery-ridgewood",
+            "googlePlacesId": "ChIJQzE0zjpcwokRB9nr5utX66g",
+            "untappdBreweryId": "44260"
+        },
+        "SixpointBrewery": {
+            "yelpBusinessId": "sixpoint-brewery-brooklyn",
+            "googlePlacesId": "ChIJm9GgGIxawokRXI9IjgXT4vE",
+            "untappdBreweryId": "1149"
+        },
+        "FinbackBrewery": {
+            "yelpBusinessId": "finback-brewery-ridgewood",
+            "googlePlacesId": "ChIJrfWZEXFewokR376UoCVzBG4",
+            "untappdBreweryId": "52099"
+        },
+        "AlphabetCityBrewingCompany": {
+            "googlePlacesId": "ChIJWaWbwHlZwokRj1wHkvB84zE",
+            "untappdBreweryId": "22243"
+        },
+        "GrimmArtisanalAles": {
+            "untappdBreweryId": "72844",
+            "location": {
+                "lat": 40.6633343,
+                "lng": -73.9680493,
+                "valid": false
+            }
+        },
+        "BravenBrewingCompany": {
+            "untappdBreweryId": "114457",
+            "location": {
+                "lat": 40.6959384,
+                "lng": -73.9169584,
+                "valid": false
+            }
+        },
+        "KingsCountyBrewersCollective": {
+            "googlePlacesId": "ChIJb6ZVSB1cwokRES6FZ2WAMAA",
+            "yelpBusinessId": "kings-county-brewers-collective-brooklyn",
+            "untappdBreweryId": "167520"
+        },
+        "OriginalSin": {
+            "untappdBreweryId": "6200",
+            "googlePlacesId": "ChIJPQtICZlZwokR1EGsTnHz1PM"
+        },
+        "RuckusBrewingCompany": {
+            "untappdBreweryId": "179069",
+            "location": {
+                "lat": 40.7527107,
+                "lng": -73.9942639,
+                "valid": false
+            }
+        },
+        "BigAliceBrewingCompany": {
+            "yelpBusinessId": "big-alice-brewing-long-island-city",
+            "googlePlacesId": "ChIJh9-J99hYwokRxc9AgwkG1Io",
+            "untappdBreweryId": "49805"
+        }
+    }
+}
