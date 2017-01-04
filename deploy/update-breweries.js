@@ -1,4 +1,4 @@
-var breweryIds = require('./breweryIds.json');
+var breweries = require('../config.json').breweries;
 var URL = require('url');
 var Yelp = require('yelp');
 var GoogleMaps = require('@google/maps');
@@ -20,18 +20,13 @@ var googleMaps = GoogleMaps.createClient({
     Promise: Promise
 })
 
-var debug = false;
-
-var untappd = new UntappdClient(debug);
-var clientId = process.env.UNTAPPD_CLIENT_ID
-var clientSecret = process.env.UNTAPPD_CLIENT_SECRET
-
-untappd.setClientId(clientId)
-untappd.setClientSecret(clientSecret)
+var untappd = new UntappdClient(false);
+untappd.setClientId(process.env.UNTAPPD_CLIENT_ID)
+untappd.setClientSecret(process.env.UNTAPPD_CLIENT_SECRET)
 
 var finalBreweriesList = {};
 
-async.forEach(breweryIds, generateBrewery, writeFinalBreweryJson);
+async.forEach(breweries, generateBrewery, writeFinalBreweryJson);
 
 function generateBrewery(brewery, completeCallback) {
     brewery.reviews = []; // reset reviews

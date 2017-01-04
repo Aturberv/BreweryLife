@@ -39,6 +39,7 @@
     "update-breweries": "node deploy/update-breweries.js",
     "server": "node deploy/server.js &",
     "scrape": "node deploy/scraper.js",
+    "clean": "rm -rf build ssr node_modules coverage",
     "deploy": "./deploy/deploy.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
