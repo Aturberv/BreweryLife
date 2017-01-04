@@ -19,6 +19,7 @@
     "async": "^2.1.4",
     "autobind-decorator": "^1.3.4",
     "extend": "^3.0.0",
+    "foursquarevenues": "^2.0.0",
     "google-map-react": "^0.22.0",
     "node-untappd": "^0.4.1",
     "react": "^15.4.1",
