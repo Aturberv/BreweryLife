@@ -24,6 +24,11 @@ var untappd = new UntappdClient(false);
 untappd.setClientId(process.env.UNTAPPD_CLIENT_ID)
 untappd.setClientSecret(process.env.UNTAPPD_CLIENT_SECRET)
 
+var foursquareClientId = process.env.FOURSQ_CLIENT_ID
+var foursquareClientSecret = process.env.FOURSQ_CLIENT_SECRET
+
+var foursquare = (require('foursquarevenues'))(foursquareClientId, foursquareClientSecret)
+
 var finalBreweriesList = {};
 
 async.forEach(breweries, generateBrewery, writeFinalBreweryJson);
@@ -42,6 +47,8 @@ function generateBrewery(brewery, completeCallback) {
         .then(queryUntappd)
         .then(parseUntappdResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
+        .then(foursquareQuery)
+        .then(parseFoursquareResponse)
         .then(appendFinalBrewery)
         .then(completeCallback)
         .catch(console.error)
@@ -168,6 +175,18 @@ function parseUntappdResponse(response) {
     return result;
  }
 
+ function foursquareQuery(brewery, callback) {
+    foursquare.getVenue(brewery.foursquareVenueId, function(error, venue){
+        if(!error) {
+            console.log(venue)
+        }
+    })
+ }
+
+function parseFoursquareResponse(response) {
+    console.log(response)
+}
+
 function writeFinalBreweryJson() {
     console.log(finalBreweriesList);
     fs.writeFile('./src/breweries.json', JSON.stringify(finalBreweriesList, null, 4));
@@ -178,10 +197,10 @@ function joinBreweryWithResponse(brewery, response) {
     // join reviews and photos together
     if(response.reviews) response.reviews = response.reviews.concat(brewery.reviews);
     if(response.photos) response.photos = response.photos.concat(brewery.photos);
-    if(response.breweryRating) Object.keys(response.breweryRating).map(function(key) {
+    if(response.breweryRating) 
+        var key = Object.keys(response.breweryRating)
         brewery.breweryRating[key] = response.breweryRating[key]
         delete response.breweryRating
-    })
     return extend(brewery, response);
 }
 
