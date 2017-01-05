@@ -6,7 +6,8 @@ import './BreweryMarker.css';
 
 const BreweryMarker = ({
   brewery,
-  breweryKey
+  breweryKey,
+  city
 }) => {
   const popoverHoverFocus = (
       <Popover id="popover-trigger-hover-focus" title={brewery.name}>
@@ -15,7 +16,7 @@ const BreweryMarker = ({
     );
 
     return (
-      <Link to={`/${breweryKey}`}>
+      <Link to={`${city}/${breweryKey}`}>
         <div className="brewery-pin">
           <OverlayTrigger trigger={['hover', 'focus']} 
                           placement="top" 

@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import BreweryMarker from '../BreweryMarker/BreweryMarker';
 import BreweryPage from '../BreweryPage/BreweryPage';
 import {geolocated} from 'react-geolocated';
-import Breweries from '../breweries.json';
+import Cities from '../breweries.json';
 import ReactGA from 'react-ga';
 import Helmet from 'react-helmet';
 import config from '../../config.json';
@@ -18,15 +18,16 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    autoBind(this)
+    autoBind(this);
+    console.log()
     this.state = {
-      breweries: Breweries,
+      breweries: Cities[props.params.city],
       defaultCenter: {lat: 40.7132859, lng: -73.9285485}
     }
-    ReactGA.pageview('/');
   }
 
   componentWillMount(){
+    ReactGA.initialize('UA-88592303-1');
     window.ButtonWebConfig = {
       applicationId: 'app-760d46b2c04938db'
     };
@@ -35,35 +36,35 @@ class App extends Component {
 
   breweryNameFilter(breweryKeys) {
     if (breweryKeys.length === 0) {
-      this.setState({breweries: Breweries});
-      this.props.router.push('/');
+      this.setState({breweries: Cities[this.props.params.city]});
+      this.props.router.push(`'/${this.props.params.city}`);
     } else if (breweryKeys.length === 1) {
-        this.props.router.push(`/${breweryKeys[0]}`)
+        this.props.router.push(`${this.props.params.city}/${breweryKeys[0]}`)
     } else {
       this.setState({
-        breweries: Object.keys(Breweries).reduce((result, key) => {
+        breweries: Object.keys(Cities[this.props.params.city]).reduce((result, key) => {
           if(breweryKeys.indexOf(key) > -1) {
-            result[key] = Breweries[key]
+            result[key] = Cities[this.props.params.city][key]
           }
           return result
         }, {})
       });
-      this.props.router.push('/');
+      this.props.router.push(`'/${this.props.params.city}`);
     }
   }
 
   beerTypeFilter(beerTypes) {
     if (beerTypes.length === 0) {
-      this.setState({breweries: Breweries});
+      this.setState({breweries: Cities[this.props.params.city]});
     } else {
       this.setState({
-        breweries: Object.keys(Breweries).reduce((result, key) => {
+        breweries: Object.keys(Cities[this.props.params.city]).reduce((result, key) => {
           const intersection = new Set(
-              Breweries[key].beerTypes
+              Cities[this.props.params.city][key].beerTypes
               .filter(type => beerTypes.indexOf(type) > -1))
           // we matched on all desired filters
           if(intersection.size === beerTypes.length) {
-            result[key] = Breweries[key];
+            result[key] = Cities[this.props.params.city][key];
           }
           return result;
         }, {})
@@ -72,11 +73,11 @@ class App extends Component {
   }
 
   ratingFilter(ratingEvent) {
-    this.props.router.push('/');
+    this.props.router.push(this.props.params.city);
     this.setState({
-      breweries: Object.keys(Breweries).reduce((result, key) => {
-        if(Breweries[key].yelpRating >= ratingEvent) {
-          result[key] = Breweries[key];
+      breweries: Object.keys(Cities[this.props.params.city]).reduce((result, key) => {
+        if(Cities[this.props.params.city][key].yelpRating >= ratingEvent) {
+          result[key] = Cities[this.props.params.city][key];
         }
         return result;
       }, {})
@@ -84,16 +85,29 @@ class App extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if(this.props.params.city !== nextProps.params.city) {
+      this.setState({
+        breweries: Cities[nextProps.params.city]
+      })
+    }
+
     if(this.props.location.pathname !== nextProps.location.pathname) {
       ReactGA.pageview(nextProps.location.pathname)
     }
   }
 
   render() {
-    // this is set by the URL
-    const { breweryKey } = this.props.params;
-    const { pathname } = this.props.location;
-    const { coords } = this.props;
+    const {
+      params: {
+        city,
+        breweryKey
+      },
+      location: {
+        pathname
+      },
+      coords
+    } = this.props;
+
     const currentUrl = `${config.url}${pathname}`;
     const favIcon = `${config.url}/favicon.ico`;
     return (
@@ -102,8 +116,8 @@ class App extends Component {
           defaultTitle="NYC Brewery Map"
           titleTemplate="%s - NYC Brewery Map"
           meta={[
-            {name: "description", content: config.description},
-            {name: "keywords", content: config.keywords},
+            {name: "description", content: config.cities[city].description},
+            {name: "keywords", content: config.cities[city].keywords},
             {}
           ]}
           link={[
@@ -122,9 +136,13 @@ class App extends Component {
         <Header breweryNameFilter={this.breweryNameFilter}
                 beerTypeFilter={this.beerTypeFilter}
                 ratingFilter={this.ratingFilter}
-                breweryKey={ breweryKey }/>
+                breweryKey={ breweryKey }
+                city={ city }
+                allCities={ config.cities }
+                breweries={ Cities[city] }
+        />
         {
-          breweryKey && <BreweryPage brewery={ Breweries[breweryKey] }
+          breweryKey && <BreweryPage brewery={ Cities[this.props.params.city][breweryKey] }
                                      isMobile={ isMobile }
                                      userCoordinates={ coords }/>
         }
@@ -132,16 +150,19 @@ class App extends Component {
           <GoogleMap
             bootstrapURLKeys={{ key: API_KEY, language: 'en' }}
             defaultCenter={ this.state.defaultCenter }
+            center={ config.cities[city].map.center}
+            zoom={ config.cities[city].map.zoom }
             defaultZoom={ 12 }
           >
           {
             Object.keys(this.state.breweries).map((breweryKey) =>
                 <BreweryMarker
+                   city={ city }
                    key={ breweryKey }
-                   lat={ Breweries[breweryKey].location.lat }
-                   lng={ Breweries[breweryKey].location.lng }
+                   lat={ Cities[this.props.params.city][breweryKey].location.lat }
+                   lng={ Cities[this.props.params.city][breweryKey].location.lng }
                    breweryKey={ breweryKey }
-                   brewery={ Breweries[breweryKey] }
+                   brewery={ Cities[this.props.params.city][breweryKey] }
                 />
             )
           }
@@ -154,6 +175,8 @@ class App extends Component {
 
 
 if(isMobile) {
+    // can we figure out what city
+    // based on their location?
     App = geolocated({
         positionOptions: {
             enableHighAccuracy: false
