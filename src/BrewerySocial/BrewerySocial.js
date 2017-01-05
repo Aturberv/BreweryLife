@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from 'react-fa';
-import socialIcons from '../../config/base.json'
+import config from '../../config.json'
 import './BrewerySocial.css';
 
 const BrewerySocial = ({ social }) => {
@@ -10,7 +10,7 @@ const BrewerySocial = ({ social }) => {
 			{
 			Object.keys(social).map((key) =>
 				<a href={social[key]} key={key} target="_blank">
-					<Icon className="social-icon" name={ socialIcons.socialIcons[key] } size='2x' />
+					<Icon className="social-icon" name={ config.socialIcons[key] } size='2x' />
 				</a>
 				)
 			}

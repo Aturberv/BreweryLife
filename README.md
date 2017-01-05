@@ -44,6 +44,12 @@ UNTAPPD_CLIENT_ID
 UNTAPPD_CLIENT_SECRET
 ```
 
+### Foursquare
+```
+FOURSQ_CLIENT_ID
+FOURSQ_CLIENT_SECRET
+```
+
 ## Update Breweries
 
 Our brewery data is aggregated from a number of different sources. It utilizes the hand picked breweries in `breweryIds.json` file to generate `src/breweries.json`. 
