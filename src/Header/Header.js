@@ -9,18 +9,11 @@ import Icon from 'antd/lib/icon';
 import 'antd/lib/icon/style/css';
 import Slider from 'antd/lib/slider';
 import 'antd/lib/slider/style/css';
-import Breweries from '../breweries.json';
+import Dropdown from 'antd/lib/dropdown';
+import 'antd/lib/dropdown/style/css';
+import Menu from 'antd/lib/menu';
+import 'antd/lib/menu/style/css';
 import './Header.css';
-
-const uniqueBeerTypes = Object.keys(Breweries).reduce((result, key) => {
-    return [...new Set(result.concat(Breweries[key].beerTypes))];
-}, []).sort((a, b) =>
-    a.toLowerCase() < b.toLowerCase() ? 
-        -1 : 
-    (a.toLowerCase() > b.toLowerCase()) ? 
-        1 : 
-        0
-);
 
 class Header extends Component {
 
@@ -61,81 +54,121 @@ class Header extends Component {
     }
 
 
+    uniqueBeerTypes(breweries) {
+        return Object.keys(breweries).reduce((result, key) => {
+            return [...new Set(result.concat(breweries[key].beerTypes))];
+        }, []).sort((a, b) =>
+            a.toLowerCase() < b.toLowerCase() ? 
+                -1 : 
+            (a.toLowerCase() > b.toLowerCase()) ? 
+                1 : 
+                0
+        );
+    }
+
+
 
     render() {
-        const { breweryKey } = this.props;
+        const { breweries, breweryKey, allCities, city } = this.props;
         return (
             <Navbar>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        {
-                            breweryKey ?
-                                (
-                                    <Link to={{
-                                        pathname: '/',
-                                        state: { breweryKey: null}
-                                    }}>
-                                        <Icon type="left"/> Map
-                                    </Link>
-                                )
-                            :
-                                "NYC Brewery Map"
-                        }
-                    </Navbar.Brand>
-                    <Navbar.Toggle/>
-                </Navbar.Header>
+                <Row>
+                    <Col xs={12} sm={3}>
+                        <Navbar.Header>
+                            <Navbar.Brand>
+                                {
+                                    breweryKey ?
+                                        (
+                                            <Link to={{
+                                                pathname: `/${city}`,
+                                                state: { breweryKey: null}
+                                            }}>
+                                                <Icon type="left"/> Map
+                                            </Link>
+                                        )
+                                    :
+                                        `${allCities[city].name} Brewery Map`
+                                }
+                            </Navbar.Brand>
+                            <Navbar.Toggle/>
+                        </Navbar.Header>
+                    </Col>
                 <Navbar.Collapse>
-                        <Row>
-                            <Col xs={12} sm={3}>
-                                <div className="nav-element">
-                                    <Select multiple
-                                            dropdownMatchSelectWidth={false}
-                                            placeholder="Brewery Name"
-                                            filterOption={this.caseInsensitiveSearch}
-                                            onChange={this.breweryNameFilter}
-                                            style={{width:'100%'}}
-                                            value={this.state.breweryNamesSelected}>
-                                        {
-                                            Object.keys(Breweries).map((key) =>
-                                                <Select.Option key={key}>{ Breweries[key].name }</Select.Option>
-                                            )
-                                        }
-                                    </Select>
+                    <Col xs={12} sm={3}>
+                        <div className="nav-element">
+                            <Select multiple
+                                    dropdownMatchSelectWidth={false}
+                                    placeholder="Brewery Name"
+                                    filterOption={this.caseInsensitiveSearch}
+                                    onChange={this.breweryNameFilter}
+                                    style={{width:'100%'}}
+                                    value={this.state.breweryNamesSelected}>
+                                {
+                                    Object.keys(breweries).map((key) =>
+                                        <Select.Option key={key}>{ breweries[key].name }</Select.Option>
+                                    )
+                                }
+                            </Select>
+                        </div>
+                    </Col>
+                    <Col xs={12} sm={3}>
+                        <div className="nav-element">
+                            <div>
+                                <Slider onChange={ this.ratingFilter }
+                                        max={ 5 }
+                                        step={ .1 }
+                                        defaultValue={ 3 }
+                                />
+                                <div className="rating">
+                                    Rating
                                 </div>
-                            </Col>
-                            <Col xs={12} sm={3}>
-                                <div className="nav-element">
-                                    <div>
-                                        <Slider onChange={ this.ratingFilter }
-                                                max={ 5 }
-                                                step={ .1 }
-                                                defaultValue={ 3 }
-                                        />
-                                        <div className="rating">
-                                            Rating
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                            <Col xs={12} sm={3}>
-                                <div className="nav-element">
-                                    <Select multiple
-                                            dropdownMatchSelectWidth={false}
-                                            placeholder="Type of Beer"
-                                            filterOption={this.caseInsensitiveSearch}
-                                            onChange={this.beerTypeFilter}
-                                            style={{width:'100%'}}
-                                            value={this.state.beerTypesSelected}>
-                                        {
-                                            uniqueBeerTypes.map((type) =>
-                                                <Select.Option key={type}>{ type }</Select.Option>
-                                            )
-                                        }
-                                    </Select>
-                                </div>
-                            </Col>
-                        </Row>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col xs={12} sm={2}>
+                        <div className="nav-element">
+                            <Select multiple
+                                    dropdownMatchSelectWidth={false}
+                                    placeholder="Type of Beer"
+                                    filterOption={this.caseInsensitiveSearch}
+                                    onChange={this.beerTypeFilter}
+                                    style={{width:'100%'}}
+                                    value={this.state.beerTypesSelected}>
+                                    {
+                                        this.uniqueBeerTypes(breweries).map((type) =>
+                                            <Select.Option key={type}>{ type }</Select.Option>
+                                        )
+                                    }
+                            </Select>
+                        </div>
+                    </Col>
+                    <Col xs={12} sm={1}>
+                        <div className="nav-element">
+                            <Dropdown overlay={
+                                <Menu>
+                                    {
+                                        Object.keys(allCities).map((city) =>
+                                            <Menu.Item key={city}>
+                                                <Link to={{
+                                                    pathname: `/${city}`,
+                                                    state: { breweryKey: null}
+                                                }}>
+                                                    {allCities[city].name}
+                                                </Link>
+                                            </Menu.Item>
+                                        )
+                                    }
+                                </Menu>
+                            }
+                            >
+                                <a className="ant-dropdown-link">
+                                    Cities
+                                </a>
+                            </Dropdown>
+                        </div>
+                    </Col>
                 </Navbar.Collapse>
+                </Row>
             </Navbar>
         );
     }

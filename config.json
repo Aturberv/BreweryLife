@@ -1,12 +1,5 @@
 {
     "url": "https://nycbrewerymap.com",
-    "title": "NYC Brewery Map",
-    "description": "NYC Brewery Map shows you ratings, reviews, and most importantly beers from breweries located in New York City.",
-    "keywords": "NYC, New York City, brewery, breweries, map, beer, brewery rating, brewery review, brewery beers, brewery tour, NYC breweries, Brooklyn breweries",
-    "mapCenter": {
-        "lat": 40.7132859,
-        "lng": -73.9285485
-    },
     "socialIcons": {
         "facebook": "facebook",
         "twitter": "twitter",
@@ -17,133 +10,171 @@
         "google": "google",
         "foursquare": "foursquare"
     },
-    "breweries": {
-        "OtherHalfBrewingCompany": {
-            "yelpBusinessId": "other-half-brewing-brooklyn",
-            "googlePlacesId": "ChIJyXHHyfZawokRm6SBxpOHUxY",
-            "untappdBreweryId": "94785",
-            "foursquareVenueId": "52eab90a498ee70cbe1ee103"
-        },
-        "SingleCutBeersmiths" : {
-            "yelpBusinessId": "singlecut-beersmiths-astoria",
-            "googlePlacesId": "ChIJ65bqXmNfwokRn6lrddvisMI",
-            "untappdBreweryId": "16555"
-        },
-        "TheBronxBrewery": {
-            "yelpBusinessId": "the-bronx-brewery-bronx",
-            "googlePlacesId": "ChIJ-58gdd71wokR0j6VEtMh9ho",
-            "untappdBreweryId": "15784",
-            "foursquareVenueId": "5151c128e4b026975853f870"
-        },
-        "ThreesBrewing": {
-            "yelpBusinessId": "threes-brewing-brooklyn",
-            "googlePlacesId": "ChIJ__u3R6tbwokRYMOym8O83H0",
-            "untappdBreweryId": "161808",
-            "foursquareVenueId": "5414d0a6498ea3d31a3c64cf"
-        },
-        "LICBeerProject": {
-            "yelpBusinessId": "lic-beer-project-long-island-city",
-            "googlePlacesId": "ChIJ-yxNmdNYwokRcATW_K6TeII",
-            "untappdBreweryId": "201804",
-            "foursquareVenueId": "5557b7a5498e14df4df7be8b"
-        },
-        "RockawayBrewingCompany": {
-            "yelpBusinessId": "rockaway-brewing-company-long-island-city",
-            "googlePlacesId": "ChIJufHAQSFZwokRLq1_oKmXu9c",
-            "untappdBreweryId": "47828",
-            "foursquareVenueId": "50244fd4e4b065daa53e03b3"
-        },
-        "TransmitterBrewing": {
-            "yelpBusinessId": "transmitter-brewing-long-island-city",
-            "googlePlacesId": "ChIJHf11RTtZwokRUrBzv0lvNso",
-            "untappdBreweryId": "95893",
-            "foursquareVenueId": "5352bfbe498e9b9e93580aa8"
-        },
-        "StrongRopeBrewery": {
-            "yelpBusinessId": "strong-rope-brewery-brooklyn",
-            "googlePlacesId": "ChIJz-qzXFVawokRSaTFuJFd_bQ",
-            "untappdBreweryId": "239783",
-            "foursquareVenueId": "5650fce0498e405c38a9c6d2"
-        },
-        "BrooklynBrewery": {
-            "yelpBusinessId": "the-brooklyn-brewery-brooklyn",
-            "googlePlacesId": "ChIJUaAuMl1ZwokRt0-S_ynnRtc",
-            "untappdBreweryId": "259",
-            "foursquareVenueId": "3fd66200f964a5205deb1ee3"
-        },
-        "FlagshipBrewingCompany": {
-            "yelpBusinessId": "flagship-brewing-staten-island",
-            "googlePlacesId": "ChIJc9BA28xPwokRsBC_ry3kiYI",
-            "untappdBreweryId": "115902",
-            "foursquareVenueId": "53532ac911d296177f43b388"
-        },
-        "ChelseaCraftBrewingCompany": {
-            "yelpBusinessId": "chelsea-craft-brewing-company-bronx-2",
-            "googlePlacesId": "ChIJNauApUL0wokRc_wz50mGCmg",
-            "untappdBreweryId": "374",
-            "foursquareVenueId": "566c9a43498eefc064700409"
-        },
-        "BridgeandTunnelBrewery": {
-            "yelpBusinessId": "bridge-and-tunnel-brewery-ridgewood",
-            "googlePlacesId": "ChIJQzE0zjpcwokRB9nr5utX66g",
-            "untappdBreweryId": "44260",
-            "foursquareVenueId": "56476e54498e4a6343d062e6"
-        },
-        "SixpointBrewery": {
-            "yelpBusinessId": "sixpoint-brewery-brooklyn",
-            "googlePlacesId": "ChIJm9GgGIxawokRXI9IjgXT4vE",
-            "untappdBreweryId": "1149",
-            "foursquareVenueId": "4a33ed4bf964a5206d9b1fe3"
-        },
-        "FinbackBrewery": {
-            "yelpBusinessId": "finback-brewery-ridgewood",
-            "googlePlacesId": "ChIJrfWZEXFewokR376UoCVzBG4",
-            "untappdBreweryId": "52099",
-            "foursquareVenueId": "51be14eb50191405dec5b2ad"
-        },
-        "AlphabetCityBrewingCompany": {
-            "googlePlacesId": "ChIJWaWbwHlZwokRj1wHkvB84zE",
-            "untappdBreweryId": "22243"
-        },
-        "GrimmArtisanalAles": {
-            "untappdBreweryId": "72844",
-            "location": {
-                "lat": 40.6633343,
-                "lng": -73.9680493,
-                "valid": false
+    "cities": {
+        "boston": {
+            "name": "Boston",
+            "map": {
+                "center": {
+                    "lat": 42.3579443,
+                    "lng": -71.0790643
+                },
+                "zoom": 13
+                
             }
         },
-        "BravenBrewingCompany": {
-            "untappdBreweryId": "114457",
-            "location": {
-                "lat": 40.6959384,
-                "lng": -73.9169584,
-                "valid": false
+        "richmond": {
+            "name": "Richmond",
+            "map": {
+                "center": {
+                    "lat": 42.3579443,
+                    "lng": -71.0790643
+                },
+                "zoom": 13
+                
             }
         },
-        "KingsCountyBrewersCollective": {
-            "googlePlacesId": "ChIJb6ZVSB1cwokRES6FZ2WAMAA",
-            "yelpBusinessId": "kings-county-brewers-collective-brooklyn",
-            "untappdBreweryId": "167520",
-            "foursquareVenueId": "56f6cd56cd102dca40d553c9"
-        },
-        "OriginalSin": {
-            "untappdBreweryId": "6200",
-            "googlePlacesId": "ChIJPQtICZlZwokR1EGsTnHz1PM"
-        },
-        "RuckusBrewingCompany": {
-            "untappdBreweryId": "179069",
-            "location": {
-                "lat": 40.7527107,
-                "lng": -73.9942639,
-                "valid": false
+        "portland": {
+            "name": "Portland",
+            "map": {
+                "center": {
+                    "lat": 42.3579443,
+                    "lng": -71.0790643
+                },
+                "zoom": 13
+                
             }
         },
-        "BigAliceBrewingCompany": {
-            "yelpBusinessId": "big-alice-brewing-long-island-city",
-            "googlePlacesId": "ChIJh9-J99hYwokRxc9AgwkG1Io",
-            "untappdBreweryId": "49805",
-            "foursquareVenueId": "51bc99a6498e1757ec1d9148"
+        "austin": {
+            "name": "Austin",
+            "map": {
+                "center": {
+                    "lat": 42.3579443,
+                    "lng": -71.0790643
+                },
+                "zoom": 13
+                
+            }
+        },
+        "sf": {
+            "name": "San Francisco",
+            "map": {
+                "center": {
+                    "lat": 42.3579443,
+                    "lng": -71.0790643
+                },
+                "zoom": 13
+                
+            }
+        },
+        "nyc": {
+            "name": "New York City",
+            "title": "Brewery Map",
+            "description": "Brewery Map shows you ratings, reviews, and most importantly beers from breweries located in your city.",
+            "keywords": "NYC, New York City, brewery, breweries, map, beer, brewery rating, brewery review, brewery beers, brewery tour, NYC breweries, Brooklyn breweries",
+            "map":{
+                "center": {
+                    "lat": 40.7132859,
+                    "lng": -73.9285485
+                },
+                "zoom": 12
+            },
+            "breweries": {
+                "OtherHalfBrewingCompany": {
+                    "yelpBusinessId": "other-half-brewing-brooklyn",
+                    "googlePlacesId": "ChIJyXHHyfZawokRm6SBxpOHUxY",
+                    "untappdBreweryId": "94785",
+                    "foursquareVenueId": "52eab90a498ee70cbe1ee103"
+                },
+                "SingleCutBeersmiths" : {
+                    "yelpBusinessId": "singlecut-beersmiths-astoria",
+                    "googlePlacesId": "ChIJ65bqXmNfwokRn6lrddvisMI",
+                    "untappdBreweryId": "16555"
+                },
+                "TheBronxBrewery": {
+                    "yelpBusinessId": "the-bronx-brewery-bronx",
+                    "googlePlacesId": "ChIJ-58gdd71wokR0j6VEtMh9ho",
+                    "untappdBreweryId": "15784",
+                    "foursquareVenueId": "5151c128e4b026975853f870"
+                },
+                "ThreesBrewing": {
+                    "yelpBusinessId": "threes-brewing-brooklyn",
+                    "googlePlacesId": "ChIJ__u3R6tbwokRYMOym8O83H0",
+                    "untappdBreweryId": "161808",
+                    "foursquareVenueId": "5414d0a6498ea3d31a3c64cf"
+                },
+                "LICBeerProject": {
+                    "yelpBusinessId": "lic-beer-project-long-island-city",
+                    "googlePlacesId": "ChIJ-yxNmdNYwokRcATW_K6TeII",
+                    "untappdBreweryId": "201804",
+                    "foursquareVenueId": "5557b7a5498e14df4df7be8b"
+                },
+                "RockawayBrewingCompany": {
+                    "yelpBusinessId": "rockaway-brewing-company-long-island-city",
+                    "googlePlacesId": "ChIJufHAQSFZwokRLq1_oKmXu9c",
+                    "untappdBreweryId": "47828",
+                    "foursquareVenueId": "50244fd4e4b065daa53e03b3"
+                },
+                "TransmitterBrewing": {
+                    "yelpBusinessId": "transmitter-brewing-long-island-city",
+                    "googlePlacesId": "ChIJHf11RTtZwokRUrBzv0lvNso",
+                    "untappdBreweryId": "95893",
+                    "foursquareVenueId": "5352bfbe498e9b9e93580aa8"
+                },
+                "StrongRopeBrewery": {
+                    "yelpBusinessId": "strong-rope-brewery-brooklyn",
+                    "googlePlacesId": "ChIJz-qzXFVawokRSaTFuJFd_bQ",
+                    "untappdBreweryId": "239783",
+                    "foursquareVenueId": "5650fce0498e405c38a9c6d2"
+                },
+                "BrooklynBrewery": {
+                    "yelpBusinessId": "the-brooklyn-brewery-brooklyn",
+                    "googlePlacesId": "ChIJUaAuMl1ZwokRt0-S_ynnRtc",
+                    "untappdBreweryId": "259",
+                    "foursquareVenueId": "3fd66200f964a5205deb1ee3"
+                },
+                "FlagshipBrewingCompany": {
+                    "yelpBusinessId": "flagship-brewing-staten-island",
+                    "googlePlacesId": "ChIJc9BA28xPwokRsBC_ry3kiYI",
+                    "untappdBreweryId": "115902",
+                    "foursquareVenueId": "53532ac911d296177f43b388"
+                },
+                "ChelseaCraftBrewingCompany": {
+                    "yelpBusinessId": "chelsea-craft-brewing-company-bronx-2",
+                    "googlePlacesId": "ChIJNauApUL0wokRc_wz50mGCmg",
+                    "untappdBreweryId": "374",
+                    "foursquareVenueId": "566c9a43498eefc064700409"
+                },
+                "BridgeandTunnelBrewery": {
+                    "yelpBusinessId": "bridge-and-tunnel-brewery-ridgewood",
+                    "googlePlacesId": "ChIJQzE0zjpcwokRB9nr5utX66g",
+                    "untappdBreweryId": "44260",
+                    "foursquareVenueId": "56476e54498e4a6343d062e6"
+                },
+                "SixpointBrewery": {
+                    "yelpBusinessId": "sixpoint-brewery-brooklyn",
+                    "googlePlacesId": "ChIJm9GgGIxawokRXI9IjgXT4vE",
+                    "untappdBreweryId": "1149",
+                    "foursquareVenueId": "4a33ed4bf964a5206d9b1fe3"
+                },
+                "FinbackBrewery": {
+                    "yelpBusinessId": "finback-brewery-ridgewood",
+                    "googlePlacesId": "ChIJrfWZEXFewokR376UoCVzBG4",
+                    "untappdBreweryId": "52099",
+                    "foursquareVenueId": "51be14eb50191405dec5b2ad"
+                },
+                "AlphabetCityBrewingCompany": {
+                    "googlePlacesId": "ChIJWaWbwHlZwokRj1wHkvB84zE",
+                    "untappdBreweryId": "22243"
+                },
+                "GrimmArtisanalAles": {
+                    "untappdBreweryId": "72844",
+                    "location": {
+                        "lat": 40.6633343,
+                        "lng": -73.9680493,
+                        "valid": false
+                    }
+                }
+            }
         }
-    }
+    }    
 }

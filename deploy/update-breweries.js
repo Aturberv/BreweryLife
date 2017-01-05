@@ -1,4 +1,4 @@
-var breweries = require('../config.json').breweries;
+var config = require('../config.json');
 var URL = require('url');
 var Yelp = require('yelp');
 var GoogleMaps = require('@google/maps');
@@ -31,9 +31,18 @@ var foursquare = (require('foursquarevenues'))(foursquareClientId, foursquareCli
 
 var finalBreweriesList = {};
 
-async.forEach(breweries, generateBrewery, writeFinalBreweryJson);
+for(city in config.cities) {
+    finalBreweriesList[city] = {};
+    generateBreweriesForCity(config.cities[city].breweries, city);
+}
 
-function generateBrewery(brewery, completeCallback) {
+
+function generateBreweriesForCity(breweries, city) {
+    async.eachOf(breweries, generateBrewery.bind(this, city), writeFinalBreweryJson);    
+}
+
+
+function generateBrewery(city, brewery, breweryKey, completeCallback) {    
     brewery.reviews = []; // reset reviews
     brewery.photos = []; // reset photos
     brewery.beers = []; // reset beers
@@ -51,9 +60,11 @@ function generateBrewery(brewery, completeCallback) {
         .then(foursquareQuery)
         .then(parseFoursquareResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
-        .then(appendFinalBrewery)
+        .then(appendFinalBrewery.bind(this, city, breweryKey))
         .then(completeCallback)
-        .catch(console.error)
+        .catch(function(){
+            process.exit(1);
+        });
 }
 
 function yelpQuery(brewery) {
@@ -176,54 +187,60 @@ function parseUntappdResponse(response) {
 }
 
 function foursquareQuery(brewery) {
-    if(brewery.foursquareVenueId) {
-        return new Promise(function(resolve, reject){
-            foursquare.getVenue({'venue_id': brewery.foursquareVenueId}, function(error, venue){
-                if(error){
-                    console.log(error)
-                    reject(error);
-                } else {
-                    resolve(venue);
-                }
-            })
+    return new Promise(function(resolve, reject){
+        if(!brewery.foursquareVenueId) {
+            resolve(null);
+            return;
+        }
+
+        foursquare.getVenue({'venue_id': brewery.foursquareVenueId}, function(error, venue){
+            if(error){
+                console.log(error);
+                reject(error);
+            } else {
+                resolve(venue);
+            }
         })
-    }
+    });
 }
 
 function parseFoursquareResponse(response) {
-    var brewery = response.response.venue
-
-    function filterTips(tipObj) {
-        if(tipObj.agreeCount > tipObj.disagreeCount && tipObj.agreeCount > 2) {
-            return tipObj
-        }
-    };
-
-    var result = {
-        breweryRating: { 
-            foursquare: brewery.rating ? {
-                rating: brewery.rating
-            } : {}
-        },
-        social: {foursquare: brewery.shortUrl},
-        userTips: brewery.tips.groups ? brewery.tips.groups[0].items.filter(filterTips).map(function(tips) {
-            if (tips.agreeCount > tips.disagreeCount && tips.agreeCount > 2) {
+    if(response){
+        var brewery = response.response.venue;
+        return result = {
+            breweryRating: { 
+                foursquare: brewery.rating ? {
+                    rating: brewery.rating
+                } : {}
+            },
+            social: {foursquare: brewery.shortUrl},
+            userTips: brewery.tips.groups ? 
+                        brewery.tips.groups[0].items
+                        .filter(function (tipObj) {
+                            if(tipObj.agreeCount > tipObj.disagreeCount && tipObj.agreeCount > 2) {
+                                return tipObj
+                            }
+                        })
+                        .map(function(tip) {
+                            if (tip.agreeCount > tip.disagreeCount && tip.agreeCount > 2) {
+                                return {
+                                    tip: tip.text,
+                                    agreeCount: tip.agreeCount
+                                }
+                            }
+                    }) 
+                    : 
+                    {},
+            tags: brewery.tags,
+            breweryAttributes: brewery.attributes.groups.map(function(info){
                 return {
-                    tip: tips.text,
-                    agreeCount: tips.agreeCount
+                    type: info.type,
+                    name: info.name,
+                    summary: info.summary
                 }
-            }
-        }) : {},
-        tags: brewery.tags,
-        breweryAttributes: brewery.attributes.groups.map(function(info){
-            return {
-                type: info.type,
-                name: info.name,
-                summary: info.summary
-            }
-        })
+            })
+        };
     }
-    return result;
 }
 
 function writeFinalBreweryJson() {
@@ -249,7 +266,6 @@ function joinBreweryWithResponse(brewery, response) {
     return extend(brewery, response);
 }
 
-function appendFinalBrewery(brewery) {
-    // we use the brewery names for routing, so get rid of whitespace
-    finalBreweriesList[brewery.name.replace(/\s/g,'')] = brewery;
+function appendFinalBrewery(city, breweryKey, brewery) {
+    finalBreweriesList[city][breweryKey] = brewery;
 }

@@ -1,4 +1,4 @@
-var breweries = require('../config.json').breweries;
+var config = require('../config.json');
 var fs = require('fs');
 require('chromedriver');
 const webdriver = require('selenium-webdriver');
@@ -13,7 +13,21 @@ builder.setChromeOptions(options);
 
 const driver = builder.build();
 
-var pageUrls = ['index.html'].concat(Object.keys(breweries));
+var pageUrls = ['index.html'];
+
+if (!fs.existsSync('ssr')){
+    fs.mkdirSync('ssr');
+}
+
+
+for(city in config.cities){
+    if (!fs.existsSync('ssr/'+city)){
+        fs.mkdirSync('ssr/'+city);
+    }
+    for(brewery in config.cities[city].breweries) {
+        pageUrls.push(city + '/' + brewery);
+    }
+}
 
 pageUrls.forEach(function(url) {
     driver.get('http://localhost:8080/' + url)

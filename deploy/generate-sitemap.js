@@ -1,25 +1,37 @@
-var CONFIG = require('../config.json');
+var config = require('../config.json');
 var xml = require('xml');
 var fs = require('fs');
 var async = require('async');
 
 var homeLink = {
     url: [
-        {loc:CONFIG.url},
+        {loc:config.url},
         {lastmod: new Date().toISOString()},
         {changefreq: "daily"},
         {priority:1.0}
     ]
 }
-var brewLinks = Object.keys(CONFIG.breweries).map(function(key){
-    return {
+var brewLinks = [];
+
+for(city in config.cities){
+    brewLinks.push({
         url: [
-            {loc: `${CONFIG.url}/${key}`},
+            {loc: `${config.url}/${city}`},
             {lastmod: new Date().toISOString()},
             {changefreq: "daily"}
         ]
+    });
+
+    for(brewery in config.cities[city].breweries) {
+        brewLinks.push({
+            url: [
+                {loc: `${config.url}/${city}/${brewery}`},
+                {lastmod: new Date().toISOString()},
+                {changefreq: "daily"}
+            ]
+        });
     }
-});
+}
 
 var siteMap = [{ 
     urlset: [{
@@ -32,4 +44,4 @@ var siteMap = [{
 }];
 
 
-fs.writeFile('./public/sitemap.xml', xml(siteMap, { declaration: true }))
+fs.writeFileSync('./public/sitemap.xml', xml(siteMap, { declaration: true }))
