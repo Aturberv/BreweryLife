@@ -38,6 +38,7 @@ function generateBrewery(brewery, completeCallback) {
     brewery.photos = []; // reset photos
     brewery.beers = []; // reset beers
     brewery.breweryRating = {};
+    brewery.social = {};
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
@@ -49,6 +50,7 @@ function generateBrewery(brewery, completeCallback) {
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(foursquareQuery)
         .then(parseFoursquareResponse)
+        .then(joinBreweryWithResponse.bind(this, brewery))
         .then(appendFinalBrewery)
         .then(completeCallback)
         .catch(console.error)
@@ -59,8 +61,7 @@ function yelpQuery(brewery) {
         return yelp.business(brewery.yelpBusinessId);    
     } else {
         return Promise.resolve(null);
-    }
-    
+    }    
 }
 
 function parseYelpResponse(business) {
@@ -88,8 +89,7 @@ function googlePlacesQuery(brewery) {
         return googleMaps.place({ placeid: brewery.googlePlacesId}).asPromise();    
     } else {
         return Promise.resolve(null);
-    }
-    
+    }    
 }
 
 function parseGooglePlacesResponse(response) {
@@ -173,18 +173,57 @@ function parseUntappdResponse(response) {
         })
     };
     return result;
- }
+}
 
- function foursquareQuery(brewery, callback) {
-    foursquare.getVenue(brewery.foursquareVenueId, function(error, venue){
-        if(!error) {
-            console.log(venue)
-        }
-    })
- }
+function foursquareQuery(brewery) {
+    if(brewery.foursquareVenueId) {
+        return new Promise(function(resolve, reject){
+            foursquare.getVenue({'venue_id': brewery.foursquareVenueId}, function(error, venue){
+                if(error){
+                    console.log(error)
+                    reject(error);
+                } else {
+                    resolve(venue);
+                }
+            })
+        })
+    }
+}
 
 function parseFoursquareResponse(response) {
-    console.log(response)
+    var brewery = response.response.venue
+
+    function filterTips(tipObj) {
+        if(tipObj.agreeCount > tipObj.disagreeCount && tipObj.agreeCount > 2) {
+            return tipObj
+        }
+    };
+
+    var result = {
+        breweryRating: { 
+            foursquare: brewery.rating ? {
+                rating: brewery.rating
+            } : {}
+        },
+        social: {foursquare: brewery.shortUrl},
+        userTips: brewery.tips.groups ? brewery.tips.groups[0].items.filter(filterTips).map(function(tips) {
+            if (tips.agreeCount > tips.disagreeCount && tips.agreeCount > 2) {
+                return {
+                    tip: tips.text,
+                    agreeCount: tips.agreeCount
+                }
+            }
+        }) : {},
+        tags: brewery.tags,
+        breweryAttributes: brewery.attributes.groups.map(function(info){
+            return {
+                type: info.type,
+                name: info.name,
+                summary: info.summary
+            }
+        })
+    }
+    return result;
 }
 
 function writeFinalBreweryJson() {
@@ -198,9 +237,15 @@ function joinBreweryWithResponse(brewery, response) {
     if(response.reviews) response.reviews = response.reviews.concat(brewery.reviews);
     if(response.photos) response.photos = response.photos.concat(brewery.photos);
     if(response.breweryRating) 
-        var key = Object.keys(response.breweryRating)
-        brewery.breweryRating[key] = response.breweryRating[key]
+        for (var ratingKey in response.breweryRating) {
+            brewery.breweryRating[ratingKey] = response.breweryRating[ratingKey]
+        }
         delete response.breweryRating
+    if(response.social)
+        for(var socialKey in response.social) { 
+            brewery.social[socialKey] = response.social[socialKey]
+        }
+        delete response.social
     return extend(brewery, response);
 }
 
