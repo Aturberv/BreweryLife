@@ -210,7 +210,7 @@ function parseFoursquareResponse(response) {
         return result = {
             breweryRating: { 
                 foursquare: brewery.rating ? {
-                    rating: brewery.rating
+                    rating: brewery.rating / 2
                 } : {}
             },
             social: {foursquare: brewery.shortUrl},
