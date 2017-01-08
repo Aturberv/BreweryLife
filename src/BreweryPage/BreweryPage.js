@@ -37,10 +37,11 @@ const BreweryPage = (
                     <h1 className="brewery-name">{brewery.name}</h1>
                     <BrewerySocial social={brewery.social} />
                     <RideButton breweryName={brewery.name} 
-                        userCoordinates={userCoordinates}
-                        isMobile={isMobile}
-                        destination={brewery.location}/>
+                                userCoordinates={userCoordinates}
+                                isMobile={isMobile}
+                                destination={brewery.location}/>
                 </center>
+                <div className="container">
                 <Row className="brewery-stuff">
                     <Col sm={12} md={6}>
                         <center>
@@ -61,6 +62,7 @@ const BreweryPage = (
                         </div>
                     </Col>
                 </Row>
+                </div>
             </div>
             <div>
                 <BreweryDescription description={brewery.breweryDescription} />
