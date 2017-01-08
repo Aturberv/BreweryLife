@@ -1,35 +1,21 @@
 .brew-reviews-container {
-	float: left;
-	display: block;
+	margin-top: 15px;
 	width: 100%;
 }
 
-.brewery-reviews {
-	margin-bottom: 30px;
-}
-
 .brew-reviews-header {
-	border-bottom: 1px solid #D3D3D3;
-	color: #778899;
-	text-align: left;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	color: #1E90FF;
+}
+
+.brew-review {
 	padding: 10px;
-}
-
-.review-text {
-    border-bottom: 1px solid #D3D3D3;
-    padding: 10px;
-}
-
-.review-text:last-child {
-    border: 0px;
 }
 
 .brew-review-text {
 	font-size: 14px;
 	padding: 5px;
-	text-align: left;
 }
 
+.brewery-reviews {
+    padding: 30px;
+}

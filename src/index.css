@@ -8,3 +8,12 @@ html, body {
 #root {
 	height: 100%;
 }
+
+h1 {
+    font-size: 3em;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
