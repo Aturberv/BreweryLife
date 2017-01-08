@@ -13,7 +13,7 @@ ReactDOM.render(
         <Route path="/:city" component={App} onEnter={
             (nextState, replace) => 
                 !(nextState.params.city in config.cities) &&
-                // redirect to "we dont support that city yet page"
+                // redirect to "we dont support that city yet" page
                 replace('/nyc')
         }>
             <Route path=":breweryKey" component={BreweryPage} onEnter={
