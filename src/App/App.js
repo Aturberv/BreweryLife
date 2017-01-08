@@ -138,6 +138,7 @@ class App extends Component {
                 city={ city }
                 allCities={ config.cities }
                 breweries={ activeCityBreweries }
+                router={ this.props.router }
         />
         {
           breweryKey && <BreweryPage brewery={ activeCityBreweries[breweryKey] }

@@ -8,8 +8,6 @@ import Icon from 'antd/lib/icon';
 import 'antd/lib/icon/style/css';
 import Slider from 'antd/lib/slider';
 import 'antd/lib/slider/style/css';
-import Dropdown from 'antd/lib/dropdown';
-import 'antd/lib/dropdown/style/css';
 import Menu from 'antd/lib/menu';
 import 'antd/lib/menu/style/css';
 import './Header.css';
@@ -68,11 +66,11 @@ class Header extends Component {
 
 
     render() {
-        const { breweries, breweryKey, allCities, city } = this.props;
+        const { breweries, breweryKey, allCities, city, router } = this.props;
         return (
             <Navbar>
                 <Row>
-                    <Col xs={12} sm={3}>
+                    <Col xs={12} sm={4}>
                         <Navbar.Header>
                             <Navbar.Brand>
                                 {
@@ -86,14 +84,14 @@ class Header extends Component {
                                             </Link>
                                         )
                                     :
-                                        `${allCities[city].name} Brewery Map`
+                                        `${allCities[city].name} Breweries`
                                 }
                             </Navbar.Brand>
                             <Navbar.Toggle/>
                         </Navbar.Header>
                     </Col>
                 <Navbar.Collapse>
-                    <Col xs={12} sm={3}>
+                    <Col xs={12} sm={2}>
                         <div className="nav-element">
                             <Select multiple
                                     dropdownMatchSelectWidth={false}
@@ -110,7 +108,7 @@ class Header extends Component {
                             </Select>
                         </div>
                     </Col>
-                    <Col xs={12} sm={3}>
+                    <Col xs={12} sm={2}>
                         <div className="nav-element">
                             <div>
                                 <Slider onChange={ this.ratingFilter }
@@ -141,29 +139,19 @@ class Header extends Component {
                             </Select>
                         </div>
                     </Col>
-                    <Col xs={12} sm={1}>
+                    <Col xs={12} sm={2}>
                         <div className="nav-element">
-                            <Dropdown overlay={
-                                <Menu>
-                                    {
-                                        Object.keys(allCities).map((city) =>
-                                            <Menu.Item key={city}>
-                                                <Link to={{
-                                                    pathname: `/${city}`,
-                                                    state: { breweryKey: null}
-                                                }}>
-                                                    {allCities[city].name}
-                                                </Link>
-                                            </Menu.Item>
-                                        )
-                                    }
-                                </Menu>
-                            }
-                            >
-                                <a className="ant-dropdown-link">
-                                    Cities
-                                </a>
-                            </Dropdown>
+                            <Menu mode="horizontal" onClick={({key}) => router.push(`/${key}`) }>
+                                <Menu.SubMenu title={<span>Cities <Icon type="down" /></span>}>
+                                {
+                                    Object.keys(allCities).map((city) =>
+                                        <Menu.Item key={city}>
+                                            {allCities[city].name}
+                                        </Menu.Item>
+                                    )
+                                }
+                                </Menu.SubMenu>
+                            </Menu>
                         </div>
                     </Col>
                 </Navbar.Collapse>
