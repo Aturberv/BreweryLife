@@ -127,8 +127,6 @@ class App extends Component {
             {rel:"apple-touch-icon", sizes:"160x160", href:favIcon},
           ]}
           script={[
-            {type: "text/javascript", innerHTML: `ButtonWebConfig = {applicationId: 'app-760d46b2c04938db'}; window['__bttnio'] = 'bttnio';`},
-            {src: "https://web.btncdn.com/v1/button.js", async:undefined, defer:undefined},
             {type: "application/ld+json", innerHTML: `{"@context": "http://schema.org","@type": "Organization","url": "${config.url}","logo": "${favIcon}"}`}
 
           ]}

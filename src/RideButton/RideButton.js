@@ -40,7 +40,9 @@ class RideButton extends Component {
     }
 
    loadingDisplay() {
-        const text = this.props.isMobile ? "Getting location..." 
+        const text = this.props.isMobile ? this.props.userCoordinates ?
+                                             "Finding an uber..."
+                                           : "Getting location..."
                                          : "Unavailable on desktop";
         return (
             <div className="uber-placeholder">
@@ -73,6 +75,7 @@ class RideButton extends Component {
                         isMobile && <div data-bttnio-id="btn-58c5e756c2a3e133"
                                          data-bttnio-context={this.locationString()}
                                          onClick={this.onRideRequest}>
+                            { this.loadingDisplay() }
                         </div>
                 }
                 </div>
@@ -82,7 +85,3 @@ class RideButton extends Component {
 }
 
 export default RideButton;
-
-
-
-
