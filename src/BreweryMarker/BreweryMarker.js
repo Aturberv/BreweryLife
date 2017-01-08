@@ -1,13 +1,14 @@
 import React from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from 'react-router';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
 import BreweryRating from '../BreweryRating/BreweryRating';
+
 import './BreweryMarker.css';
 
 const BreweryMarker = ({
   brewery,
   breweryKey,
-  city
+  pageUrl
 }) => {
   const popoverHoverFocus = (
       <Popover id="popover-trigger-hover-focus" title={brewery.name}>
@@ -16,7 +17,7 @@ const BreweryMarker = ({
     );
 
     return (
-      <Link to={`${city}/${breweryKey}`}>
+      <Link to={ pageUrl }>
         <div className="brewery-pin">
           <OverlayTrigger trigger={['hover', 'focus']} 
                           placement="top" 

@@ -1,14 +1,20 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import { Row, Col } from 'react-bootstrap';
+
 import BreweryImages from '../BreweryImages/BreweryImages';
 import BreweryReviews from '../BreweryReviews/BreweryReviews';
 import BreweryDescription from '../BreweryDescription/BreweryDescription';
 import BreweryBeers from '../BreweryBeers/BreweryBeers';
 import BrewerySocial from '../BrewerySocial/BrewerySocial';
 import BreweryRating from '../BreweryRating/BreweryRating';
+import BreweryMap from '../BreweryMap/BreweryMap';
 import RideButton from '../RideButton/RideButton';
+
 import Tabs from 'antd/lib/tabs';
-import Helmet from 'react-helmet';
 import 'antd/lib/tabs/style/css';
+
+import config from '../../config.json';
 
 import './BreweryPage.css';
 
@@ -16,7 +22,9 @@ const BreweryPage = (
 {
     brewery, 
     userCoordinates,
-    isMobile
+    isMobile,
+    activeCity,
+    activeCityBreweries
 }) => {
     return (
       <div className="breweryPage">
@@ -26,17 +34,37 @@ const BreweryPage = (
                 {name:"description", content:brewery.breweryDescription}
               ]}
             />
+
             <div className="breweryPage-header">
-                <h2 className="brewery-name">{brewery.name}</h2>
                 <center>
+                    <h2 className="brewery-name">{brewery.name}</h2>
                     <BrewerySocial social={brewery.social} />
-                    <BreweryRating ratings={brewery.breweryRating} />
-                </center>
-            </div>
-            <RideButton breweryName={brewery.name} 
+                    <RideButton breweryName={brewery.name} 
                         userCoordinates={userCoordinates}
                         isMobile={isMobile}
                         destination={brewery.location}/>
+                </center>
+                <Row className="brewery-stuff">
+                    <Col sm={12} md={6}>
+                        <center>
+                            <BreweryRating ratings={brewery.breweryRating} />
+                        </center>
+                    </Col>
+                    <Col sm={12} md={6}>
+                        <div className="breweryPage-map">
+                            <BreweryMap googleMapsApiKey={ config.googleMapsApiKey }
+                                        mapCenter={ {
+                                            lat: brewery.location.lat,
+                                            lng: brewery.location.lng
+                                        } }
+                                        mapZoom={ 15 }
+                                        breweries={ activeCityBreweries }
+                                        activeCity={ activeCity }
+                            />
+                        </div>
+                    </Col>
+                </Row>
+            </div>
             <div className="breweryPage-tabs">
                 <Tabs defaultActiveKey="1">
                     <Tabs.TabPane key="1" tab="About">
