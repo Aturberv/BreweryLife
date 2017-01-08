@@ -8,17 +8,14 @@
 
 ```
 yarn install
-npm run update-breweries
-npm start
+yarn start
 ```
 
 Browse to [localhost:3000](localhost:3000) and enjoy!
 
-Getting an error while running `update-breweries`? See [below](#update-breweries).
-
 ## Overview
 
-[NYC Brewery Map](nycbrewerymap.com) is an entirely static site hosted in S3. All of the information displayed is scraped at build time and embedded into the App using webpack.
+[NYC Brewery Map](nycbrewerymap.com) is an entirely static site hosted on S3. All of the information displayed is scraped at build time and embedded into the App using webpack.
 
 ## Accounts
 
@@ -52,7 +49,7 @@ FOURSQ_CLIENT_SECRET
 
 ## Update Breweries
 
-Our brewery data is aggregated from a number of different sources. It utilizes the hand picked breweries in `breweryIds.json` file to generate `src/breweries.json`. 
+Our brewery data is aggregated from a number of different sources. It utilizes the hand picked breweries in `config.json` file to generate `src/breweries.json`. 
 
 ### Adding a new brewery
 
@@ -60,26 +57,32 @@ Add a new object to `breweryIds.json` in the following format:
 
 ```
 {
-    "BreweryNamePascalCamelCase": {
+    "BreweryName": {
         "yelpBusinessId": "string",
         "googlePlacesId": "string",
-        "untappdBreweryId": "string"
+        "untappdBreweryId": "string",
+        "foursquareVenueId": "string"
     }
 }
 ```
 
 You can retrieve the `yelpBusinessId` by searching Yelp for the brewery and extracting the part of the url after `https://yelp.com/biz/`.
-You can retrieve the `googlePlacesId` [here](https://developers.google.com/places/web-service/place-id)
+
+You can retrieve the `googlePlacesId` [here](https://developers.google.com/places/web-service/place-id).
+
 You can retrieve the `untappdBreweryId` by inspecting the URL you are routed to when searching for the brewery on [https://untappd.com](https://untappd.com).
 
+You can retrieve the `foursquareVenueId` by looking at meta tags on the brewery's foursquare page.
+
 You may find some breweries do not have profiles on all of these sites. The only required ID is the `untappdBreweryId`. If the place doesn't exist on Google Places, you'll have to hardcode the location object like this:
+
 ```
 "location" {
    "lat": 12.1244
    "lng": 43.12313 
 }
 ```
-__You can include the `"valid": false` key to prevent people from catching Ubers to places we aren't 100% sure exist at that location.__
+_You can include the `"valid": false` key to prevent people from catching Ubers to places we aren't 100% sure exist at that location._
 
 
 ## Deploying
@@ -87,12 +90,13 @@ __You can include the `"valid": false` key to prevent people from catching Ubers
 Travis CI is responsible for deploying our code on every merge to master. Essentially, it runs:
 
 ```
-npm run update-breweries
-npm run build
 ./deploy.sh
 ```
 
-Which simply synchronizes the content of the local `build/` directory with the S3 folder in AWS. It also invalidates the CloudFront cache so that users get the updates more quickly.
+This script is responsible for creating a sitemap, generating static versions of each URL (for SEO purposes), scraping location information, and
+synchronizing the result to S3.
+
+The content that is synchronized are the local `build/` and `ssr/` directories with the S3 folder in AWS. It also invalidates the CloudFront cache so that users get the updates more quickly.
 
 ## Shout outs!
 
