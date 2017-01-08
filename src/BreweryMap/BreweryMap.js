@@ -23,7 +23,7 @@ const BreweryMap = ({
                key={ breweryKey }
                lat={ breweries[breweryKey].location.lat }
                lng={ breweries[breweryKey].location.lng }
-               pageUrl={ `${activeCity}/${breweryKey}` }
+               pageUrl={ `/${activeCity}/${breweryKey}` }
                breweryKey={ breweryKey }
                brewery={ breweries[breweryKey] }
             />

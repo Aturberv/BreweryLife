@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App/App';
 import config from '../config.json'
 import BreweryPage from './BreweryPage/BreweryPage';
-import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
+import { Router, Route, browserHistory, IndexRedirect, Redirect } from 'react-router';
 import './index.css';
 
 ReactDOM.render( 
@@ -23,6 +23,7 @@ ReactDOM.render(
                     replace(`/${nextState.params.city}`)
             }/>
         </Route>
+        <Redirect from="*" to="/nyc/" />
     </Route>
   </Router>
   ,document.getElementById('root')
