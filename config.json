@@ -1,5 +1,6 @@
 {
     "url": "https://nycbrewerymap.com",
+    "googleMapsApiKey": "AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
     "socialIcons": {
         "facebook": "facebook",
         "twitter": "twitter",
@@ -20,6 +21,92 @@
                 },
                 "zoom": 13
                 
+            },
+            "breweries": {
+                "TrilliumBrewingCompany": {
+                    "yelpBusinessId": "trillium-brewing-company-boston-5",
+                    "googlePlacesId": "ChIJcU3GPIB644kRbYdSLAIzQwg",
+                    "untappdBreweryId": "23038",
+                    "foursquareVenueId": "4e3d729daeb73139a178d4fa"
+                },
+                "NightShiftBrewing": {
+                    "yelpBusinessId": "night-shift-brewing-everett-2",
+                    "googlePlacesId": "ChIJ00C7jRpx44kRlbXdNAR_i8Y",
+                    "untappdBreweryId": "20827",
+                    "foursquareVenueId": "4ecc6c5c7beb7e03659ff7c1"
+                },
+                "MysticBrewery": {
+                    "yelpBusinessId": "mystic-brewery-chelsea",
+                    "googlePlacesId": "ChIJj3-DjKtx44kRKPgEQowZRMY",
+                    "untappdBreweryId": "11459",
+                    "foursquareVenueId": "4eda6a27f790c04545b983c0"
+                },
+                "CambridgeBrewingCompany": {
+                    "yelpBusinessId": "cambridge-brewing-company-cambridge",
+                    "googlePlacesId": "ChIJE7TL4a1w44kR-QT7CkRaMT4",
+                    "untappdBreweryId": "1506",
+                    "foursquareVenueId": "40b28c80f964a52044f81ee3"
+                },
+                "SomervilleBrewingCompany": {
+                    "yelpBusinessId": "somerville-brewing-company-somerville-4",
+                    "googlePlacesId": "ChIJxxSuWrZw44kRoDjJ6Id7mdw",
+                    "untappdBreweryId": "16923",
+                    "foursquareVenueId": "5616cfee498ed6c1f2ab1652"
+                },
+                "AeronautBrewingCompany": {
+                    "yelpBusinessId": "aeronaut-brewing-company-somerville",
+                    "googlePlacesId": "ChIJ46AbYjZ344kRc8p9_jStCM0",
+                    "untappdBreweryId": "118327",
+                    "foursquareVenueId": "52a1da9d11d2623b045bd2a0"
+                },
+                "HarpoonBrewery": {
+                    "yelpBusinessId": "harpoon-brewery-boston-4",
+                    "googlePlacesId": "ChIJy8-ipZ1644kRfvgwPIiLvsA",
+                    "untappdBreweryId": "634",
+                    "foursquareVenueId": "40b28c80f964a52073f81ee3"
+                },
+                "LamplighterBrewing": {
+                    "yelpBusinessId": "lamplighter-brewing-cambridge",
+                    "googlePlacesId": "ChIJZxjosFJ344kRxJpdlnkZgSY",
+                    "untappdBreweryId": "229710",
+                    "foursquareVenueId": "57eec4c0498ea73596d7c131"
+                },
+                "WinterHillBrewingCompany": {
+                    "yelpBusinessId": "winter-hill-brewing-somerville",
+                    "googlePlacesId": "ChIJnXszYdRw44kRVfo2r_rGMgc",
+                    "untappdBreweryId": "259769",
+                    "foursquareVenueId": "56fda0e4498e0beb2b1b7f23"
+                },
+                "BostonBeerWorks": {
+                    "yelpBusinessId": "boston-beer-works-boston-2",
+                    "googlePlacesId": "ChIJ8-MbNvZ544kRp1mugL9Gc6U",
+                    "untappdBreweryId": "158",
+                    "foursquareVenueId": "3fd66200f964a52040f11ee3"
+                },
+                "JohnHarvardBrewery": {
+                    "yelpBusinessId": "john-harvards-brewery-and-ale-house-cambridge",
+                    "googlePlacesId": "ChIJCam4zkJ344kRY_HdMR5HZnY",
+                    "untappdBreweryId": "16871",
+                    "foursquareVenueId": "4a89f4d8f964a5207f0920e3"
+                },
+                "BoneUpBrewingCompany": {
+                    "yelpBusinessId": "bone-up-brewing-everett",
+                    "googlePlacesId": "ChIJ38ZUYBFx44kRzUSp4xae3TA",
+                    "untappdBreweryId": "275941",
+                    "foursquareVenueId": "548c7a44498eb5ef056f021c"
+                },
+                "DorchesterBrewingCompany": {
+                    "yelpBusinessId": "dorchester-brewing-boston-2",
+                    "googlePlacesId": "ChIJz2210k9644kRB7kfHVqJVkU",
+                    "untappdBreweryId": "284505",
+                    "foursquareVenueId": "56520396498e05915ac06a89"
+                },
+                "SamuelAdamsBrewery": {
+                    "yelpBusinessId": "samuel-adams-brewery-boston",
+                    "googlePlacesId": "ChIJeRyjfXt544kRdjPWKIshi2A",
+                    "untappdBreweryId": "157",
+                    "foursquareVenueId": "4a7daee1f964a5202aef1fe3"  
+                }
             }
         },
         "richmond": {
