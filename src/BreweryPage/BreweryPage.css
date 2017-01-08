@@ -5,7 +5,10 @@
 }
 
 .breweryPage-map {
-    height: 300px;
+    max-width: 100vw;
+    max-height: 100vh;
+    height: 275px;
+    width: 100%;
 }
 
 .breweryPage-header {
