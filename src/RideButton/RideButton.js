@@ -22,8 +22,6 @@ class RideButton extends Component {
 
     refreshButton(){
         if(this.props.isMobile && this.props.userCoordinates) {
-            console.log('refreshing');
-            console.log(this.props.userCoordinates)
             bttnio('refresh') //eslint-disable-line no-undef    
         }
     }

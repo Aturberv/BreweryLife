@@ -1,10 +1,10 @@
 .brewery-beers {
     padding: 30px;
-    border-bottom: 1px solid #D3D3D3;
 }
 
-.brewery-beers:last-child {
-    border: 0px;
+.brewery-beers-title {
+    padding: 20px;
+    color: #1E90FF;
 }
 
 .beer-info {
@@ -14,8 +14,7 @@
 }
 
 .beer-stats {
-    text-align: right;
-    padding: 10px;
+    padding-top: 5px;
 }
 
 .beer-label {

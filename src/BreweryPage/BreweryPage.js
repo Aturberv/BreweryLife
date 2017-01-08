@@ -11,9 +11,6 @@ import BreweryRating from '../BreweryRating/BreweryRating';
 import BreweryMap from '../BreweryMap/BreweryMap';
 import RideButton from '../RideButton/RideButton';
 
-import Tabs from 'antd/lib/tabs';
-import 'antd/lib/tabs/style/css';
-
 import config from '../../config.json';
 
 import './BreweryPage.css';
@@ -37,7 +34,7 @@ const BreweryPage = (
 
             <div className="breweryPage-header">
                 <center>
-                    <h2 className="brewery-name">{brewery.name}</h2>
+                    <h1 className="brewery-name">{brewery.name}</h1>
                     <BrewerySocial social={brewery.social} />
                     <RideButton breweryName={brewery.name} 
                         userCoordinates={userCoordinates}
@@ -65,17 +62,11 @@ const BreweryPage = (
                     </Col>
                 </Row>
             </div>
-            <div className="breweryPage-tabs">
-                <Tabs defaultActiveKey="1">
-                    <Tabs.TabPane key="1" tab="About">
-                        <BreweryDescription description={brewery.breweryDescription} />
-                        <BreweryImages photos={brewery.photos} />
-                        <BreweryReviews reviews={brewery.reviews} />
-                    </Tabs.TabPane>
-                    <Tabs.TabPane key="2" tab="Beers">
-                        <BreweryBeers beers={brewery.beers} />
-                    </Tabs.TabPane>
-                </Tabs>
+            <div>
+                <BreweryDescription description={brewery.breweryDescription} />
+                <BreweryImages photos={brewery.photos} />
+                <BreweryReviews reviews={brewery.reviews} />
+                <BreweryBeers beers={brewery.beers} />
             </div>
         </div>
     );
