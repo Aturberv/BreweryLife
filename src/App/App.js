@@ -20,7 +20,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     autoBind(this);
-    console.log()
     this.state = {
       breweries: Cities[props.params.city],
       defaultCenter: config.cities[props.params.city].map.center
@@ -162,7 +161,6 @@ class App extends Component {
   }
 }
 
-console.log(isMobile)
 if(isMobile) {
     // can we figure out what city
     // based on their location?
