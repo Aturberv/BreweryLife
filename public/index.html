@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="manifest" href="/manifest.json">
     <script>
       window.ButtonWebConfig = {
         applicationId: 'app-760d46b2c04938db'
       };
       window['__bttnio'] = 'bttnio';
     </script>
-    <script src="https://web.btncdn.com/v1/button.js" async defer></script>
   </head>
   <body>
     <div id="root"></div>
@@ -19,6 +19,14 @@
     <script>
       Raven.config('https://c56bf372c3244e089766fb089d1fb85a@sentry.io/122382', 
         {whitelistUrls: [/https:\/\/nycbrewerymap\.com.*/]}).install()
+    </script>
+    <script src="https://web.btncdn.com/v1/button.js" async defer></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
     </script>
   </body>
 </html>

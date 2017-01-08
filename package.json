@@ -16,6 +16,7 @@
     "react-scripts": "0.8.4",
     "selenium-webdriver": "^3.0.1",
     "sinon": "^1.17.6",
+    "sw-precache": "^4.3.0",
     "xml": "^1.0.1",
     "yelp": "^1.0.2"
   },
@@ -44,6 +45,7 @@
     "deploy": "./deploy/deploy.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "generate-serviceworker": "sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

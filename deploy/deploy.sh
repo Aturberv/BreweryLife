@@ -14,9 +14,12 @@ npm run build
 npm run server
 npm run scrape
 
+mv ssr/index.html build/
+
+npm run generate-serviceworker
+
 # gzip swag
 find build \( -iname '*.html' -o  -iname '*.css' -o -iname '*.js' -o -iname '*.json' -o -iname '*.xml' -o -iname '*.txt' -o -iname '*.ico' \-o -iname '*.eot' -o -iname '*.ttf' -o -iname '*.woff*' \)  -exec gzip -9 -n {} \; -exec mv {}.gz {} \;
-gzip -9 -n ssr/index.html; mv ssr/index.html.gz ssr/index.html;
 find ssr/**/* -exec gzip -9 -n {} \; -exec mv {}.gz {} \;
 
 pip install --user awscli
