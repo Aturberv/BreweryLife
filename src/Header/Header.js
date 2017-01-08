@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Col, Row } from 'react-bootstrap';
-import { Navbar } from 'react-bootstrap';
+import { Col, Row, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router';
 import Select from 'antd/lib/select'
 import 'antd/lib/select/style/css';

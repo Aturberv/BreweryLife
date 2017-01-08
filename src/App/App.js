@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
-import GoogleMap from 'google-map-react';
-import autoBind from 'react-autobind';
-import Header from '../Header/Header';
-import BreweryMarker from '../BreweryMarker/BreweryMarker';
-import BreweryPage from '../BreweryPage/BreweryPage';
-import {geolocated} from 'react-geolocated';
-import Cities from '../breweries.json';
 import ReactGA from 'react-ga';
 import Helmet from 'react-helmet';
+import React, { Component } from 'react';
+import autoBind from 'react-autobind';
+import {geolocated} from 'react-geolocated';
+
+import Header from '../Header/Header';
+import BreweryPage from '../BreweryPage/BreweryPage';
+import BreweryMap from '../BreweryMap/BreweryMap';
+
+import Cities from '../breweries.json';
 import config from '../../config.json';
+
 import './App.css';
 
-const API_KEY = 'AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y';
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 class App extends Component {
@@ -22,16 +23,12 @@ class App extends Component {
     console.log()
     this.state = {
       breweries: Cities[props.params.city],
-      defaultCenter: {lat: 40.7132859, lng: -73.9285485}
+      defaultCenter: config.cities[props.params.city].map.center
     }
   }
 
   componentWillMount(){
     ReactGA.initialize('UA-88592303-1');
-    window.ButtonWebConfig = {
-      applicationId: 'app-760d46b2c04938db'
-    };
-    window['__bttnio'] = 'bttnio';
   }
 
   breweryNameFilter(breweryKeys) {
@@ -110,14 +107,17 @@ class App extends Component {
 
     const currentUrl = `${config.url}${pathname}`;
     const favIcon = `${config.url}/favicon.ico`;
+    const activeCityConfig = config.cities[city];
+    const activeCityBreweries = Cities[city];
+
     return (
       <div className="App">
         <Helmet
           defaultTitle="NYC Brewery Map"
           titleTemplate="%s - NYC Brewery Map"
           meta={[
-            {name: "description", content: config.cities[city].description},
-            {name: "keywords", content: config.cities[city].keywords},
+            {name: "description", content: activeCityConfig.description},
+            {name: "keywords", content: activeCityConfig.keywords},
             {}
           ]}
           link={[
@@ -128,6 +128,7 @@ class App extends Component {
             {rel:"apple-touch-icon", sizes:"160x160", href:favIcon},
           ]}
           script={[
+            {type: "text/javascript", innerHTML: `ButtonWebConfig = {applicationId: 'app-760d46b2c04938db'}; window['__bttnio'] = 'bttnio';`},
             {src: "https://web.btncdn.com/v1/button.js", async:undefined, defer:undefined},
             {type: "application/ld+json", innerHTML: `{"@context": "http://schema.org","@type": "Organization","url": "${config.url}","logo": "${favIcon}"}`}
 
@@ -139,41 +140,29 @@ class App extends Component {
                 breweryKey={ breweryKey }
                 city={ city }
                 allCities={ config.cities }
-                breweries={ Cities[city] }
+                breweries={ activeCityBreweries }
         />
         {
-          breweryKey && <BreweryPage brewery={ Cities[this.props.params.city][breweryKey] }
+          breweryKey && <BreweryPage brewery={ activeCityBreweries[breweryKey] }
                                      isMobile={ isMobile }
-                                     userCoordinates={ coords }/>
+                                     userCoordinates={ coords }
+                                     activeCity={ city }
+                                     activeCityBreweries={ activeCityBreweries }/>
         }
         <div className="App-map">
-          <GoogleMap
-            bootstrapURLKeys={{ key: API_KEY, language: 'en' }}
-            defaultCenter={ this.state.defaultCenter }
-            center={ config.cities[city].map.center}
-            zoom={ config.cities[city].map.zoom }
-            defaultZoom={ 12 }
-          >
-          {
-            Object.keys(this.state.breweries).map((breweryKey) =>
-                <BreweryMarker
-                   city={ city }
-                   key={ breweryKey }
-                   lat={ Cities[this.props.params.city][breweryKey].location.lat }
-                   lng={ Cities[this.props.params.city][breweryKey].location.lng }
-                   breweryKey={ breweryKey }
-                   brewery={ Cities[this.props.params.city][breweryKey] }
-                />
-            )
-          }
-          </GoogleMap>
+          <BreweryMap googleMapsApiKey={ config.googleMapsApiKey }
+                      mapCenter={ activeCityConfig.map.center }
+                      mapZoom={ activeCityConfig.map.zoom }
+                      breweries={ this.state.breweries }
+                      activeCity={ city }
+          />
         </div>
       </div>
     );
   }
 }
 
-
+console.log(isMobile)
 if(isMobile) {
     // can we figure out what city
     // based on their location?
@@ -182,7 +171,7 @@ if(isMobile) {
             enableHighAccuracy: false
         },
         userDecisionTimeout: 5000
-    })(App);  
+    })(App);
 }
 
 export default App;
