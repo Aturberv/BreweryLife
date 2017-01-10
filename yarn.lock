@@ -1277,8 +1277,8 @@ chokidar@^1.0.0:
     fsevents "^1.0.0"
 
 chromedriver@^2.26.1:
-  version "2.27.1"
-  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.27.1.tgz#b4f2fbace4309e7cf705e9c0af64c0c21c88fae9"
+  version "2.26.1"
+  resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.26.1.tgz#60036732224580d2699afd2626f5f26ea1f6c9fe"
   dependencies:
     adm-zip "^0.4.7"
     kew "^0.5.0"
