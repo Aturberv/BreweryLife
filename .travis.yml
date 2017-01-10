@@ -29,8 +29,4 @@ before_install:
 before_script:
 - npm test -- --coverage
 - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-script: npm run build
-deploy:
-  provider: script
-  script: npm run deploy
-  skip_cleanup: true
+script: npm run deploy
