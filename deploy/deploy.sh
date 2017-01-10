@@ -19,7 +19,17 @@ mv ssr/index.html build/
 npm run generate-serviceworker
 
 # gzip swag
-find build \( -iname '*.html' -o  -iname '*.css' -o -iname '*.js' -o -iname '*.json' -o -iname '*.xml' -o -iname '*.txt' -o -iname '*.ico' \-o -iname '*.eot' -o -iname '*.ttf' -o -iname '*.woff*' \)  -exec gzip -9 -n {} \; -exec mv {}.gz {} \;
+find build \( -iname '*.html' \
+              -o  -iname '*.css' \
+              -o -iname '*.js' \
+              -o -iname '*.json' \
+              -o -iname '*.xml' \
+              -o -iname '*.txt' \
+              -o -iname '*.ico' \
+              -o -iname '*.eot' \
+              -o -iname '*.ttf' \
+              -o -iname '*.woff*' \
+              -o -iname '*.svg' \)  -exec gzip -9 -n {} \; -exec mv {}.gz {} \;
 find ssr/**/* -exec gzip -9 -n {} \; -exec mv {}.gz {} \;
 
 pip install --user awscli

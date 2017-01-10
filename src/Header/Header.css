@@ -18,6 +18,10 @@
     width: 100%;
 }
 
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+
 .navbar-default {
     background-color: white; 
     border-color: #777;
