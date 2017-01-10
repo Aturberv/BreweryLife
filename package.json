@@ -5,6 +5,7 @@
   "homepage": "https://nycbrewerymap.com/",
   "devDependencies": {
     "async": "^2.1.4",
+    "cheerio": "^0.22.0",
     "chromedriver": "^2.26.1",
     "coveralls": "^2.11.15",
     "enzyme": "^2.6.0",
