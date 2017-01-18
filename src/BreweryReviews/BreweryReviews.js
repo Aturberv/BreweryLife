@@ -21,8 +21,14 @@ const BreweryReviews = ({ reviews }) => {
               {
                 twoReviews.map((review, idx) =>
                   <Col xs={12} md={6} key={idx} className="brew-review">
-                    <StarRating rating={ review.rating } />
-                    <p className="brew-review-text">{ review.text }</p>
+                    <div itemProp="review" itemScope itemType="http://schema.org/Review">
+                      <div itemProp="reviewRating" itemScope itemType="http://schema.org/Rating">
+                        <meta itemProp="ratingValue" content={review.rating} />
+                        <StarRating rating={ review.rating } />
+                      </div>
+                      <meta itemProp="author" content="N/A"/>
+                      <p itemProp="reviewBody" className="brew-review-text">{ review.text }</p>
+                    </div>
                   </Col>
                 )
               }
