@@ -108,16 +108,21 @@ class App extends Component {
     const favIcon = `${config.url}/favicon.ico`;
     const activeCityConfig = config.cities[city];
     const activeCityBreweries = Cities[city];
+    const title = `${activeCityConfig.name} Brewery Map`;
 
     return (
       <div className="App">
         <Helmet
-          defaultTitle="NYC Brewery Map"
-          titleTemplate="%s - NYC Brewery Map"
+          defaultTitle={title}
+          titleTemplate={`%s - ${title}`}
           meta={[
             {name: "description", content: activeCityConfig.description},
             {name: "keywords", content: activeCityConfig.keywords},
-            {}
+            {property: "fb:app_id", content:"744534482367485"},
+            {property: "og:type", content:"website"},
+            {property: "og:url", content:currentUrl},
+            {property: "og:description", content:activeCityConfig.description},
+            {property: "og:title", content: title}
           ]}
           link={[
             {rel:"alternate", hreflang:"en", href:currentUrl},
@@ -141,11 +146,15 @@ class App extends Component {
                 router={ this.props.router }
         />
         {
-          breweryKey && <BreweryPage brewery={ activeCityBreweries[breweryKey] }
-                                     isMobile={ isMobile }
-                                     userCoordinates={ coords }
-                                     activeCity={ city }
-                                     activeCityBreweries={ activeCityBreweries }/>
+          breweryKey && 
+            <BreweryPage brewery={ activeCityBreweries[breweryKey] }
+                         isMobile={ isMobile }
+                         userCoordinates={ coords }
+                         activeCity={ city }
+                         activeCityBreweries={ activeCityBreweries }
+                         isLoggedIn={ this.state.isLoggedIn }
+                         currentUrl={ currentUrl }
+            />
         }
         <div className="App-map">
           <BreweryMap googleMapsApiKey={ config.googleMapsApiKey }

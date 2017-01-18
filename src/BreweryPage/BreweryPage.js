@@ -21,14 +21,49 @@ const BreweryPage = (
     userCoordinates,
     isMobile,
     activeCity,
-    activeCityBreweries
+    activeCityBreweries,
+    isLoggedIn,
+    currentUrl
 }) => {
     return (
-      <div className="breweryPage">
+      <div className="breweryPage" itemScope itemType="http://schema.org/Brewery">
+          <meta itemProp="priceRange" content="$" />
+          <meta itemProp="servesCuisine" content="beer" />
+          { /* TODO: address, telephone number, hours */ }
+          <meta itemProp="name" content={brewery.name} />
+          <meta itemProp="hasMap" content={currentUrl} />
+          <meta itemProp="url" content={currentUrl} />
+          <meta itemProp="logo" content={brewery.breweryLogo} />
+          <meta itemProp="description" content={brewery.breweryDescription} />
+          <meta itemProp="image" content={brewery.breweryLogo} />
+          <div itemProp="geo" itemScope itemType="http://schema.org/GeoCoordinates">
+              <meta itemProp="latitude" content={brewery.location.lat} />
+              <meta itemProp="longitude" content={brewery.location.lng} />
+          </div>
+          <div itemProp="geo" itemScope itemType="http://schema.org/GeoCircle">
+              <div itemProp="geoMidpoint" itemScope itemType="http://schema.org/GeoCoordinates">
+                  <meta itemProp="latitude" content={brewery.location.lat} />
+                  <meta itemProp="longitude" content={brewery.location.lng} />
+              </div>
+              <meta itemProp="geoRadius" content="50" />
+          </div>
+          <div itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
+            <meta itemProp="ratingValue" content={brewery.breweryRating.yelp.rating}/>
+            <meta itemProp="ratingCount" content={brewery.breweryRating.yelp.reviewCount}/>
+          </div>
           <Helmet 
               title={ brewery.name }
               meta={[
-                {name:"description", content:brewery.breweryDescription}
+                {name:"description", content:brewery.breweryDescription},
+                {property: "og:type", content:"restaurant.restaurant"},
+                {property: "og:url", content:currentUrl},
+                {property: "og:image", content:brewery.breweryLogo},
+                {property: "og:description", content:brewery.breweryDescription},
+                {property: "place:location:latitude", content:brewery.location.lat},
+                {property: "place:location:longitude", content:brewery.location.lng},
+                {property: "restaurant:price_rating", content:1},
+                {property: "restaurant:cateogry", content:"brewery"},
+                {property: "restaurant:cateogry", content:"beer"},
               ]}
             />
 
