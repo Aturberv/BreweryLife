@@ -163,6 +163,18 @@ class App extends Component {
                       breweries={ this.state.breweries }
                       activeCity={ city }
           />
+          {
+            // include anchor tags to all of our links so
+            // search engines can more easily crawl
+            Object.keys(config.cities).map((city) => {
+              let breweries = config.cities[city].breweries || []
+              return [(<a href={`${config.url}/${city}`}>{city}</a>)].concat(
+                Object.keys(breweries).map((brewery) => {
+                  return (<a href={`${config.url}/${city}/${brewery}`}>{brewery}</a>)
+                })
+              )
+            })
+          }
         </div>
       </div>
     );
