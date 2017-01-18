@@ -163,6 +163,8 @@ class App extends Component {
                       breweries={ this.state.breweries }
                       activeCity={ city }
           />
+        </div>
+        <div className="hidden-links">
           {
             // include anchor tags to all of our links so
             // search engines can more easily crawl
