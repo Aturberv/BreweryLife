@@ -45,7 +45,7 @@ const BreweryPage = (
                   <meta itemProp="latitude" content={brewery.location.lat} />
                   <meta itemProp="longitude" content={brewery.location.lng} />
               </div>
-              <meta itemProp="geoRadius" content="50" />
+              <meta itemProp="geoRadius" content="40000" />
           </div>
           <div itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
             <meta itemProp="ratingValue" content={brewery.breweryRating.yelp.rating}/>
