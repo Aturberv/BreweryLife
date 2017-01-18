@@ -26,7 +26,7 @@ const BreweryBeers = ({beers}) => {
                                     <div className="beer-info">
                                         <h3 itemProp="name">{beer.beerName}</h3>
                                         <h4>{beer.beerStyle}</h4>
-                                        <p>{beer.beerDescription}</p>
+                                        <p itemProp="description">{beer.beerDescription}</p>
                                         <div className="beer-stats">
                                             <p>ABV: {beer.beerABV}, IBU: {beer.beerIBU}</p>
                                             <span itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
