@@ -48,6 +48,7 @@ function generateBrewery(city, brewery, breweryKey, completeCallback) {
     brewery.beers = []; // reset beers
     brewery.breweryRating = {};
     brewery.social = {};
+    brewery.brewInfo = {};
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
@@ -62,13 +63,15 @@ function generateBrewery(city, brewery, breweryKey, completeCallback) {
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(appendFinalBrewery.bind(this, city, breweryKey))
         .then(completeCallback)
-        .catch(function(){
+        .catch(function(err){
+            console.log(err)
             process.exit(1);
         });
 }
 
 function yelpQuery(brewery) {
     if (brewery.yelpBusinessId) {
+
         return yelp.business(brewery.yelpBusinessId);    
     } else {
         return Promise.resolve(null);
@@ -84,7 +87,10 @@ function parseYelpResponse(business) {
                     reviewCount: business.review_count
                 } : {}
             },
-            phone: business.display_phone,
+            brewInfo: {
+                phone: business.display_phone,
+                address: business.location.display_address
+            },
             reviews: business.reviews ? business.reviews.map(function(review){
                 return {
                     text: review.excerpt,
@@ -115,6 +121,11 @@ function parseGooglePlacesResponse(response) {
             },
             googleUrl: place.url,
             location: place.geometry.location,
+            brewInfo: {
+                phone: place.formatted_phone_number,
+                address: place.formatted_address,
+                hours: place.opening_hours ? place.opening_hours.periods : {}
+            },
             reviews: place.reviews ? place.reviews.map(function(review){
                 return {
                     text: review.text,
@@ -213,6 +224,12 @@ function parseFoursquareResponse(response) {
                     rating: brewery.rating / 2
                 } : {}
             },
+            brewInfo: {
+                phone: brewery.contact.formattedPhone,
+                address: brewery.location.formattedAddress
+                // popularHours: brewery.popular.timeframes leaving this for future ref in case we decide we want it
+                // have to slice the first object (the object is stored with 'today' for the date)
+            },
             social: {foursquare: brewery.shortUrl},
             userTips: brewery.tips.groups ? 
                         brewery.tips.groups[0].items
@@ -258,6 +275,11 @@ function joinBreweryWithResponse(brewery, response) {
             brewery.breweryRating[ratingKey] = response.breweryRating[ratingKey]
         }
         delete response.breweryRating
+    if(response.brewInfo)
+        for (var infoKey in response.brewInfo) {
+            brewery.brewInfo[infoKey] = response.brewInfo[infoKey]
+        }
+        delete response.brewInfo
     if(response.social)
         for(var socialKey in response.social) { 
             brewery.social[socialKey] = response.social[socialKey]
