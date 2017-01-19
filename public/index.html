@@ -14,6 +14,13 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js" crossorigin="anonymous"></script>
     <script>
@@ -21,12 +28,12 @@
         {whitelistUrls: [/https:\/\/nycbrewerymap\.com.*/]}).install()
     </script>
     <script src="https://web.btncdn.com/v1/button.js" async defer></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js');
-        });
-      }
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4823558074614500",
+        enable_page_level_ads: true
+      });
     </script>
   </body>
 </html>
