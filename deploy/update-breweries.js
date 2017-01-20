@@ -88,8 +88,7 @@ function parseYelpResponse(business) {
                 } : {}
             },
             brewInfo: {
-                phone: business.display_phone,
-                address: business.location.display_address
+                phone: business.display_phone
             },
             reviews: business.reviews ? business.reviews.map(function(review){
                 return {
@@ -123,8 +122,8 @@ function parseGooglePlacesResponse(response) {
             location: place.geometry.location,
             brewInfo: {
                 phone: place.formatted_phone_number,
-                address: place.formatted_address,
-                hours: place.opening_hours ? place.opening_hours.periods : {}
+                hours: place.opening_hours ? place.opening_hours.periods : {},
+                humanReadableHours: place.opening_hours ? place.opening_hours.weekday_text : []
             },
             reviews: place.reviews ? place.reviews.map(function(review){
                 return {
@@ -226,7 +225,12 @@ function parseFoursquareResponse(response) {
             },
             brewInfo: {
                 phone: brewery.contact.formattedPhone,
-                address: brewery.location.formattedAddress
+                address: {
+                    streetAddress: brewery.location.address,
+                    postal: brewery.location.postalCode,
+                    city: brewery.location.city,
+                    state: brewery.location.state
+                }
                 // popularHours: brewery.popular.timeframes leaving this for future ref in case we decide we want it
                 // have to slice the first object (the object is stored with 'today' for the date)
             },
