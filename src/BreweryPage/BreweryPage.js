@@ -10,6 +10,7 @@ import BrewerySocial from '../BrewerySocial/BrewerySocial';
 import BreweryRating from '../BreweryRating/BreweryRating';
 import BreweryMap from '../BreweryMap/BreweryMap';
 import RideButton from '../RideButton/RideButton';
+import BreweryInfo from '../BreweryInfo/BreweryInfo';
 
 import config from '../../config.json';
 
@@ -29,7 +30,23 @@ const BreweryPage = (
       <div className="breweryPage" itemScope itemType="http://schema.org/Brewery">
           <meta itemProp="priceRange" content="$" />
           <meta itemProp="servesCuisine" content="beer" />
-          { /* TODO: address, telephone number, hours */ }
+          <div itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
+            <meta itemProp="streetAddress" content={brewery.brewInfo.address.streetAddress} />
+            <meta itemProp="addressLocality" content={brewery.brewInfo.address.city} />
+            <meta itemProp="addressRegion" content={brewery.brewInfo.address.state} />
+            <meta itemProp="postalCode" content={brewery.brewInfo.address.postal} />
+          </div>
+          <meta itemProp="telephone" content={brewery.brewInfo.phone} />
+          {
+            brewery.brewInfo.hours.map((day) =>
+              <div itemProp="openingHoursSpecification" itemType="http://schema.org/OpeningHoursSpecification">
+                  <link itemProp="dayOfWeek" href={`http://schema.org/${config.days[day.open.day]}`} /> 
+                  <meta itemProp="opens" content={day.open.time} />
+                  <meta itemProp="closes" content={day.close.time} />
+              </div>
+            )
+          }
+          
           <meta itemProp="name" content={brewery.name} />
           <meta itemProp="hasMap" content={currentUrl} />
           <meta itemProp="url" content={currentUrl} />
@@ -81,6 +98,7 @@ const BreweryPage = (
                     <Col sm={12} md={6}>
                         <center>
                             <BreweryRating ratings={brewery.breweryRating} />
+                            <BreweryInfo info={brewery.brewInfo} />
                         </center>
                     </Col>
                     <Col sm={12} md={6}>
