@@ -38,7 +38,7 @@ const BreweryPageMeta = (
           <meta itemProp="url" content={currentUrl} />
           <meta itemProp="logo" content={brewery.breweryLogo} />
           <meta itemProp="description" content={brewery.breweryDescription} />
-          <meta itemProp="image" content={brewery.breweryLogo} />
+          <meta itemProp="image" content={brewery.images} />
           <div itemProp="geo" itemScope itemType="http://schema.org/GeoCoordinates">
               <meta itemProp="latitude" content={brewery.location.lat} />
               <meta itemProp="longitude" content={brewery.location.lng} />
@@ -64,7 +64,7 @@ const BreweryPageMeta = (
                 {name:"description", content:brewery.breweryDescription},
                 {property: "og:type", content:"restaurant.restaurant"},
                 {property: "og:url", content:currentUrl},
-                {property: "og:image", content:brewery.breweryLogo},
+                {property: "og:image", content:brewery.photos.length > 0 ? brewery.photos[0] : ''},
                 {property: "og:description", content:brewery.breweryDescription},
                 {property: "place:location:latitude", content:brewery.location.lat},
                 {property: "place:location:longitude", content:brewery.location.lng},

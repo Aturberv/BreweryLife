@@ -6,6 +6,7 @@ function cleanup {
 }
 trap cleanup EXIT
 
+export REACT_APP_CI=1
 rm -rf ssr/
 
 npm run generate-sitemap

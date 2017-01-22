@@ -52,6 +52,9 @@ pageUrls.forEach(function(url) {
                 return true;
             });
             $('head').find('script').replaceWith(scripts);
+            // if we load facebook's iframes from localhost
+            // they complain when being loaded from a real url
+            $('body').append('<script src="https://connect.facebook.net/en_US/sdk.js" async defer></script>');
             fs.writeFileSync('ssr/' + url, $.html());
         })
     }); 
