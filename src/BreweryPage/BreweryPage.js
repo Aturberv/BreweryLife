@@ -11,6 +11,7 @@ import BreweryRating from '../BreweryRating/BreweryRating';
 import BreweryMap from '../BreweryMap/BreweryMap';
 import RideButton from '../RideButton/RideButton';
 import BreweryInfo from '../BreweryInfo/BreweryInfo';
+import Facebook from '../Facebook/Facebook';
 
 import config from '../../config.json';
 
@@ -24,7 +25,8 @@ const BreweryPage = (
     activeCity,
     activeCityBreweries,
     isLoggedIn,
-    currentUrl
+    currentUrl,
+    fbInit
 }) => {
     return (
       <div className="breweryPage" itemScope itemType="http://schema.org/Brewery">
@@ -37,6 +39,10 @@ const BreweryPage = (
                                 userCoordinates={userCoordinates}
                                 isMobile={isMobile}
                                 destination={brewery.location}/>
+                    <Facebook isLoggedIn={isLoggedIn} 
+                              currentUrl={currentUrl}
+                              fbInit={fbInit} 
+                    />
                 </center>
                 <div className="container">
                 <Row className="brewery-stuff">

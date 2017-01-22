@@ -3,7 +3,7 @@
   <head itemscope itemtype="http://schema.org/WebSite">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
     <link rel="manifest" href="/manifest.json">
     <script>
       window.ButtonWebConfig = {
@@ -13,6 +13,7 @@
     </script>
   </head>
   <body>
+    <div id="fb-root"></div>
     <div id="root"></div>
     <script>
       if ('serviceWorker' in navigator) {
@@ -23,17 +24,10 @@
     </script>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js" crossorigin="anonymous"></script>
+    <script src="https://web.btncdn.com/v1/button.js" async defer></script>
     <script>
       Raven.config('https://c56bf372c3244e089766fb089d1fb85a@sentry.io/122382', 
         {whitelistUrls: [/https:\/\/nycbrewerymap\.com.*/]}).install()
-    </script>
-    <script src="https://web.btncdn.com/v1/button.js" async defer></script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-4823558074614500",
-        enable_page_level_ads: true
-      });
     </script>
   </body>
 </html>

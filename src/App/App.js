@@ -1,3 +1,5 @@
+/* global FB */
+
 import ReactGA from 'react-ga';
 import Helmet from 'react-helmet';
 import React, { Component } from 'react';
@@ -22,12 +24,43 @@ class App extends Component {
     autoBind(this);
     this.state = {
       breweries: Cities[props.params.city],
-      defaultCenter: config.cities[props.params.city].map.center
+      defaultCenter: config.cities[props.params.city].map.center,
+      isLoggedIn: false,
+      fbInit: false
     }
+    window.fbAsyncInit = this.facebookInit;
+    window.fbLogin = this.getFacebookInfo;
   }
 
   componentWillMount(){
     ReactGA.initialize('UA-88592303-1');
+  }
+
+  facebookInit() {
+    FB.init({
+      appId      : '744534482367485',
+      xfbml      : true,
+      status     : true,
+      cookie     : true,
+      version    : 'v2.7'
+    });
+    this.setState({fbInit:true});
+    FB.getLoginStatus(this.getFacebookInfo);
+  }
+
+  getFacebookInfo(fbResponse) {
+    if (fbResponse.authResponse && fbResponse.status === 'connected') {
+      this.setState({
+        isLoggedIn: true
+      });
+      // FB.api('/me', {fields:'name, email'}, function(resp) {
+      //   TODO: send email to third party service?
+      // });
+    } else {
+      this.setState({
+        isLoggedIn:false
+      });
+    }
   }
 
   breweryNameFilter(breweryKeys) {
@@ -109,6 +142,12 @@ class App extends Component {
     const activeCityConfig = config.cities[city];
     const activeCityBreweries = Cities[city];
     const title = `${activeCityConfig.name} Brewery Map`;
+    let scripts = [
+      {type: "application/ld+json", innerHTML: `{"@context": "http://schema.org","@type": "Organization","url": "${config.url}","logo": "${favIcon}"}`}
+    ];
+    if(!process.env.REACT_APP_CI) {
+      scripts.push({src:"https://connect.facebook.net/en_US/sdk.js"});
+    }
 
     return (
       <div className="App">
@@ -131,10 +170,7 @@ class App extends Component {
             {rel:"apple-touch-icon", href:favIcon},
             {rel:"apple-touch-icon", sizes:"160x160", href:favIcon},
           ]}
-          script={[
-            {type: "application/ld+json", innerHTML: `{"@context": "http://schema.org","@type": "Organization","url": "${config.url}","logo": "${favIcon}"}`}
-
-          ]}
+          script={scripts}
         />
         <Header breweryNameFilter={this.breweryNameFilter}
                 beerTypeFilter={this.beerTypeFilter}
@@ -153,6 +189,7 @@ class App extends Component {
                          activeCity={ city }
                          activeCityBreweries={ activeCityBreweries }
                          isLoggedIn={ this.state.isLoggedIn }
+                         fbInit={ this.state.fbInit }
                          currentUrl={ currentUrl }
             />
         }
