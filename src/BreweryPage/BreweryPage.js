@@ -48,8 +48,12 @@ const BreweryPage = (
                 <Row className="brewery-stuff">
                     <Col sm={12} md={6}>
                         <center>
-                            <BreweryRating ratings={brewery.breweryRating} />
-                            <BreweryInfo info={brewery.brewInfo} />
+                            <Col sm={12} md={6}>
+                                <BreweryRating ratings={brewery.breweryRating} />
+                            </Col>
+                            <Col sm={12} md={6}>
+                                <BreweryInfo info={brewery.brewInfo} />
+                            </Col>
                         </center>
                     </Col>
                     <Col sm={12} md={6}>
