@@ -6,13 +6,14 @@ const BreweryInfo = ({ info }) => {
   return(
     <div className="brewery-info">
         {
-          <div className="brewery-number">
-            <h4>
-              <a href={`tel:+1${info.phone.replace(/\D/g,'')}`}>
-              {info.phone}
-              </a>
-            </h4>
-          </div>
+          info.phone &&
+            <div className="brewery-number">
+              <h4>
+                <a href={`tel:+1${info.phone.replace(/\D/g,'')}`}>
+                {info.phone}
+                </a>
+              </h4>
+            </div>
         }
         <div className="brewery-hours">
         {
