@@ -1,8 +1,12 @@
 .facebook-button {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 2px;
+    display: inline;
 }
 
 #facebook-container {
     padding-bottom: 5px;
+}
+
+.fb-login-button > span {
+    height: 26px !important;
 }
