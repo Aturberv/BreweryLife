@@ -1,22 +1,36 @@
 import React from 'react';
 
+import './BreweryInfo.css';
+
 const BreweryInfo = ({ info }) => {
   return(
-    <div>
-      <span>
+    <div className="brewery-info">
+        {
+          <div className="brewery-number">
+            <h4>
+              <a href={`tel:+1${info.phone.replace(/\D/g,'')}`}>
+              {info.phone}
+              </a>
+            </h4>
+          </div>
+        }
+        <div className="brewery-hours">
+        {
+          info.humanReadableHours.map((day) =>
+            <div key={day}><h5>{day}</h5></div>
+          )
+        }
+        </div>
+        <div className="brewery-address">
         {
           info.address &&
           <div>
-            <h5>{info.address.streetAddress}, {info.address.city} {info.address.state}, {info.address.postal}</h5>
-            <center><h6>{info.phone}</h6></center>
+            <h4>{info.address.streetAddress}<br/>
+                {info.address.city}, {info.address.state} {info.address.postal}
+            </h4>
           </div>
         }
-        {
-          info.humanReadableHours.map((day) =>
-            <div key={day}>{day}</div>
-          )
-        }
-      </span>
+        </div>
     </div>
   )
 }

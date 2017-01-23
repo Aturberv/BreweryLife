@@ -2,7 +2,6 @@ import React from 'react';
 import Icon from 'react-fa'
 import StarRating from '../Rating/Rating';
 import config from '../../config.json'
-import './BreweryRating.css'
 
 const BreweryRating = ({
   ratings
