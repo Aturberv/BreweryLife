@@ -66,6 +66,7 @@ const BreweryPage = (
                                         mapZoom={ 15 }
                                         breweries={ activeCityBreweries }
                                         activeCity={ activeCity }
+                                        interactive={ false }
                             />
                         </div>
                     </Col>
