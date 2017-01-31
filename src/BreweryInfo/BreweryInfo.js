@@ -17,6 +17,7 @@ const BreweryInfo = ({ info }) => {
         }
         <div className="brewery-hours">
         {
+          info.humanReadableHours &&
           info.humanReadableHours.map((day) =>
             <div key={day}><h5>{day}</h5></div>
           )
