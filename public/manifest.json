@@ -1,6 +1,8 @@
 {
-  "short_name": "City Brewery Map",
+  "short_name": "Brewery Map",
   "name": "City Brewery Map",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,6 +10,11 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./",
-  "display": "standalone"
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1E90FF",
+  "theme_color": "#1E90FF",
+  "related_applications": [{
+    "platform": "web"
+  }]
 }

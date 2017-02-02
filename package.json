@@ -5,6 +5,7 @@
   "homepage": "https://nycbrewerymap.com/",
   "devDependencies": {
     "async": "^2.1.4",
+    "babel-polyfill": "^6.22.0",
     "cheerio": "^0.22.0",
     "chromedriver": "^2.26.1",
     "coveralls": "^2.11.15",
@@ -26,6 +27,7 @@
     "antd": "^2.5.1",
     "autobind-decorator": "^1.3.4",
     "google-map-react": "^0.22.0",
+    "raven-js": "^3.10.0",
     "react": "^15.4.1",
     "react-autobind": "^1.0.6",
     "react-bootstrap": "^0.30.7",

@@ -157,6 +157,7 @@ class App extends Component {
           meta={[
             {name: "description", content: activeCityConfig.description},
             {name: "keywords", content: activeCityConfig.keywords},
+            {name: "theme-color", content:"#1E90FF"},
             {property: "fb:app_id", content:"744534482367485"},
             {property: "og:type", content:"website"},
             {property: "og:url", content:currentUrl},
