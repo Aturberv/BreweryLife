@@ -22,6 +22,7 @@ npm run generate-serviceworker
 # gzip swag
 find build \( -iname '*.html' \
               -o  -iname '*.css' \
+              -o  -iname '*.map' \
               -o -iname '*.js' \
               -o -iname '*.json' \
               -o -iname '*.xml' \
