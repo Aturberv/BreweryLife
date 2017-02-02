@@ -50,7 +50,6 @@ class Header extends Component {
         this.props.ratingFilter(rating);
     }
 
-
     uniqueBeerTypes(breweries) {
         return Object.keys(breweries).reduce((result, key) => {
             return [...new Set(result.concat(breweries[key].beerTypes))];
@@ -62,7 +61,6 @@ class Header extends Component {
                 0
         );
     }
-
 
 
     render() {
@@ -81,7 +79,7 @@ class Header extends Component {
                                                 state: { breweryKey: null}
                                             }}>
                                                 <Icon type="left"/> Map
-                                            </Link>
+                                            </Link> 
                                         )
                                     :
                                         `${allCities[city].name} Breweries`
@@ -90,6 +88,12 @@ class Header extends Component {
                             <Navbar.Toggle/>
                         </Navbar.Header>
                     </Col>
+                    {
+                        breweryKey ?
+                            (
+                                <div />
+                            )
+                        :
                 <Navbar.Collapse>
                     <Col xs={12} sm={2}>
                         <div className="nav-element">
@@ -155,6 +159,7 @@ class Header extends Component {
                         </div>
                     </Col>
                 </Navbar.Collapse>
+            }
                 </Row>
             </Navbar>
         );
