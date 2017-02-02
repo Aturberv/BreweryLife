@@ -25,11 +25,7 @@ const BreweryPageMeta = (
           {
             brewery.brewInfo.hours && brewery.brewInfo.hours.map && 
             brewery.brewInfo.hours.map((day) =>
-              <div itemProp="openingHoursSpecification" itemType="http://schema.org/OpeningHoursSpecification" key={day.open.day}>
-                  <link itemProp="dayOfWeek" href={`http://schema.org/${config.days[day.open.day]}`} /> 
-                  <meta itemProp="opens" content={day.open.time} />
-                  <meta itemProp="closes" content={day.close.time} />
-              </div>
+                <meta itemProp="openingHours" content={`${config.days[day.open.day].slice(0, 2)} ${day.open.time}-${day.close.time}`} />
             )
           }
 
@@ -38,7 +34,10 @@ const BreweryPageMeta = (
           <meta itemProp="url" content={currentUrl} />
           <meta itemProp="logo" content={brewery.breweryLogo} />
           <meta itemProp="description" content={brewery.breweryDescription} />
-          <meta itemProp="image" content={brewery.images} />
+          { 
+            brewery.photos.length > 0 &&
+              <meta itemProp="image" content={brewery.photos[0]} />
+          }
           <div itemProp="geo" itemScope itemType="http://schema.org/GeoCoordinates">
               <meta itemProp="latitude" content={brewery.location.lat} />
               <meta itemProp="longitude" content={brewery.location.lng} />
