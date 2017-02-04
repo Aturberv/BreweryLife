@@ -25,7 +25,9 @@ const BreweryPageMeta = (
           {
             brewery.brewInfo.hours && brewery.brewInfo.hours.map && 
             brewery.brewInfo.hours.map((day) =>
-                <meta itemProp="openingHours" content={`${config.days[day.open.day].slice(0, 2)} ${day.open.time}-${day.close.time}`} />
+                <meta itemProp="openingHours" 
+                      key={config.days[day.open.day].slice(0, 2)} 
+                      content={`${config.days[day.open.day].slice(0, 2)} ${day.open.time}-${day.close.time}`} />
             )
           }
 

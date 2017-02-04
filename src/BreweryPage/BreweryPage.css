@@ -1,12 +1,4 @@
-.breweryPage {
-    z-index: 1; /* above the map */
-    background: white;
-    flex: 1 1 auto;
-}
-
 .breweryPage-map {
-    max-width: 100vw;
-    max-height: 100vh;
     height: 275px;
     width: 100%;
     margin-top:5px;
@@ -16,6 +8,7 @@
     display: table;
     margin: 0 auto;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .ant-tabs-nav-container {
@@ -25,5 +18,4 @@
 
 .brewery-name {
 	color: #1E90FF;
-	font-family: 'Palatino', serif;
 }

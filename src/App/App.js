@@ -9,10 +9,12 @@ import {geolocated} from 'react-geolocated';
 import Header from '../Header/Header';
 import BreweryPage from '../BreweryPage/BreweryPage';
 import BreweryMap from '../BreweryMap/BreweryMap';
+import Footer from '../Footer/Footer';
 
 import Cities from '../breweries.json';
 import config from '../../config.json';
 
+import './bootstrap.css';
 import './App.css';
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -30,10 +32,6 @@ class App extends Component {
     }
     window.fbAsyncInit = this.facebookInit;
     window.fbLogin = this.getFacebookInfo;
-  }
-
-  componentWillMount(){
-    ReactGA.initialize('UA-88592303-1');
   }
 
   facebookInit() {
@@ -180,28 +178,34 @@ class App extends Component {
                 city={ city }
                 allCities={ config.cities }
                 breweries={ activeCityBreweries }
-                router={ this.props.router }
         />
-        {
-          breweryKey && 
-            <BreweryPage brewery={ activeCityBreweries[breweryKey] }
-                         isMobile={ isMobile }
-                         userCoordinates={ coords }
-                         activeCity={ city }
-                         activeCityBreweries={ activeCityBreweries }
-                         isLoggedIn={ this.state.isLoggedIn }
-                         fbInit={ this.state.fbInit }
-                         currentUrl={ currentUrl }
-            />
-        }
-        <div className="App-map">
-          <BreweryMap googleMapsApiKey={ config.googleMapsApiKey }
-                      mapCenter={ activeCityConfig.map.center }
-                      mapZoom={ activeCityConfig.map.zoom }
-                      breweries={ this.state.breweries }
-                      activeCity={ city }
-          />
+        <div className="content">
+          {
+            breweryKey ?
+              <BreweryPage brewery={ activeCityBreweries[breweryKey] }
+                           isMobile={ isMobile }
+                           userCoordinates={ coords }
+                           activeCity={ city }
+                           activeCityBreweries={ activeCityBreweries }
+                           isLoggedIn={ this.state.isLoggedIn }
+                           fbInit={ this.state.fbInit }
+                           currentUrl={ currentUrl }
+              />
+            :
+              <div className="App-map">
+                <BreweryMap googleMapsApiKey={ config.googleMapsApiKey }
+                            mapCenter={ activeCityConfig.map.center }
+                            mapZoom={ activeCityConfig.map.zoom }
+                            breweries={ this.state.breweries }
+                            activeCity={ city }
+                />
+              </div>
+          }
         </div>
+        <Footer 
+          allCities={ config.cities }
+          router={ this.props.router }
+        />
         <div className="hidden-links">
           {
             // include anchor tags to all of our links so

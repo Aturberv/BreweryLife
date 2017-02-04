@@ -6603,6 +6603,48 @@
     "austin": {},
     "sf": {},
     "nyc": {
+        "BreweryMap": {
+                    "location": {
+                        "lat": 40.6710413,
+                        "lng": -73.9900452,
+                        "valid": false
+                    },
+                    "reviews": [
+                        {
+                        "text": "Wow these guys are awesomesauce.",
+                        "rating": 5
+                        }
+                    ],
+                    "photos": [
+                        "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/000/25c/2d6/227c931.jpg"
+                    ],
+                    "beers": [],
+                    "breweryRating": {
+                        "yelp": {
+                            "rating": 5
+                        },
+                        "google": {
+                            "rating": 5
+                        },
+                        "untappd": {
+                            "rating": 5
+                        },
+                        "foursquare": {
+                            "rating": 5
+                        }
+                    },
+                    "social": {
+                        "twitter": "",
+                        "instagram": "",
+                        "facebook": "",
+                        "website": "https://nycbrewerymap.com"
+                    },
+                    "brewInfo": {},
+                    "name": "Brewery Map",
+                    "breweryDescription": "da bess",
+                    "breweryLogo": "/favicon.ico",
+                    "beerTypes": []
+                },
         "GrimmArtisanalAles": {
             "untappdBreweryId": "72844",
             "location": {
