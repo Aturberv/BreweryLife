@@ -160,45 +160,47 @@ function queryUntappd(brewery) {
 }
 
 function parseUntappdResponse(response) {
-    var brewery = response.response.brewery;
-    var breweryBeers = brewery.beer_list.items;
-    var socialObj = brewery.contact;
-    var result = {
-        name: brewery.brewery_name,
-        breweryRating: {
-            untappd: brewery.rating.rating_score ? {
-                rating: brewery.rating.rating_score,
-            } : {}
-        },
-        breweryDescription: brewery.brewery_description,
-        breweryLogo: brewery.brewery_label,
-        social: {
-                twitter: `https://twitter.com/${socialObj.twitter}`,
-                instagram: `https://www.instagram.com/${socialObj.instagram}`,
-                facebook: socialObj.facebook,
-                website: socialObj.url
+    if(response) {
+        var brewery = response.response.brewery;
+        var breweryBeers = brewery.beer_list.items;
+        var socialObj = brewery.contact;
+        var result = {
+            name: brewery.brewery_name,
+            breweryRating: {
+                untappd: brewery.rating.rating_score ? {
+                    rating: brewery.rating.rating_score,
+                } : {}
             },
-        beers: breweryBeers.map(function(beerObj){
-            return {
-                beerName: beerObj.beer.beer_name,
-                beerLabel: beerObj.beer.beer_label,
-                beerStyle: beerObj.beer.beer_style,
-                beerLabel: beerObj.beer.beer_label,
-                beerDescription: beerObj.beer.beer_description,
-                beerRating: beerObj.beer.rating_score,
-                beerRatingCount: beerObj.beer.rating_count,
-                beerABV: beerObj.beer.beer_abv,
-                beerIBU: beerObj.beer.beer_ibu
-            }
-        }),
-        // extract unique beer types from each brewery
-        beerTypes: breweryBeers.map(function(beerObj){
-            return beerObj.beer.beer_style;
-        }).filter(function(value, index, self){
-            return self.indexOf(value) === index;
-        })
-    };
-    return result;
+            breweryDescription: brewery.brewery_description,
+            breweryLogo: brewery.brewery_label,
+            social: {
+                    twitter: `https://twitter.com/${socialObj.twitter}`,
+                    instagram: `https://www.instagram.com/${socialObj.instagram}`,
+                    facebook: socialObj.facebook,
+                    website: socialObj.url
+                },
+            beers: breweryBeers.map(function(beerObj){
+                return {
+                    beerName: beerObj.beer.beer_name,
+                    beerLabel: beerObj.beer.beer_label,
+                    beerStyle: beerObj.beer.beer_style,
+                    beerLabel: beerObj.beer.beer_label,
+                    beerDescription: beerObj.beer.beer_description,
+                    beerRating: beerObj.beer.rating_score,
+                    beerRatingCount: beerObj.beer.rating_count,
+                    beerABV: beerObj.beer.beer_abv,
+                    beerIBU: beerObj.beer.beer_ibu
+                }
+            }),
+            // extract unique beer types from each brewery
+            beerTypes: breweryBeers.map(function(beerObj){
+                return beerObj.beer.beer_style;
+            }).filter(function(value, index, self){
+                return self.indexOf(value) === index;
+            })
+        };
+        return result;
+    }
 }
 
 function foursquareQuery(brewery) {
