@@ -1,0 +1,49 @@
+.footer { 
+    height: 40px;
+}
+
+.footer > div {
+    padding-top: 10px;
+    margin: 0 auto;
+    display: table;
+}
+
+.footer > div > * {
+    display: table;
+    margin: 0 auto;
+}
+
+.city-selection-button {
+    width: 100%;
+}
+
+.ant-menu {
+    line-height: 26px;
+}
+
+.ant-menu-horizontal {
+    border: 0;
+}
+
+.ant-menu-horizontal > .ant-menu-submenu-selected {
+    border: 0;
+}
+.ant-menu-horizontal > .ant-menu-submenu {
+    border: 0;
+}
+.ant-menu-horizontal > .ant-menu-submenu:hover {
+    border: 0;
+}
+
+.ant-menu-horizontal > .ant-menu-submenu-active {
+    border: 0;
+}
+
+.ant-menu-submenu-horizontal > .ant-menu {
+    top: initial;
+    bottom: 20px;
+}
+
+.ant-menu-item {
+    cursor: pointer;
+}

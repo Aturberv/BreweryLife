@@ -43,12 +43,13 @@ function generateBreweriesForCity(breweries, city) {
 
 
 function generateBrewery(city, brewery, breweryKey, completeCallback) {    
-    brewery.reviews = []; // reset reviews
-    brewery.photos = []; // reset photos
-    brewery.beers = []; // reset beers
-    brewery.breweryRating = {};
-    brewery.social = {};
-    brewery.brewInfo = {};
+    // reset
+    brewery.reviews = brewery.reviews || []; 
+    brewery.photos = brewery.photos || [];
+    brewery.beers = brewery.beers || [];
+    brewery.breweryRating = brewery.breweryRating || {};
+    brewery.social = brewery.social || {};
+    brewery.brewInfo = brewery.brewInfo || {};
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
@@ -142,16 +143,20 @@ function parseGooglePlacesResponse(response) {
 }
 
 function queryUntappd(brewery) {
-    return new Promise(function(resolve, reject){
-        untappd.breweryInfo(function(err, brew){
-            if(err){
-                console.log('err'+ err)
-                reject(err);
-            }
-                resolve(brew);
-        }, 
-        {"BREWERY_ID": brewery.untappdBreweryId})
-    })
+    if(brewery.untappdBreweryId) {
+        return new Promise(function(resolve, reject){
+            untappd.breweryInfo(function(err, brew){
+                if(err){
+                    console.log('err'+ err)
+                    reject(err);
+                }
+                    resolve(brew);
+            }, 
+            {"BREWERY_ID": brewery.untappdBreweryId})
+        })
+    } else {
+        return Promise.resolve(null);
+    }  
 }
 
 function parseUntappdResponse(response) {

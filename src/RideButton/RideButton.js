@@ -3,8 +3,6 @@ import ReactGA from 'react-ga';
 import autoBind from 'react-autobind';
 import './RideButton.css';
 
-
-
 class RideButton extends Component {
 
     constructor(props) {
@@ -66,13 +64,14 @@ class RideButton extends Component {
     render() {
         const { isMobile, userCoordinates } = this.props; 
         return (
-            <div className="ride-button">
+            <div>
                 <div>
                 {
                     !userCoordinates ?
                         this.loadingDisplay()
                     :
-                        isMobile && <div data-bttnio-id="btn-58c5e756c2a3e133"
+                        isMobile && <div className="ride-button"
+                                         data-bttnio-id="btn-58c5e756c2a3e133"
                                          data-bttnio-context={this.locationString()}
                                          onClick={this.onRideRequest}>
                             { this.loadingDisplay() }

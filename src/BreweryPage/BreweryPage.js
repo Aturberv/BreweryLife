@@ -34,9 +34,9 @@ const BreweryPage = (
             <div className="breweryPage-header">
                 <center>
                     <h1 className="brewery-name">{brewery.name}</h1>
+                    {brewery.breweryDescription && <BreweryDescription description={brewery.breweryDescription} />}
                     <BrewerySocial social={brewery.social} />
-                    <RideButton breweryName={brewery.name} 
-                                userCoordinates={userCoordinates}
+                    <RideButton userCoordinates={userCoordinates}
                                 isMobile={isMobile}
                                 destination={brewery.location}/>
                     <Facebook isLoggedIn={isLoggedIn} 
@@ -74,10 +74,9 @@ const BreweryPage = (
                 </div>
             </div>
             <div>
-                <BreweryDescription description={brewery.breweryDescription} />
-                <BreweryImages photos={brewery.photos} />
-                <BreweryReviews reviews={brewery.reviews} />
-                <BreweryBeers beers={brewery.beers} />
+                {brewery.photos.length > 0 && <BreweryImages photos={brewery.photos} />}
+                {brewery.reviews.length > 0 && <BreweryReviews reviews={brewery.reviews} />}
+                {brewery.beers.length > 0 && <BreweryBeers beers={brewery.beers} />}
             </div>
         </div>
     );

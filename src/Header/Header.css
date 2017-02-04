@@ -3,15 +3,11 @@
 }
 
 .navbar {
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
+    background-color: white !important;
     padding-bottom: 5px;
     color: #777;
     z-index: 1001; /* above the map and the modals */
-}
-
-.navbar-default .navbar-brand {
-    color: #1E90FF;
-    font-family: 'Palatino', serif;
 }
 
 .navbar > .container {
@@ -41,30 +37,4 @@
 .rating {
     display: table;
     margin: 0 auto;
-}
-
-.city-selection-button {
-    width: 100%;
-}
-
-.ant-menu {
-    line-height: 26px;
-}
-
-.ant-menu-horizontal {
-    border: 0;
-}
-
-.ant-menu-horizontal > .ant-menu-submenu-selected {
-    border: 0;
-}
-.ant-menu-horizontal > .ant-menu-submenu {
-    border: 0;
-}
-.ant-menu-horizontal > .ant-menu-submenu:hover {
-    border: 0;
-}
-
-.ant-menu-horizontal > .ant-menu-submenu-active {
-    border: 0;
 }
