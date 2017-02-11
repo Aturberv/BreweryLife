@@ -53,7 +53,7 @@ Our brewery data is aggregated from a number of different sources. It utilizes t
 
 ### Adding a new brewery
 
-Add a new object to `breweryIds.json` in the following format:
+You'll need to add a new object to `config.json` in the following format:
 
 ```
 {
@@ -66,11 +66,27 @@ Add a new object to `breweryIds.json` in the following format:
 }
 ```
 
+You can get those ids using our script:
+
+```
+node deploy/search-brewery.js "brewery name" "city"
+```
+
+Paste the JSON result into `config.json`. If any of the results are null or don't make sense (sometimes the searches can be a bit wonky), try searching manually using the below techniques:
+
+#### Yelp
+
 You can retrieve the `yelpBusinessId` by searching Yelp for the brewery and extracting the part of the url after `https://yelp.com/biz/`.
+
+#### Google
 
 You can retrieve the `googlePlacesId` [here](https://developers.google.com/places/web-service/place-id).
 
+#### Untappd
+
 You can retrieve the `untappdBreweryId` by inspecting the URL you are routed to when searching for the brewery on [https://untappd.com](https://untappd.com).
+
+#### Foursquare
 
 You can retrieve the `foursquareVenueId` by looking at meta tags on the brewery's foursquare page.
 
@@ -90,7 +106,7 @@ _You can include the `"valid": false` key to prevent people from catching Ubers 
 Travis CI is responsible for deploying our code on every merge to master. Essentially, it runs:
 
 ```
-./deploy.sh
+./deploy/deploy.sh
 ```
 
 This script is responsible for creating a sitemap, generating static versions of each URL (for SEO purposes), scraping location information, and
@@ -103,9 +119,4 @@ The content that is synchronized are the local `build/` and `ssr/` directories w
 Thanks to Greg at Untappd for giving us access to their [API](https://untappd.com/api/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). If you have questions about webpack configuration, babel, etc. you should start there.
-
-
-## To Dos
-
-1. Convert to a [Progressive Web App](https://developers.google.com/web/progressive-web-apps/) by following the steps in [this repository](https://github.com/jeffposnick/create-react-pwa).
 
