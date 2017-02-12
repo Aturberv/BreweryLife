@@ -178,7 +178,9 @@ class App extends Component {
     const favIcon = `${config.url}/favicon.ico`;
     const activeCityConfig = config.cities[city];
     const activeCityBreweries = Cities[city];
-    const title = `${activeCityConfig.name} Brewery Map`;
+    const activeBreweryName = breweryKey ?
+      `${activeCityBreweries[breweryKey].name} - ` : '';
+    const title = `${activeBreweryName} ${activeCityConfig.name} Brewery Life`;
     let scripts = [
       {type: "application/ld+json", innerHTML: `{"@context": "http://schema.org","@type": "Organization","url": "${config.url}","logo": "${favIcon}"}`}
     ];
@@ -190,7 +192,6 @@ class App extends Component {
       <div className="App">
         <Helmet
           defaultTitle={title}
-          titleTemplate={`%s - ${title}`}
           meta={[
             {name: "description", content: activeCityConfig.description},
             {name: "keywords", content: activeCityConfig.keywords},

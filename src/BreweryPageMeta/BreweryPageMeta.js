@@ -60,7 +60,6 @@ const BreweryPageMeta = (
           }
 
           <Helmet
-              title={ brewery.name }
               meta={[
                 {name:"description", content:brewery.breweryDescription},
                 {property: "og:type", content:"restaurant.restaurant"},
