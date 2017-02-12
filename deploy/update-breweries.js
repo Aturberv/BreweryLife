@@ -123,7 +123,7 @@ function parseGooglePlacesResponse(response) {
             location: place.geometry.location,
             brewInfo: {
                 phone: place.formatted_phone_number,
-                hours: place.opening_hours ? place.opening_hours.periods : {},
+                hours: place.opening_hours ? place.opening_hours.periods : [],
                 humanReadableHours: place.opening_hours ? place.opening_hours.weekday_text : []
             },
             reviews: place.reviews ? place.reviews.map(function(review){

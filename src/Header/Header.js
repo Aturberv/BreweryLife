@@ -14,51 +14,64 @@ import './Header.css';
 class Header extends Component {
 
     constructor(props) {
-        super(props);
-        autoBind(this);
-        this.state = {
-            breweryNamesSelected: [],
-            beerTypesSelected: []
-        };
+      super(props);
+      autoBind(this);
+      this.state = this.defaultState();
+    }
+
+    componentWillReceiveProps(nextProps) {
+      if(this.props.city !== nextProps.city) {
+        this.setState(this.defaultState());
+      }
+    }
+
+    defaultState() {
+      return {
+        breweryNamesSelected: [],
+        beerTypesSelected: [],
+        rating: 2,
+        openNow: false
+      };
     }
 
     caseInsensitiveSearch(searchText, option){
-        return option.key.toLowerCase().includes(searchText.toLowerCase());
-    }
-
-    breweryNameFilter(breweryKeys) {
-        this.setState({
-            breweryNamesSelected: breweryKeys
-        })
-        this.props.breweryNameFilter(breweryKeys);
-    }
-
-    beerTypeFilter(beerTypes) {
-        this.setState({
-            beerTypesSelected: beerTypes
-        })
-        this.props.beerTypeFilter(beerTypes);
-    }
-
-    ratingFilter(rating) {
-        //our searches are currently mutually exclusive :(
-        this.setState({
-            breweryNamesSelected: [],
-            beerTypesSelected: []
-        })
-        this.props.ratingFilter(rating);
+      return option.key.toLowerCase().includes(searchText.toLowerCase());
     }
 
     uniqueBeerTypes(breweries) {
-        return Object.keys(breweries).reduce((result, key) => {
-            return [...new Set(result.concat(breweries[key].beerTypes))];
-        }, []).sort((a, b) =>
-            a.toLowerCase() < b.toLowerCase() ? 
-                -1 : 
-            (a.toLowerCase() > b.toLowerCase()) ? 
-                1 : 
-                0
-        );
+      return Object.keys(breweries).reduce((result, key) => {
+          return [...new Set(result.concat(breweries[key].beerTypes))];
+      }, []).sort((a, b) =>
+          a.toLowerCase() < b.toLowerCase() ? 
+              -1 : 
+          (a.toLowerCase() > b.toLowerCase()) ? 
+              1 : 
+              0
+      );
+    }
+
+    breweryNameFilter(breweryKeys) {
+      this.setState({
+          breweryNamesSelected: breweryKeys
+      }, () => this.props.filterChanged(this.state));
+    }
+
+    beerTypeFilter(beerTypes) {
+      this.setState({
+          beerTypesSelected: beerTypes
+      }, () => this.props.filterChanged(this.state));
+    }
+
+    ratingFilter(rating) {
+      this.setState({
+          rating: rating
+      }, () => this.props.filterChanged(this.state));
+    }
+
+    openFilter(event) {
+      this.setState({
+        openNow: event.target.checked
+      }, () => this.props.filterChanged(this.state));
     }
 
     render() {
@@ -90,11 +103,11 @@ class Header extends Component {
                         {
                             !breweryKey &&
                             <Navbar.Collapse>
-                                <Col xs={12} sm={3}>
+                                <Col xs={12} sm={2}>
                                     <div className="nav-element">
                                         <Select multiple
                                                 dropdownMatchSelectWidth={false}
-                                                placeholder="Brewery Name"
+                                                placeholder="Name"
                                                 filterOption={this.caseInsensitiveSearch}
                                                 onChange={this.breweryNameFilter}
                                                 style={{width:'100%'}}
@@ -107,7 +120,7 @@ class Header extends Component {
                                         </Select>
                                     </div>
                                 </Col>
-                                <Col xs={12} sm={3}>
+                                <Col xs={12} sm={2}>
                                     <div className="nav-element">
                                         <div>
                                             <Slider onChange={ this.ratingFilter }
@@ -115,8 +128,8 @@ class Header extends Component {
                                                     step={ .1 }
                                                     defaultValue={ 3 }
                                             />
-                                            <div className="rating">
-                                                Rating
+                                            <div className="center">
+                                                Rating: {this.state.rating}
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +138,7 @@ class Header extends Component {
                                     <div className="nav-element">
                                         <Select multiple
                                                 dropdownMatchSelectWidth={false}
-                                                placeholder="Type of Beer"
+                                                placeholder="Beer"
                                                 filterOption={this.caseInsensitiveSearch}
                                                 onChange={this.beerTypeFilter}
                                                 style={{width:'100%'}}
@@ -138,6 +151,16 @@ class Header extends Component {
                                         </Select>
                                     </div>
                                 </Col>
+                                <Col xs={12} sm={2}>
+                                  <div className="nav-element">
+                                    <div className="center">
+                                      <label>
+                                        <input type="checkbox" checked={this.state.openNow} onChange={this.openFilter}/>
+                                         <span>  Open Now</span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </Col>
                             </Navbar.Collapse>
                         }
                     </Row>
@@ -145,7 +168,6 @@ class Header extends Component {
             </header>
         );
     }
-
 }
 
 export default Header;

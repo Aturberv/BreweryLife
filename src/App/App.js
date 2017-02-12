@@ -61,61 +61,100 @@ class App extends Component {
     }
   }
 
-  breweryNameFilter(breweryKeys) {
-    if (breweryKeys.length === 0) {
-      this.setState({breweries: Cities[this.props.params.city]});
-      this.props.router.push(`'/${this.props.params.city}`);
-    } else if (breweryKeys.length === 1) {
-        this.props.router.push(`${this.props.params.city}/${breweryKeys[0]}`)
-    } else {
-      this.setState({
-        breweries: Object.keys(Cities[this.props.params.city]).reduce((result, key) => {
-          if(breweryKeys.indexOf(key) > -1) {
-            result[key] = Cities[this.props.params.city][key]
-          }
-          return result
-        }, {})
-      });
-      this.props.router.push(`'/${this.props.params.city}`);
-    }
-  }
-
-  beerTypeFilter(beerTypes) {
-    if (beerTypes.length === 0) {
-      this.setState({breweries: Cities[this.props.params.city]});
-    } else {
-      this.setState({
-        breweries: Object.keys(Cities[this.props.params.city]).reduce((result, key) => {
-          const intersection = new Set(
-              Cities[this.props.params.city][key].beerTypes
-              .filter(type => beerTypes.indexOf(type) > -1))
-          // we matched on all desired filters
-          if(intersection.size === beerTypes.length) {
-            result[key] = Cities[this.props.params.city][key];
-          }
-          return result;
-        }, {})
-      });
-    }
-  }
-
-  ratingFilter(ratingEvent) {
-    this.props.router.push(this.props.params.city);
+  onFilterChanged(filters) {
+    // there must be a better way to chain these!
+    let filteredBreweries = Cities[this.props.params.city];
+    filteredBreweries = this.breweryNameFilter(filteredBreweries, filters.breweryNamesSelected);
+    filteredBreweries = this.beerTypeFilter(filteredBreweries, filters.beerTypesSelected);
+    filteredBreweries = this.ratingFilter(filteredBreweries, filters.rating);
+    filteredBreweries = this.openFilter(filteredBreweries, filters.openNow);
     this.setState({
-      breweries: Object.keys(Cities[this.props.params.city]).reduce((result, key) => {
-        if(Cities[this.props.params.city][key].yelpRating >= ratingEvent) {
-          result[key] = Cities[this.props.params.city][key];
-        }
-        return result;
-      }, {})
+      breweries: filteredBreweries
     });
+  } 
+
+  breweryNameFilter(breweries, breweryKeys) {
+    if (breweryKeys.length === 0) {
+      return breweries;
+    }
+    return Object.keys(breweries).reduce((result, key) => {
+      if(breweryKeys.indexOf(key) > -1) {
+        result[key] = breweries[key]
+      }
+      return result;
+    }, {});
+  }
+
+  beerTypeFilter(breweries, beerTypes) {
+    if (beerTypes.length === 0) {
+      return breweries;
+    } 
+    return Object.keys(breweries).reduce((result, key) => {
+      const intersection = new Set(breweries[key].beerTypes.filter(type => beerTypes.indexOf(type) > -1))
+      // this brewery has all requested beer types
+      if(intersection.size === beerTypes.length) {
+        result[key] = breweries[key];
+      }
+      return result;
+    }, {});
+  }
+
+  ratingFilter(breweries, rating) {
+    return Object.keys(breweries).reduce((result, key) => {
+      if(breweries[key].breweryRating.untappd.rating >= rating) {
+        result[key] = breweries[key];
+      }
+      return result;
+    }, {})
+  }
+
+  openFilter(breweries, checked) {
+    if(!checked) return breweries;
+
+    const now = new Date();
+    return Object.keys(breweries).reduce((result, key) => {
+      const brewery = breweries[key];
+
+      // this brewery doesn't have hours information
+      if(!brewery.brewInfo ||
+         !brewery.brewInfo.hours ||
+         brewery.brewInfo.hours.length === 0) {
+        return result;
+      }
+
+      brewery.brewInfo.hours.forEach((day)=> {
+        if(now.getDay() === day.open.day ||
+           now.getDay() === day.close.day) {
+          // this brewery has hours today
+
+          const openTime = new Date(now)
+          const openHours = parseInt(day.open.time.slice(0, 2), 10);
+          const openMinutes = parseInt(day.open.time.slice(-2), 10);
+          openTime.setHours(openHours, openMinutes);
+          const closeTime = new Date(now);
+          const closeHours = parseInt(day.close.time.slice(0, 2), 10);
+          const closeMinutes = parseInt(day.close.time.slice(-2), 10);
+          closeTime.setHours(closeHours, closeMinutes);
+          if(day.close.day > day.open.day ||
+            (day.open.day === 6 && day.close.day === 0)){
+            closeTime.setDate(closeTime.getDate() + 1);
+          }
+          
+          if(now.getTime() >= openTime.getTime() &&
+             now.getTime() <= closeTime.getTime()) {
+            result[key] = breweries[key];
+          }
+        }
+      });
+      return result;
+    }, {})
   }
 
   componentWillReceiveProps(nextProps) {
     if(this.props.params.city !== nextProps.params.city) {
       this.setState({
         breweries: Cities[nextProps.params.city]
-      })
+      });
     }
 
     if(this.props.location.pathname !== nextProps.location.pathname) {
@@ -171,9 +210,7 @@ class App extends Component {
           ]}
           script={scripts}
         />
-        <Header breweryNameFilter={this.breweryNameFilter}
-                beerTypeFilter={this.beerTypeFilter}
-                ratingFilter={this.ratingFilter}
+        <Header filterChanged={this.onFilterChanged}
                 breweryKey={ breweryKey }
                 city={ city }
                 allCities={ config.cities }
@@ -212,7 +249,7 @@ class App extends Component {
             // search engines can more easily crawl
             Object.keys(config.cities).map((city) => {
               let breweries = config.cities[city].breweries || []
-              return [(<a href={`${config.url}/${city}`}>{city}</a>)].concat(
+              return [(<a href={`${config.url}/${city}`}>{config.cities[city].name}</a>)].concat(
                 Object.keys(breweries).map((brewery) => {
                   return (<a href={`${config.url}/${city}/${brewery}`}>{brewery}</a>)
                 })
@@ -226,7 +263,7 @@ class App extends Component {
 }
 
 if(isMobile) {
-    // can we figure out what city
+    // can we figure out what city to default to
     // based on their location?
     App = geolocated({
         positionOptions: {

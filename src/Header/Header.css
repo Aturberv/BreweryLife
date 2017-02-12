@@ -34,7 +34,11 @@
     margin: 0;
 }
 
-.rating {
+.center {
     display: table;
     margin: 0 auto;
+}
+
+.center > label {
+    font-weight: normal;
 }
