@@ -1,4 +1,4 @@
-# <a href="brewery.life" target="_blank">Brewery Life</a>
+# <a href="https://brewery.life" target="_blank">Brewery Life</a>
 
 [<img src="https://travis-ci.org/travis-ci/travis-web.svg?branch=master">](https://travis-ci.org/Aturberv/BreweryLife/)
 [![Coverage Status](https://coveralls.io/repos/github/Aturberv/BreweryLife/badge.svg?branch=master)](https://coveralls.io/github/Aturberv/BreweryLife?branch=master)
@@ -15,7 +15,7 @@ Browse to [localhost:3000](localhost:3000) and enjoy!
 
 ## Overview
 
-[Brewery Life](brewery.life) is an entirely static site hosted on S3. All of the information displayed is scraped at build time and embedded into the App using webpack.
+[Brewery Life](https://brewery.life) is an entirely static site hosted on S3. All of the information displayed is scraped at build time and embedded into the App using webpack.
 
 ## Accounts
 
