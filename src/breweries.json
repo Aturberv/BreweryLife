@@ -11526,7 +11526,7 @@
             },
             "brewInfo": {
                 "phone": "(917) 696-0438",
-                "hours": {},
+                "hours": [],
                 "humanReadableHours": [],
                 "address": {
                     "streetAddress": "40 Van Dyke St",
