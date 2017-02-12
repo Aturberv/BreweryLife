@@ -2,7 +2,7 @@
   "name": "nyc-beer-map",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nycbrewerymap.com/",
+  "homepage": "https://brewery.life/",
   "devDependencies": {
     "async": "^2.1.4",
     "babel-polyfill": "^6.22.0",

@@ -12,7 +12,7 @@ import './index.css';
 ReactGA.initialize('UA-88592303-1');
 Raven.config('https://c56bf372c3244e089766fb089d1fb85a@sentry.io/122382', 
     {
-       whitelistUrls: [/https:\/\/nycbrewerymap\.com.*/]
+       whitelistUrls: [/https:\/\/brewery\.life.*/]
     }).install()
 
 ReactDOM.render( 
