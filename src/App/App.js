@@ -195,6 +195,7 @@ class App extends Component {
             {name: "description", content: activeCityConfig.description},
             {name: "keywords", content: activeCityConfig.keywords},
             {name: "theme-color", content:"#1E90FF"},
+            {name: "google-site-verification", content:"tf7IBOxqLPpVM61wOQld8QA5NPGwh-M89iEMhJL2jYU"},
             {property: "fb:app_id", content:"744534482367485"},
             {property: "og:type", content:"website"},
             {property: "og:url", content:currentUrl},

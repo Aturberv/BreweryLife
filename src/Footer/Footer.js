@@ -16,7 +16,7 @@ const Footer = ({
         <footer>
             <Row className="footer">
                 <Col xs={12} sm={4}>
-                    <Link to="/nyc/BreweryMap">About Us</Link>
+                    <Link to="/nyc/BreweryLife">About Us</Link>
                 </Col>
                 <Col xs={12} sm={4}>
                     <Menu mode="horizontal" onClick={({key}) => router.push(`/${key}`) }>
@@ -32,7 +32,7 @@ const Footer = ({
                     </Menu>
                 </Col>
                 <Col xs={12} sm={4}>
-                    <a href="https://github.com/Aturberv/NYCBeerMap" target="_blank">Help us make this better!</a>
+                    <a href="https://github.com/Aturberv/BreweryLife" target="_blank">Help us make this better!</a>
                 </Col>
             </Row>
                         

@@ -1,5 +1,5 @@
 {
-    "url": "https://nycbrewerymap.com",
+    "url": "https://brewery.life",
     "googleMapsApiKey": "AIzaSyCG6SNlthILXRA7qZhcvNH5Wx6NL42gE8Y",
     "days": {
         "0": "Sunday",
@@ -175,7 +175,7 @@
                 "zoom": 12
             },
             "breweries": {
-            "BreweryMap": {
+            "BreweryLife": {
                     "location": {
                         "lat": 40.6710413,
                         "lng": -73.9900452,
@@ -209,10 +209,10 @@
                         "twitter": "",
                         "instagram": "",
                         "facebook": "",
-                        "website": "https://nycbrewerymap.com"
+                        "website": "https://brewery.life"
                     },
                     "brewInfo": {},
-                    "name": "BreweryMap",
+                    "name": "Brewery Life",
                     "breweryDescription": "da bess",
                     "breweryLogo": "/favicon.ico",
                     "beerTypes": []
