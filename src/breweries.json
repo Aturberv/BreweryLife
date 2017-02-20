@@ -8162,7 +8162,8 @@
             "googleUrl": "https://maps.google.com/?cid=15512340134091706295",
             "location": {
                 "lat": 40.7217239,
-                "lng": -73.9571722
+                "lng": -73.9571722,
+                "valid": true
             },
             "name": "Brooklyn Brewery",
             "breweryDescription": "",
