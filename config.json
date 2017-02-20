@@ -183,12 +183,21 @@
                     },
                     "reviews": [
                         {
-                        "text": "Wow these guys are awesomesauce.",
-                        "rating": 5
-                        }
+                            "text": "If you're a brewery and interested in a partnership, don't hesitate to reach out! Email: admin@brewery.life",
+                            "rating": 5
+                        },
+                        {
+                            "text": "Do you wish this site did something it doesn't? Let us know. Email: admin@brewery.life",
+                            "rating": 5
+                        },
+                        {
+                            "text": "Wow these guys are awesomesauce.",
+                            "rating": 5
+                        },
                     ],
                     "photos": [
-                        "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/000/25c/2d6/227c931.jpg"
+                        "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/000/25c/2d6/227c931.jpg",
+                        "https://avatars0.githubusercontent.com/u/17619426?v=3&s=500"
                     ],
                     "beers": [],
                     "breweryRating": {
@@ -213,7 +222,7 @@
                     },
                     "brewInfo": {},
                     "name": "Brewery Life",
-                    "breweryDescription": "da bess",
+                    "breweryDescription": "Made by a couple of guys who wished finding nearby breweries was easier.",
                     "breweryLogo": "/favicon.ico",
                     "beerTypes": []
                 },
