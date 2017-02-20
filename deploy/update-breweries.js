@@ -285,6 +285,9 @@ function joinBreweryWithResponse(brewery, response) {
     // join reviews and photos together
     if(response.reviews) response.reviews = response.reviews.concat(brewery.reviews);
     if(response.photos) response.photos = response.photos.concat(brewery.photos);
+    // use custom location from config rather than from google
+    if(response.location && brewery.location) response.location = brewery.location;
+    
     if(response.breweryRating) 
         for (var ratingKey in response.breweryRating) {
             brewery.breweryRating[ratingKey] = response.breweryRating[ratingKey]
