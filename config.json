@@ -311,6 +311,22 @@
                         "lng": -73.9680493,
                         "valid": false
                     }
+                },
+                "Wartega": {
+                    "foursquareVenueId":"58a8a9ec0a3d5449dce989cf",
+                    "untappdBreweryId":254065,
+                    "googlePlacesId":"ChIJ9aWUnb9awokRkpsUxYvuA9o"
+                },
+                "BigAliceBrewing": {
+                    "foursquareVenueId":"51bc99a6498e1757ec1d9148",
+                    "untappdBreweryId":49805,
+                    "yelpBusinessId":"big-alice-brewing-long-island-city",
+                    "googlePlacesId":"ChIJh9-J99hYwokRxc9AgwkG1Io"
+                },
+                "LineupBrewing": {
+                    "foursquareVenueId":"58a8a8ae93eaf85892f55e5a",
+                    "untappdBreweryId":254270,
+                    "googlePlacesId":"ChIJ4ZaWnb9awokRCIop4LNkzVo"
                 }
             }
         }
