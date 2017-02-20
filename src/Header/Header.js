@@ -29,7 +29,7 @@ class Header extends Component {
       return {
         breweryNamesSelected: [],
         beerTypesSelected: [],
-        rating: 2,
+        rating: 3,
         openNow: false
       };
     }
