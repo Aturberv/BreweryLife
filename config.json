@@ -329,7 +329,12 @@
                 "Wartega": {
                     "foursquareVenueId":"58a8a9ec0a3d5449dce989cf",
                     "untappdBreweryId":254065,
-                    "googlePlacesId":"ChIJ9aWUnb9awokRkpsUxYvuA9o"
+                    "googlePlacesId":"ChIJ9aWUnb9awokRkpsUxYvuA9o",
+                    "location": {
+                        "lat": 40.6563971,
+                        "lng": -74.006167,
+                        "valid": true
+                    }
                 },
                 "BigAliceBrewing": {
                     "foursquareVenueId":"51bc99a6498e1757ec1d9148",
@@ -340,7 +345,12 @@
                 "LineupBrewing": {
                     "foursquareVenueId":"58a8a8ae93eaf85892f55e5a",
                     "untappdBreweryId":254270,
-                    "googlePlacesId":"ChIJ4ZaWnb9awokRCIop4LNkzVo"
+                    "googlePlacesId":"ChIJ4ZaWnb9awokRCIop4LNkzVo",
+                    "location": {
+                        "lat": 40.6574813,
+                        "lng": -74.0080784,
+                        "valid": true
+                    }
                 }
             }
         }

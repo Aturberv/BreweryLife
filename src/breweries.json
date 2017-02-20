@@ -7056,124 +7056,6 @@
                 "Stout - Imperial / Double"
             ]
         },
-        "Wartega": {
-            "foursquareVenueId": "58a8a9ec0a3d5449dce989cf",
-            "untappdBreweryId": 254065,
-            "googlePlacesId": "ChIJ9aWUnb9awokRkpsUxYvuA9o",
-            "reviews": [],
-            "photos": [
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAM6GHDacDsLcICh233qAHq3v3XzWnm1Gx0qxMynvQZgDwxHQc0E5LW-10OkKcMVIh3b2oEBEXiOxt9qufjNY7bYkDJZ7pf7yzvjWSbPmX28UKEtSnyIaJNndKh2wdtvq7YKI1zqCRb-nb6wCZtKJMBabBx65vB7rH02LY34gRkXPEhBF2XyFGJWYEAOqep9-aY2VGhREscyMPCL4Wkx37G_s-t9NzNWLCg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAEjPE2S1402tUoTKfAskiTlkF92_pAAbPNtPwID7ljzXaoyPrlm9uNr7yULILpWqlzIzyx_g4U_5UGsfXRlfS5Y47QBxGA0Yo977Gs_bjxPMRiifQkbjuHupPlWUAdlSQKLLTU3UFkPL0LFCcM9ahtg4sNGsRaPH9PU-7L76jLhUEhC7OOp09zqj1Ml7b0MphcdcGhT8egI9UaEFxZN2hfK9jboNpF8rjA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAE3U8YJpJelK2aFIn6yhPRRW9i-PPPysiipQILXOwDvEhnkCOn7iclXe91ghvNUkU8nE59nykdTSHoRZUaqP1ueeAt2bwgmhyYjchKvogI2j3IDMM5axnAc1OWixweKm04ylKjVW8WJ_uRB4SUwlvWE5HwSS7Ri-ERNYutoldiwQEhDW3Y98lp7PKaXd8CkKDIPEGhST6Zk8Uk9OSCMaUkvC976Mjv70Sw&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAOLiGg9bR7piGPEJkDpuvQezguXUTFg5Ih_W-8yvw3qFXyYj9erhHI9f2RKVUqY6rPFngIkmZrFOvJfKiAzwceJIgdB_-RylUl9qASN1jcQfQ7nZuEVi5HV0i8p2HejTVTtR_XfwYOZG5_m3dAtD8TWIkxs1J_qSjJlqX_7OpsLKEhB0iwK-NZJTsY6p4OnIioMKGhTFuvb12YbcNUcjCKcdSW7EqhJtHA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
-                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAAGJldapZxoCb6SguILGbzbhuoIB4o1KmKuX4T9h1voCCF2a9H1LBlXF56KfLIWoCjW_wchomuBU5_vlqNKf0VFIEbfUpqeKCSuZW1KPxU_-hEmNWsUZU72jR00QnffAtthLvRqqbqzZ2Ec12vYzowwz5kkfeZMs8wTMtd8J_EljEhBjGx3kMJPAwLr9IU3UcbkEGhRz3Bpbl97jO2TNbNNKFYK80wAhTg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ"
-            ],
-            "beers": [
-                {
-                    "beerName": "SSS",
-                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
-                    "beerStyle": "Stout - Imperial / Double",
-                    "beerDescription": "Sensational beer for the sensationalist. Simply put, this super dark ale has splendid spiciness, slight sweetness and a singe of smokiness, with zero superfluous extras. Its sizable spirit makes it superb for sipping. ",
-                    "beerRating": 0,
-                    "beerRatingCount": 4,
-                    "beerABV": 9,
-                    "beerIBU": 35
-                },
-                {
-                    "beerName": "Pinkerton",
-                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
-                    "beerStyle": "Spiced / Herbed Beer",
-                    "beerDescription": "Reconstructed inspiration. A masterful blend of unique ingredients gives this amber ale notes of citrus, pepper, ginger, and a soft hints of licorice. Balanced and palatable, these flavors create delightful drinkability. ",
-                    "beerRating": 0,
-                    "beerRatingCount": 4,
-                    "beerABV": 6,
-                    "beerIBU": 40
-                },
-                {
-                    "beerName": "Keen",
-                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
-                    "beerStyle": "Sour - American Wild Ale",
-                    "beerDescription": "Punch of citrus. A sour ale produced with a healthy portion of kumquats, tangerine zest & juice, and mango. Its medium carbonation and dry finish produce a tangy bite.  ",
-                    "beerRating": 0,
-                    "beerRatingCount": 4,
-                    "beerABV": 5,
-                    "beerIBU": 0
-                },
-                {
-                    "beerName": "Catawampus",
-                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
-                    "beerStyle": "Spiced / Herbed Beer",
-                    "beerDescription": "Pleasantly askew. Light ale spiked with green tea leaves and nutmeg for a playfully palatable pint. The feather-light bubbles and creaminess are inclined to delight.",
-                    "beerRating": 0,
-                    "beerRatingCount": 4,
-                    "beerABV": 5,
-                    "beerIBU": 25
-                },
-                {
-                    "beerName": "Versuch",
-                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
-                    "beerStyle": "English Mild Ale",
-                    "beerDescription": "",
-                    "beerRating": 0,
-                    "beerRatingCount": 4,
-                    "beerABV": 0,
-                    "beerIBU": 0
-                },
-                {
-                    "beerName": "Prima #003",
-                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
-                    "beerStyle": "Dark Ale",
-                    "beerDescription": "",
-                    "beerRating": 0,
-                    "beerRatingCount": 4,
-                    "beerABV": 0,
-                    "beerIBU": 0
-                }
-            ],
-            "breweryRating": {
-                "google": {
-                    "rating": 4
-                },
-                "untappd": {},
-                "foursquare": {}
-            },
-            "social": {
-                "twitter": "https://twitter.com/Wartega",
-                "instagram": "https://www.instagram.com/Wartega",
-                "facebook": "http://facebook.com/wartega",
-                "website": "http://wartega.com",
-                "foursquare": "http://4sq.com/2lW1f6T"
-            },
-            "brewInfo": {
-                "hours": [],
-                "humanReadableHours": [],
-                "address": {
-                    "streetAddress": "33 35th St Unit 6A",
-                    "postal": "11232",
-                    "city": "Brooklyn",
-                    "state": "NY"
-                }
-            },
-            "googleUrl": "https://maps.google.com/?cid=15709662209272748946",
-            "location": {
-                "lat": 40.6572748,
-                "lng": -74.0075161,
-                "valid": true
-            },
-            "name": "Wartega",
-            "breweryDescription": "Beers inspired by ancient ale ingredients with uniquely bold flavor. Wartega's beers are carefully crafted with herbs, spices and fruit.",
-            "breweryLogo": "https://untappd.akamaized.net/site/brewery_logos/brewery-254065_c03a7.jpeg",
-            "beerTypes": [
-                "Stout - Imperial / Double",
-                "Spiced / Herbed Beer",
-                "Sour - American Wild Ale",
-                "English Mild Ale",
-                "Dark Ale"
-            ],
-            "userTips": [],
-            "tags": [],
-            "breweryAttributes": []
-        },
         "AlphabetCityBrewingCompany": {
             "googlePlacesId": "ChIJWaWbwHlZwokRj1wHkvB84zE",
             "untappdBreweryId": "22243",
@@ -8448,6 +8330,124 @@
                 }
             ]
         },
+        "Wartega": {
+            "foursquareVenueId": "58a8a9ec0a3d5449dce989cf",
+            "untappdBreweryId": 254065,
+            "googlePlacesId": "ChIJ9aWUnb9awokRkpsUxYvuA9o",
+            "reviews": [],
+            "photos": [
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAM6GHDacDsLcICh233qAHq3v3XzWnm1Gx0qxMynvQZgDwxHQc0E5LW-10OkKcMVIh3b2oEBEXiOxt9qufjNY7bYkDJZ7pf7yzvjWSbPmX28UKEtSnyIaJNndKh2wdtvq7YKI1zqCRb-nb6wCZtKJMBabBx65vB7rH02LY34gRkXPEhBF2XyFGJWYEAOqep9-aY2VGhREscyMPCL4Wkx37G_s-t9NzNWLCg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAEjPE2S1402tUoTKfAskiTlkF92_pAAbPNtPwID7ljzXaoyPrlm9uNr7yULILpWqlzIzyx_g4U_5UGsfXRlfS5Y47QBxGA0Yo977Gs_bjxPMRiifQkbjuHupPlWUAdlSQKLLTU3UFkPL0LFCcM9ahtg4sNGsRaPH9PU-7L76jLhUEhC7OOp09zqj1Ml7b0MphcdcGhT8egI9UaEFxZN2hfK9jboNpF8rjA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAE3U8YJpJelK2aFIn6yhPRRW9i-PPPysiipQILXOwDvEhnkCOn7iclXe91ghvNUkU8nE59nykdTSHoRZUaqP1ueeAt2bwgmhyYjchKvogI2j3IDMM5axnAc1OWixweKm04ylKjVW8WJ_uRB4SUwlvWE5HwSS7Ri-ERNYutoldiwQEhDW3Y98lp7PKaXd8CkKDIPEGhST6Zk8Uk9OSCMaUkvC976Mjv70Sw&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAOLiGg9bR7piGPEJkDpuvQezguXUTFg5Ih_W-8yvw3qFXyYj9erhHI9f2RKVUqY6rPFngIkmZrFOvJfKiAzwceJIgdB_-RylUl9qASN1jcQfQ7nZuEVi5HV0i8p2HejTVTtR_XfwYOZG5_m3dAtD8TWIkxs1J_qSjJlqX_7OpsLKEhB0iwK-NZJTsY6p4OnIioMKGhTFuvb12YbcNUcjCKcdSW7EqhJtHA&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ",
+                "https://maps.googleapis.com/maps/api/place/photo?photoreference=CoQBdwAAAAGJldapZxoCb6SguILGbzbhuoIB4o1KmKuX4T9h1voCCF2a9H1LBlXF56KfLIWoCjW_wchomuBU5_vlqNKf0VFIEbfUpqeKCSuZW1KPxU_-hEmNWsUZU72jR00QnffAtthLvRqqbqzZ2Ec12vYzowwz5kkfeZMs8wTMtd8J_EljEhBjGx3kMJPAwLr9IU3UcbkEGhRz3Bpbl97jO2TNbNNKFYK80wAhTg&maxwidth=800&maxheight=800&key=AIzaSyDjflZPmAfKeukc0BFBvRvEDjLKIEegMbQ"
+            ],
+            "beers": [
+                {
+                    "beerName": "SSS",
+                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
+                    "beerStyle": "Stout - Imperial / Double",
+                    "beerDescription": "Sensational beer for the sensationalist. Simply put, this super dark ale has splendid spiciness, slight sweetness and a singe of smokiness, with zero superfluous extras. Its sizable spirit makes it superb for sipping. ",
+                    "beerRating": 0,
+                    "beerRatingCount": 4,
+                    "beerABV": 9,
+                    "beerIBU": 35
+                },
+                {
+                    "beerName": "Pinkerton",
+                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
+                    "beerStyle": "Spiced / Herbed Beer",
+                    "beerDescription": "Reconstructed inspiration. A masterful blend of unique ingredients gives this amber ale notes of citrus, pepper, ginger, and a soft hints of licorice. Balanced and palatable, these flavors create delightful drinkability. ",
+                    "beerRating": 0,
+                    "beerRatingCount": 4,
+                    "beerABV": 6,
+                    "beerIBU": 40
+                },
+                {
+                    "beerName": "Keen",
+                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
+                    "beerStyle": "Sour - American Wild Ale",
+                    "beerDescription": "Punch of citrus. A sour ale produced with a healthy portion of kumquats, tangerine zest & juice, and mango. Its medium carbonation and dry finish produce a tangy bite.  ",
+                    "beerRating": 0,
+                    "beerRatingCount": 4,
+                    "beerABV": 5,
+                    "beerIBU": 0
+                },
+                {
+                    "beerName": "Catawampus",
+                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
+                    "beerStyle": "Spiced / Herbed Beer",
+                    "beerDescription": "Pleasantly askew. Light ale spiked with green tea leaves and nutmeg for a playfully palatable pint. The feather-light bubbles and creaminess are inclined to delight.",
+                    "beerRating": 0,
+                    "beerRatingCount": 4,
+                    "beerABV": 5,
+                    "beerIBU": 25
+                },
+                {
+                    "beerName": "Versuch",
+                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
+                    "beerStyle": "English Mild Ale",
+                    "beerDescription": "",
+                    "beerRating": 0,
+                    "beerRatingCount": 4,
+                    "beerABV": 0,
+                    "beerIBU": 0
+                },
+                {
+                    "beerName": "Prima #003",
+                    "beerLabel": "https://untappd.akamaized.net/site/assets/images/temp/badge-beer-default.png",
+                    "beerStyle": "Dark Ale",
+                    "beerDescription": "",
+                    "beerRating": 0,
+                    "beerRatingCount": 4,
+                    "beerABV": 0,
+                    "beerIBU": 0
+                }
+            ],
+            "breweryRating": {
+                "google": {
+                    "rating": 4
+                },
+                "untappd": {},
+                "foursquare": {}
+            },
+            "social": {
+                "twitter": "https://twitter.com/Wartega",
+                "instagram": "https://www.instagram.com/Wartega",
+                "facebook": "http://facebook.com/wartega",
+                "website": "http://wartega.com",
+                "foursquare": "http://4sq.com/2lW1f6T"
+            },
+            "brewInfo": {
+                "hours": [],
+                "humanReadableHours": [],
+                "address": {
+                    "streetAddress": "33 35th St Unit 6A",
+                    "postal": "11232",
+                    "city": "Brooklyn",
+                    "state": "NY"
+                }
+            },
+            "googleUrl": "https://maps.google.com/?cid=15709662209272748946",
+            "location": {
+                "lat": 40.6563971,
+                "lng": -74.006167,
+                "valid": true
+            },
+            "name": "Wartega",
+            "breweryDescription": "Beers inspired by ancient ale ingredients with uniquely bold flavor. Wartega's beers are carefully crafted with herbs, spices and fruit.",
+            "breweryLogo": "https://untappd.akamaized.net/site/brewery_logos/brewery-254065_c03a7.jpeg",
+            "beerTypes": [
+                "Stout - Imperial / Double",
+                "Spiced / Herbed Beer",
+                "Sour - American Wild Ale",
+                "English Mild Ale",
+                "Dark Ale"
+            ],
+            "userTips": [],
+            "tags": [],
+            "breweryAttributes": []
+        },
         "LineupBrewing": {
             "foursquareVenueId": "58a8a8ae93eaf85892f55e5a",
             "untappdBreweryId": 254270,
@@ -8547,8 +8547,8 @@
             },
             "googleUrl": "https://maps.google.com/?cid=6542996557361941000",
             "location": {
-                "lat": 40.6572757,
-                "lng": -74.00749239999999,
+                "lat": 40.6574813,
+                "lng": -74.0080784,
                 "valid": true
             },
             "name": "Lineup Brewing",
