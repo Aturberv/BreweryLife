@@ -101,7 +101,11 @@ class App extends Component {
 
   ratingFilter(breweries, rating) {
     return Object.keys(breweries).reduce((result, key) => {
-      if(breweries[key].breweryRating.untappd.rating >= rating) {
+      if(breweries[key].breweryRating.untappd.rating >= rating ||
+         (!breweries[key].breweryRating.untappd.rating && rating <= 4))
+         // ugh, for those without an untappd rating we want to show them
+         // when searched for
+      {
         result[key] = breweries[key];
       }
       return result;
