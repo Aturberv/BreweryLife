@@ -31,16 +31,16 @@ var foursquare = (require('foursquarevenues'))(foursquareClientId, foursquareCli
 
 var finalBreweriesList = {};
 
-for(city in config.cities) {
-    finalBreweriesList[city] = {};
-    generateBreweriesForCity(config.cities[city].breweries, city);
+// we are cappd by untappd to 100 requests per hour
+// so add a sleep between calls and never surpass the limit
+var sleepyTime = 3600000 / 100;
+
+async.eachSeries(config.cities, generateBreweriesForCity, writeFinalBreweryJson);
+
+function generateBreweriesForCity(city, completeCallback) {
+    finalBreweriesList[city.name] = {};
+    async.eachOfSeries(city.breweries, generateBrewery.bind(this, city.name), completeCallback);
 }
-
-
-function generateBreweriesForCity(breweries, city) {
-    async.eachOf(breweries, generateBrewery.bind(this, city), writeFinalBreweryJson);    
-}
-
 
 function generateBrewery(city, brewery, breweryKey, completeCallback) {    
     // reset
@@ -50,6 +50,7 @@ function generateBrewery(city, brewery, breweryKey, completeCallback) {
     brewery.breweryRating = brewery.breweryRating || {};
     brewery.social = brewery.social || {};
     brewery.brewInfo = brewery.brewInfo || {};
+
     yelpQuery(brewery)
         .then(parseYelpResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
@@ -63,7 +64,7 @@ function generateBrewery(city, brewery, breweryKey, completeCallback) {
         .then(parseFoursquareResponse)
         .then(joinBreweryWithResponse.bind(this, brewery))
         .then(appendFinalBrewery.bind(this, city, breweryKey))
-        .then(completeCallback)
+        .then(setTimeout(completeCallback, sleepyTime))
         .catch(function(err){
             console.log(err)
             process.exit(1);
