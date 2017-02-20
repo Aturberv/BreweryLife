@@ -120,7 +120,11 @@ function parseGooglePlacesResponse(response) {
                 } : {}
             },
             googleUrl: place.url,
-            location: place.geometry.location,
+            location: {
+                lat: place.geometry.location.lat,
+                lng: place.geometry.location.lng,
+                valid: true
+            },
             brewInfo: {
                 phone: place.formatted_phone_number,
                 hours: place.opening_hours ? place.opening_hours.periods : [],

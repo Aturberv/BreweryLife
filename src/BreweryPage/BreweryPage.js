@@ -36,9 +36,16 @@ const BreweryPage = (
                     <h1 className="brewery-name">{brewery.name}</h1>
                     {brewery.breweryDescription && <BreweryDescription description={brewery.breweryDescription} />}
                     <BrewerySocial social={brewery.social} />
-                    <RideButton userCoordinates={userCoordinates}
-                                isMobile={isMobile}
-                                destination={brewery.location}/>
+                    {
+                        brewery.location.valid ?
+                            <RideButton userCoordinates={userCoordinates}
+                                    isMobile={isMobile}
+                                    destination={brewery.location}/>
+                        :
+                            <div>
+                                This brewery is not open for visiting.
+                            </div>
+                    }
                     <Facebook isLoggedIn={isLoggedIn} 
                               currentUrl={currentUrl}
                               fbInit={fbInit} 

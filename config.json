@@ -193,7 +193,7 @@
                         {
                             "text": "Wow these guys are awesomesauce.",
                             "rating": 5
-                        },
+                        }
                     ],
                     "photos": [
                         "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/000/25c/2d6/227c931.jpg",
@@ -298,6 +298,11 @@
                     "foursquareVenueId": "56476e54498e4a6343d062e6"
                 },
                 "SixpointBrewery": {
+                    "location": {
+                        "lat": 40.6739774,
+                        "lng": -74.0141167,
+                        "valid": false
+                    },
                     "yelpBusinessId": "sixpoint-brewery-brooklyn",
                     "googlePlacesId": "ChIJm9GgGIxawokRXI9IjgXT4vE",
                     "untappdBreweryId": "1149",
