@@ -27,9 +27,14 @@ const BreweryInfo = ({ info }) => {
         {
           info.address &&
           <div>
-            <h4>{info.address.streetAddress}<br/>
-                {info.address.city}, {info.address.state} {info.address.postal}
-            </h4>
+            <a href={`https://maps.google.com/maps?q=` +
+                    `${info.address.streetAddress} ${info.address.city}` +
+                    `${info.address.state} ${info.address.postal}`}
+               target="_blank">
+              <h4>{info.address.streetAddress}<br/>
+                  {info.address.city}, {info.address.state} {info.address.postal}
+              </h4>
+            </a>
           </div>
         }
         </div>
