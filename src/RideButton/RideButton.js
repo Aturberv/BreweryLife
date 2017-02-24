@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import autoBind from 'react-autobind';
+import Geolocation from '../geolocation/Geolocation'
 import './RideButton.css';
 
 class RideButton extends Component {
@@ -60,12 +61,12 @@ class RideButton extends Component {
         });
     }
 
-
     render() {
-        const { isMobile, userCoordinates } = this.props; 
+        const { isMobile, userCoordinates } = this.props;
         return (
             <div>
                 <div>
+                <Geolocation locationChanged={this.props.locationChanged}>
                 {
                     !userCoordinates ?
                         this.loadingDisplay()
@@ -77,6 +78,7 @@ class RideButton extends Component {
                             { this.loadingDisplay() }
                         </div>
                 }
+                </Geolocation>
                 </div>
             </div>
         );

@@ -29,12 +29,15 @@ const BreweryBeers = ({beers}) => {
                                         <p itemProp="description">{beer.beerDescription}</p>
                                         <div className="beer-stats">
                                             <p>ABV: {beer.beerABV}, IBU: {beer.beerIBU}</p>
-                                            <span itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
-                                                <meta itemProp="ratingValue" content={beer.beerRating}/>
-                                                <meta itemProp="ratingCount" content={beer.beerRatingCount}/>
-                                                <StarRating rating={beer.beerRating} />
-                                                <p>reviews: {beer.beerRatingCount}</p>
-                                            </span>
+                                            {
+                                                beer.beerRating &&
+                                                <span itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
+                                                    <meta itemProp="ratingValue" content={beer.beerRating}/>
+                                                    <meta itemProp="ratingCount" content={beer.beerRatingCount}/>
+                                                    <StarRating rating={beer.beerRating} />
+                                                    <p>reviews: {beer.beerRatingCount}</p>
+                                                </span>
+                                            }
                                         </div> 
                                     </div>
                                 </div>

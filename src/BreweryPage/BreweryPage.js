@@ -21,6 +21,7 @@ const BreweryPage = (
 {
     brewery, 
     userCoordinates,
+    locationChanged,
     isMobile,
     activeCity,
     activeCityBreweries,
@@ -40,7 +41,9 @@ const BreweryPage = (
                         brewery.location.valid ?
                             <RideButton userCoordinates={userCoordinates}
                                     isMobile={isMobile}
-                                    destination={brewery.location}/>
+                                    destination={brewery.location}
+                                    locationChanged={locationChanged}
+                                    />
                         :
                             <div>
                                 This brewery is not open for visiting.

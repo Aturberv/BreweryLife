@@ -4,7 +4,6 @@ import ReactGA from 'react-ga';
 import Helmet from 'react-helmet';
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import {geolocated} from 'react-geolocated';
 
 import Header from '../Header/Header';
 import BreweryPage from '../BreweryPage/BreweryPage';
@@ -27,6 +26,7 @@ class App extends Component {
     this.state = {
       breweries: Cities[props.params.city],
       defaultCenter: config.cities[props.params.city].map.center,
+      userCoords: this.props.userCoords,
       isLoggedIn: false,
       fbInit: false
     }
@@ -164,6 +164,16 @@ class App extends Component {
     if(this.props.location.pathname !== nextProps.location.pathname) {
       ReactGA.pageview(nextProps.location.pathname)
     }
+
+    if(this.props.userCoords !== nextProps.userCoords) {
+      this.setState({
+        userCoords: nextProps.userCoords
+      });
+    }
+  }
+
+  onLocationChanged(coords) {
+    this.setState({userCoords: coords});
   }
 
   render() {
@@ -174,8 +184,7 @@ class App extends Component {
       },
       location: {
         pathname
-      },
-      coords
+      }
     } = this.props;
 
     const currentUrl = `${config.url}${pathname}`;
@@ -227,7 +236,8 @@ class App extends Component {
             breweryKey ?
               <BreweryPage brewery={ activeCityBreweries[breweryKey] }
                            isMobile={ isMobile }
-                           userCoordinates={ coords }
+                           userCoordinates={ this.state.userCoords }
+                           locationChanged={this.onLocationChanged}
                            activeCity={ city }
                            activeCityBreweries={ activeCityBreweries }
                            isLoggedIn={ this.state.isLoggedIn }
@@ -266,17 +276,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-if(isMobile) {
-    // can we figure out what city to default to
-    // based on their location?
-    App = geolocated({
-        positionOptions: {
-            enableHighAccuracy: false
-        },
-        userDecisionTimeout: 5000
-    })(App);
 }
 
 export default App;
