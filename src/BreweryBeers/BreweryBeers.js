@@ -30,10 +30,15 @@ const BreweryBeers = ({beers}) => {
                                         <div className="beer-stats">
                                             <p>ABV: {beer.beerABV}, IBU: {beer.beerIBU}</p>
                                             {
-                                                beer.beerRating &&
+                                                beer.beerRating ?
                                                 <span itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
                                                     <meta itemProp="ratingValue" content={beer.beerRating}/>
                                                     <meta itemProp="ratingCount" content={beer.beerRatingCount}/>
+                                                    <StarRating rating={beer.beerRating} />
+                                                    <p>reviews: {beer.beerRatingCount}</p>
+                                                </span>
+                                                :
+                                                <span>
                                                     <StarRating rating={beer.beerRating} />
                                                     <p>reviews: {beer.beerRatingCount}</p>
                                                 </span>

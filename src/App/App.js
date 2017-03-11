@@ -164,16 +164,12 @@ class App extends Component {
     if(this.props.location.pathname !== nextProps.location.pathname) {
       ReactGA.pageview(nextProps.location.pathname)
     }
-
-    if(this.props.userCoords !== nextProps.userCoords) {
-      this.setState({
-        userCoords: nextProps.userCoords
-      });
-    }
   }
 
   onLocationChanged(coords) {
-    this.setState({userCoords: coords});
+    if(coords !== this.state.userCoords) { 
+      this.setState({userCoords: coords});
+    }
   }
 
   render() {
@@ -251,6 +247,8 @@ class App extends Component {
                             mapZoom={ activeCityConfig.map.zoom }
                             breweries={ this.state.breweries }
                             activeCity={ city }
+                            userCoordinates={this.state.userCoords}
+                            locationChanged={this.onLocationChanged}
                 />
               </div>
           }

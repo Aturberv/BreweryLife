@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import autoBind from 'react-autobind';
-import Geolocation from '../geolocation/Geolocation'
+import Geolocation from '../Geolocation/Geolocation'
 import './RideButton.css';
 
 class RideButton extends Component {
@@ -9,6 +9,7 @@ class RideButton extends Component {
     constructor(props) {
         super(props);
         autoBind(this);
+        this.state = { showComponent: false }
     }
 
     componentDidUpdate() {
@@ -41,7 +42,7 @@ class RideButton extends Component {
    loadingDisplay() {
         const text = this.props.isMobile ? this.props.userCoordinates ?
                                              "Finding an uber..."
-                                           : "Getting location..."
+                                           : "Request an uber..."
                                          : "Unavailable on desktop";
         return (
             <div className="uber-placeholder">
@@ -61,24 +62,35 @@ class RideButton extends Component {
         });
     }
 
+    onClickRender() {
+        if(this.state.showComponent !== true){
+            this.setState({showComponent: true});
+        }
+    }
+
     render() {
         const { isMobile, userCoordinates } = this.props;
         return (
             <div>
-                <div>
-                <Geolocation locationChanged={this.props.locationChanged}>
+                <div onClick={this.onClickRender}>
                 {
-                    !userCoordinates ?
-                        this.loadingDisplay()
+                    this.state.showComponent && isMobile ?
+                    <Geolocation locationChanged={this.props.locationChanged}>
+                        {
+                        !userCoordinates ?
+                            this.loadingDisplay()
+                        :
+                            <div className="ride-button"
+                                 data-bttnio-id="btn-58c5e756c2a3e133"
+                                 data-bttnio-context={this.locationString()}
+                                 onClick={this.onRideRequest}>
+                                { this.loadingDisplay() }
+                            </div>
+                        }
+                    </Geolocation> 
                     :
-                        isMobile && <div className="ride-button"
-                                         data-bttnio-id="btn-58c5e756c2a3e133"
-                                         data-bttnio-context={this.locationString()}
-                                         onClick={this.onRideRequest}>
-                            { this.loadingDisplay() }
-                        </div>
+                        this.loadingDisplay()
                 }
-                </Geolocation>
                 </div>
             </div>
         );

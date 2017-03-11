@@ -8,40 +8,34 @@ class Geolocation extends Component {
 		super(props)
 		autoBind(this)
 		this.state = {
-			userCoords: {},
-			showComponent: false
+			userCoords: {}
 		}
 	}
 
-	componentWillMount() {
-		this.updateLocation(this.props.coords)
+	componentWillMount(){
+		if(this.userCoords !== this.props.coords){
+			this.updateLocation(this.props.coords)
+		}
 	}
 
-	componentDidMount() {
-		this.updateLocation(this.props.coords)
+	componentWillReceiveProps(nextProps){
+		if(this.props.coords !== nextProps.coords) {
+			this.updateLocation(nextProps.coords)
+		}
 	}
 
 	updateLocation(coords) {
-		this.setState({
-			userCoords: coords
-		}, () => this.props.locationChanged(this.props.coords))
+		if(this.state.userCoords !== coords) {
+			this.setState({
+				userCoords: coords
+			}, () => this.props.locationChanged(coords))
+		}
 	}
-
-	onClickRender() {
-    	this.setState({showComponent: true});
-    	this.updateLocation(this.props.coords)
-  	}
 
 	render() {
 		return (
-			<div onClick={this.onClickRender}>
-			{this.props.children}
-			{
-				this.state.showComponent ?
-					<div className="user-location" />
-				:
-					null
-			}
+			<div onClick={this.updateLocation(this.props.coords)}>
+				{this.props.children}
 			</div>
 		)
 	}
