@@ -13,7 +13,7 @@ class Geolocation extends Component {
 	}
 
 	componentWillMount(){
-		if(this.userCoords !== this.props.coords){
+		if(this.compareCoordinates(this.state.userCoords, this.props.coords)){
 			this.updateLocation(this.props.coords)
 		}
 	}
@@ -25,10 +25,21 @@ class Geolocation extends Component {
 	}
 
 	updateLocation(coords) {
-		if(this.state.userCoords !== coords) {
+		if(this.compareCoordinates(this.state.userCoords, coords)) {
 			this.setState({
 				userCoords: coords
 			}, () => this.props.locationChanged(coords))
+		}
+	}
+
+	compareCoordinates(userCoords, coords){
+		if(userCoords && coords){
+			if(userCoords.latitude !== coords.latitude || 
+		   	   userCoords.longitude !== coords.longitude){
+				return true
+			} else {
+				return false
+			}
 		}
 	}
 

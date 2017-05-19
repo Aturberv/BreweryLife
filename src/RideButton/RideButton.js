@@ -9,7 +9,7 @@ class RideButton extends Component {
     constructor(props) {
         super(props);
         autoBind(this);
-        this.state = { showComponent: false }
+        this.state = { hasUserCoordinates: false }
     }
 
     componentDidUpdate() {
@@ -63,8 +63,8 @@ class RideButton extends Component {
     }
 
     onClickRender() {
-        if(this.state.showComponent !== true){
-            this.setState({showComponent: true});
+        if(!this.state.hasUserCoordinates){
+            this.setState({hasUserCoordinates: true});
         }
     }
 
@@ -74,7 +74,7 @@ class RideButton extends Component {
             <div>
                 <div onClick={this.onClickRender}>
                 {
-                    this.state.showComponent && isMobile ?
+                    this.state.hasUserCoordinates && isMobile ?
                     <Geolocation locationChanged={this.props.locationChanged}>
                         {
                         !userCoordinates ?

@@ -13,7 +13,7 @@ class BreweryMap extends Component {
     autoBind(this);
     this.state = {
       pulsing: null,
-      showComponent: false,
+      locationEnabled: false,
     }
   }
 
@@ -35,9 +35,9 @@ class BreweryMap extends Component {
   }
 
   onClickRender() {
-    if(this.state.showComponent !== true) {
+    if(this.state.locationEnabled !== true) {
       this.setState({
-        showComponent: true
+        locationEnabled: true
       })
     }
   }
@@ -49,6 +49,7 @@ class BreweryMap extends Component {
       mapZoom,
       breweries,
       activeCity,
+      locationChanged,
       userCoordinates,
       interactive = true,
     } = this.props;
@@ -61,7 +62,7 @@ class BreweryMap extends Component {
                   : 
                     mapCenter 
                 }
-        zoom={ userCoordinates ? mapZoom - 1 : mapZoom }
+        zoom={ mapZoom }
         options={!interactive && 
                   {
                     disableDefaultUI:true,
@@ -73,15 +74,15 @@ class BreweryMap extends Component {
                 }
         defaultZoom={ 12 }
       >
-      <Crosshairs clickRender={this.onClickRender} />
+      <Crosshairs onClickRender={this.onClickRender} />
         {
-          this.state.showComponent &&
-          <Geolocation locationChanged={this.props.locationChanged} />
+          this.state.locationEnabled &&
+            <Geolocation locationChanged={locationChanged} />
         }
           {
             userCoordinates &&
-            <UserMarker lat={userCoordinates.latitude} 
-                        lng={userCoordinates.longitude} />
+              <UserMarker lat={userCoordinates.latitude} 
+                          lng={userCoordinates.longitude} />
           }
         {
           Object.keys(breweries).map((breweryKey, idx) =>

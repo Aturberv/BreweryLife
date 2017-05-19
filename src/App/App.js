@@ -167,9 +167,7 @@ class App extends Component {
   }
 
   onLocationChanged(coords) {
-    if(coords !== this.state.userCoords) { 
-      this.setState({userCoords: coords});
-    }
+    this.setState({userCoords: coords});
   }
 
   render() {
