@@ -351,6 +351,18 @@
                         "lng": -74.0080784,
                         "valid": true
                     }
+                },
+                "IconycBrewingCompany": {
+                    "yelpBusinessId": "iconyc-brewing-company-queens",
+                    "googlePlacesId": "ChIJH7gEOyNfwokR7oqYzcsILJA",
+                    "untappdBreweryId": 251150,
+                    "foursquareVenueId": "590e3215286fda7d6e87b70d"
+                },
+                "KingsCountyBrewersCollective": {
+                    "yelpBusinessId": "kings-county-brewers-collective-brooklyn",
+                    "googlePlacesId": "ChIJb6ZVSB1cwokRES6FZ2WAMAA",
+                    "untappdBreweryId": 4765840,
+                    "foursquareVenueId": "56f6cd56cd102dca40d553c9"
                 }
             }
         }
