@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import GoogleMap from 'google-map-react';
 import autoBind from 'react-autobind';
 import BreweryMarker from '../BreweryMarker/BreweryMarker';
+import Geolocation from '../Geolocation/Geolocation';
+import UserMarker from '../UserMarker/UserMarker';
+import Crosshairs from '../Crosshairs/Crosshairs';
 
 class BreweryMap extends Component {
 
@@ -9,7 +12,8 @@ class BreweryMap extends Component {
     super(props);
     autoBind(this);
     this.state = {
-      pulsing: null
+      pulsing: null,
+      locationEnabled: false,
     }
   }
 
@@ -30,6 +34,14 @@ class BreweryMap extends Component {
     });
   }
 
+  onClickRender() {
+    if(this.state.locationEnabled !== true) {
+      this.setState({
+        locationEnabled: true
+      })
+    }
+  }
+
   render() {
     const {
       googleMapsApiKey,
@@ -37,13 +49,19 @@ class BreweryMap extends Component {
       mapZoom,
       breweries,
       activeCity,
+      locationChanged,
+      userCoordinates,
       interactive = true,
     } = this.props;
-
     return (
       <GoogleMap
         bootstrapURLKeys={{ key: googleMapsApiKey, language: 'en' }}
-        center={ mapCenter }
+        center={ 
+                  userCoordinates ? 
+                    {lat: userCoordinates.latitude, lng: userCoordinates.longitude} 
+                  : 
+                    mapCenter 
+                }
         zoom={ mapZoom }
         options={!interactive && 
                   {
@@ -56,6 +74,16 @@ class BreweryMap extends Component {
                 }
         defaultZoom={ 12 }
       >
+      <Crosshairs onClickRender={this.onClickRender} />
+        {
+          this.state.locationEnabled &&
+            <Geolocation locationChanged={locationChanged} />
+        }
+          {
+            userCoordinates &&
+              <UserMarker lat={userCoordinates.latitude} 
+                          lng={userCoordinates.longitude} />
+          }
         {
           Object.keys(breweries).map((breweryKey, idx) =>
               <BreweryMarker
